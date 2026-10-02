@@ -1,0 +1,14 @@
+{
+  "client_name": "Cameron Blake",
+  "dob": "1988-12-06",
+  "address": "710 Simulation Way, Test Harbor, NC 00000",
+  "email": "cameron.blake@example.com",
+  "phone": "555-0105",
+  "account_number": "DEMO-BRK-5005",
+  "account_type": "Individual Brokerage",
+  "account_value": 421880.4,
+  "risk_tolerance": "Moderate",
+  "investment_objective": "Growth and Income",
+  "beneficiary": "N/A",
+  "beneficiary_allocation": "N/A"
+}

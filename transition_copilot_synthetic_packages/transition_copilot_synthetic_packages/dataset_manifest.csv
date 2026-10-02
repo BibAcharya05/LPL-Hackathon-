@@ -1,5 +1,0 @@
-transition_id,scenario,expected_status,issue_count,client_name,account_type,account_value
-T001_READY_JORDAN_KIM,Clean Traditional IRA transition; all core fields agree.,Ready,0,Jordan Kim,Traditional IRA,286420.55
-T002_MISSING_INFO_PRIYA_SHAH,Roth IRA package missing beneficiary designation document.,Missing Info,1,Priya Shah,Roth IRA,174880.20
-T003_FLAGGED_MARCUS_LEE,Traditional IRA with cross-document address mismatch and risk-tolerance mismatch.,Flagged,2,Marcus Lee,Traditional IRA,512335.10
-T004_COMPLEX_ELENA_RODRIGUEZ,"Multi-issue individual brokerage transition: value variance, unsigned transfer form, objective mismatch, and name formatting inconsistency.",Flagged,4,Elena M. Rodriguez,Individual Brokerage,638145.75

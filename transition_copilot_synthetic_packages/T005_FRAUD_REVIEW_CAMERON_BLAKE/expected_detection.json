@@ -1,0 +1,17 @@
+{
+  "expected_status": "Flagged",
+  "issues": [
+    {
+      "code": "RAPID_THIRD_PARTY_FUND_MOVEMENT",
+      "description": "A $125,000 incoming ACH from a newly observed external originator is followed within 48 hours by $119,500 in outgoing wires to newly added third-party recipients."
+    },
+    {
+      "code": "NEW_WIRE_RECIPIENTS",
+      "description": "Both outgoing wires are directed to third-party recipients first added immediately before the transfers."
+    },
+    {
+      "code": "RETURNED_ACH_NAME_MISMATCH",
+      "description": "A separate $22,400 ACH debit is returned because the destination account name does not match the expected beneficiary name. This is an indicator for review, not proof of fraud."
+    }
+  ]
+}
