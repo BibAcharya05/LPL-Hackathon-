@@ -1,0 +1,21 @@
+{
+  "expected_status": "Flagged",
+  "issues": [
+    {
+      "code": "NAME_VARIATION",
+      "description": "Application uses Elena Rodriguez while statement uses Elena M. Rodriguez; requires identity confirmation rather than automatic rejection."
+    },
+    {
+      "code": "ACCOUNT_VALUE_VARIANCE",
+      "description": "Transfer form estimated value is $603,145.75 versus statement value $638,145.75."
+    },
+    {
+      "code": "MISSING_TRANSFER_SIGNATURE",
+      "description": "Transfer form signature field is blank/not signed."
+    },
+    {
+      "code": "OBJECTIVE_MISMATCH",
+      "description": "Application lists Balanced Growth while investor profile lists Aggressive Growth."
+    }
+  ]
+}

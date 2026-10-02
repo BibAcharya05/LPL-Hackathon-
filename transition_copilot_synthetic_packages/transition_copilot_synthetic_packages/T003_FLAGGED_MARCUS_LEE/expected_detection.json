@@ -1,0 +1,13 @@
+{
+  "expected_status": "Flagged",
+  "issues": [
+    {
+      "code": "ADDRESS_MISMATCH",
+      "description": "Existing statement lists 350 Prototype Road while new account application lists 305 Prototype Road."
+    },
+    {
+      "code": "RISK_TOLERANCE_MISMATCH",
+      "description": "New account application lists Conservative while investor profile lists Moderate."
+    }
+  ]
+}

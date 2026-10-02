@@ -1,0 +1,14 @@
+{
+  "client_name": "Jordan Kim",
+  "dob": "1978-02-14",
+  "address": "100 Demo Avenue, Sample City, NC 00000",
+  "email": "jordan.kim@example.com",
+  "phone": "555-0101",
+  "account_number": "DEMO-IRA-1001",
+  "account_type": "Traditional IRA",
+  "account_value": 286420.55,
+  "risk_tolerance": "Moderate",
+  "investment_objective": "Growth and Income",
+  "beneficiary": "Taylor Kim",
+  "beneficiary_allocation": "100%"
+}

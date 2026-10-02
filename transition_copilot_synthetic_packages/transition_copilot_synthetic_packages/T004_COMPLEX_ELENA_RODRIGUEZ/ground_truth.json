@@ -1,0 +1,14 @@
+{
+  "client_name": "Elena M. Rodriguez",
+  "dob": "1980-04-09",
+  "address": "480 Sandbox Street, Demo Heights, NC 00000",
+  "email": "elena.rodriguez@example.com",
+  "phone": "555-0104",
+  "account_number": "DEMO-BRK-4004",
+  "account_type": "Individual Brokerage",
+  "account_value": 638145.75,
+  "risk_tolerance": "Moderate",
+  "investment_objective": "Balanced Growth",
+  "beneficiary": "N/A",
+  "beneficiary_allocation": "N/A"
+}

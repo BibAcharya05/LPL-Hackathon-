@@ -1,0 +1,14 @@
+{
+  "client_name": "Marcus Lee",
+  "dob": "1971-07-22",
+  "address": "350 Prototype Road, Mocksville, NC 00000",
+  "email": "marcus.lee@example.com",
+  "phone": "555-0103",
+  "account_number": "DEMO-IRA-3003",
+  "account_type": "Traditional IRA",
+  "account_value": 512335.1,
+  "risk_tolerance": "Conservative",
+  "investment_objective": "Capital Preservation and Income",
+  "beneficiary": "Dana Lee",
+  "beneficiary_allocation": "100%"
+}

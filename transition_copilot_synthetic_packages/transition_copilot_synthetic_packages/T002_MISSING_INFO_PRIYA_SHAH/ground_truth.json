@@ -1,0 +1,14 @@
+{
+  "client_name": "Priya Shah",
+  "dob": "1985-11-03",
+  "address": "220 Test Lane, Example Town, NC 00000",
+  "email": "priya.shah@example.com",
+  "phone": "555-0102",
+  "account_number": "DEMO-ROTH-2002",
+  "account_type": "Roth IRA",
+  "account_value": 174880.2,
+  "risk_tolerance": "Moderately Aggressive",
+  "investment_objective": "Long-Term Growth",
+  "beneficiary": "Arjun Shah",
+  "beneficiary_allocation": "100%"
+}

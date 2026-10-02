@@ -1,0 +1,9 @@
+{
+  "expected_status": "Missing Info",
+  "issues": [
+    {
+      "code": "MISSING_BENEFICIARY_DOCUMENT",
+      "description": "Demo workflow expects a beneficiary designation for this IRA transition, but the package does not contain one."
+    }
+  ]
+}
