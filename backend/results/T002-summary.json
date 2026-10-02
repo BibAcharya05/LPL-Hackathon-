@@ -1,0 +1,216 @@
+{
+  "account_id": "T002",
+  "model_id": "amazon.nova-micro-v1:0",
+  "summary": "Priya Shah's Roth IRA is in \"Missing Info\" status due to a missing beneficiary designation. Required next steps: Obtain and upload the beneficiary designation (document 05_beneficiary_designation.pdf). Human review is required.",
+  "source": "bedrock",
+  "requires_human_review": true,
+  "input_snapshot": {
+    "account_id": "T002",
+    "client_name": "Priya Shah",
+    "account_type": "Roth IRA",
+    "status": "Missing Info",
+    "summary": "Demo checks found 1 issue(s). Human review is required.",
+    "synthetic": true,
+    "processing_status": "Complete",
+    "checks_completed": [
+      "required_documents",
+      "field_comparisons",
+      "synthetic_signature_markers"
+    ],
+    "normalized_fields": {
+      "client_name": [
+        {
+          "document": "01_existing_account_statement.pdf",
+          "page": 1,
+          "label": "Client Name",
+          "value": "Priya Shah",
+          "confidence": 95.81912994384766
+        },
+        {
+          "document": "02_new_account_application.pdf",
+          "page": 1,
+          "label": "Client Name",
+          "value": "Priya Shah",
+          "confidence": 95.50942993164062
+        },
+        {
+          "document": "03_account_transfer_form.pdf",
+          "page": 1,
+          "label": "Client Name",
+          "value": "Priya Shah",
+          "confidence": 95.7535171508789
+        },
+        {
+          "document": "04_investor_profile.pdf",
+          "page": 1,
+          "label": "Client Name",
+          "value": "Priya Shah",
+          "confidence": 95.05058288574219
+        },
+        {
+          "document": "06_advisory_agreement.pdf",
+          "page": 1,
+          "label": "Client Name",
+          "value": "Priya Shah",
+          "confidence": 95.21293640136719
+        }
+      ],
+      "mailing_address": [
+        {
+          "document": "01_existing_account_statement.pdf",
+          "page": 1,
+          "label": "Mailing Address",
+          "value": "220 Test Lane, Example Town, NC 00000",
+          "confidence": 96.01773071289062
+        },
+        {
+          "document": "02_new_account_application.pdf",
+          "page": 1,
+          "label": "Mailing Address",
+          "value": "220 Test Lane, Example Town, NC 00000",
+          "confidence": 95.98515319824219
+        }
+      ],
+      "account_type": [
+        {
+          "document": "01_existing_account_statement.pdf",
+          "page": 1,
+          "label": "Account Type",
+          "value": "Roth IRA",
+          "confidence": 95.74988555908203
+        },
+        {
+          "document": "02_new_account_application.pdf",
+          "page": 1,
+          "label": "Requested Account Type",
+          "value": "Roth IRA",
+          "confidence": 95.83172607421875
+        },
+        {
+          "document": "03_account_transfer_form.pdf",
+          "page": 1,
+          "label": "Account Type",
+          "value": "Roth IRA",
+          "confidence": 95.72416687011719
+        }
+      ],
+      "risk_tolerance": [
+        {
+          "document": "02_new_account_application.pdf",
+          "page": 1,
+          "label": "Risk Tolerance",
+          "value": "Moderately Aggressive",
+          "confidence": 94.96082305908203
+        },
+        {
+          "document": "04_investor_profile.pdf",
+          "page": 1,
+          "label": "Risk Tolerance",
+          "value": "Moderately Aggressive",
+          "confidence": 95.76441955566406
+        }
+      ],
+      "investment_objective": [
+        {
+          "document": "02_new_account_application.pdf",
+          "page": 1,
+          "label": "Investment Objective",
+          "value": "Long-Term Growth",
+          "confidence": 95.01240539550781
+        },
+        {
+          "document": "04_investor_profile.pdf",
+          "page": 1,
+          "label": "Investment Objective",
+          "value": "Long-Term Growth",
+          "confidence": 95.97093200683594
+        }
+      ],
+      "source_account_number": [
+        {
+          "document": "01_existing_account_statement.pdf",
+          "page": 1,
+          "label": "Account Number",
+          "value": "DEMO-ROTH-2002",
+          "confidence": 95.71711730957031
+        },
+        {
+          "document": "03_account_transfer_form.pdf",
+          "page": 1,
+          "label": "Delivering Account Number",
+          "value": "DEMO-ROTH-2002",
+          "confidence": 95.83049774169922
+        },
+        {
+          "document": "06_advisory_agreement.pdf",
+          "page": 1,
+          "label": "Account Number",
+          "value": "DEMO-ROTH-2002",
+          "confidence": 95.64349365234375
+        }
+      ],
+      "transfer_value": [
+        {
+          "document": "01_existing_account_statement.pdf",
+          "page": 1,
+          "label": "Ending Account Value",
+          "value": "$174,880.20",
+          "confidence": 95.95613861083984
+        },
+        {
+          "document": "03_account_transfer_form.pdf",
+          "page": 1,
+          "label": "Estimated Transfer Value",
+          "value": "$174,880.20",
+          "confidence": 95.91722106933594
+        }
+      ]
+    },
+    "issues": [
+      {
+        "code": "MISSING_DOCUMENT",
+        "severity": "Missing Info",
+        "message": "Beneficiary designation is missing under the demo checklist.",
+        "sources": [],
+        "action": "Obtain and upload the beneficiary designation.",
+        "expected_document": "05_beneficiary_designation.pdf"
+      }
+    ],
+    "observations": [
+      {
+        "code": "SYNTHETIC_SIGNATURE_MARKER",
+        "message": "Matching synthetic signature marker found. This does not authenticate a signature.",
+        "sources": [
+          {
+            "document": "02_new_account_application.pdf",
+            "page": 1,
+            "value": "SIGNED Priya Shah"
+          }
+        ]
+      },
+      {
+        "code": "SYNTHETIC_SIGNATURE_MARKER",
+        "message": "Matching synthetic signature marker found. This does not authenticate a signature.",
+        "sources": [
+          {
+            "document": "03_account_transfer_form.pdf",
+            "page": 1,
+            "value": "SIGNED Priya Shah"
+          }
+        ]
+      },
+      {
+        "code": "SYNTHETIC_SIGNATURE_MARKER",
+        "message": "Matching synthetic signature marker found. This does not authenticate a signature.",
+        "sources": [
+          {
+            "document": "06_advisory_agreement.pdf",
+            "page": 1,
+            "value": "SIGNED Priya Shah"
+          }
+        ]
+      }
+    ],
+    "notice": "Demo preflight only. Ready means ready for human review. No signature authentication or transfer authorization."
+  }
+}

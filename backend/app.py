@@ -61,20 +61,28 @@ ACCOUNTS = [
     }
 ]
 
-
 def load_accounts():
-    result_file = (
-        Path(__file__).parent / "results" / "T002-checked.json"
-    )
+    results = Path(__file__).parent / "results"
+    result_file = results / "T002-checked.json"
+    summary_file = results / "T002-summary.json"
 
-    if result_file.exists():
-        account = json.loads(
-            result_file.read_text(encoding="utf-8")
-        )
-        return "extracted", [account]
+    if not result_file.exists():
+        return "mock", ACCOUNTS
 
-    return "mock", ACCOUNTS
+    account = json.loads(result_file.read_text(encoding="utf-8"))
 
+    if summary_file.exists():
+        saved = json.loads(summary_file.read_text(encoding="utf-8"))
+
+        # Only use the summary if its source results still match.
+        if (
+            saved.get("account_id") == account["account_id"]
+            and saved.get("input_snapshot") == account
+        ):
+            account["summary"] = saved["summary"]
+            account["summary_source"] = "bedrock"
+
+    return "extracted", [account]
 
 @app.after_request
 def cors(response):
