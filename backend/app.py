@@ -1,90 +1,64 @@
 import json
 import os
-from upload_api import register_upload_routes
+from decimal import Decimal
 from pathlib import Path
 
+import boto3
+from botocore.exceptions import BotoCoreError, ClientError
 from flask import Flask, jsonify
+
+from upload_api import register_upload_routes
 
 app = Flask(__name__)
 register_upload_routes(app)
-FRONTEND_ORIGIN = os.getenv(
-    "FRONTEND_ORIGIN",
-    "http://localhost:5173",
-)
 
-ACCOUNTS = [
-    {
-        "account_id": "DEMO-001",
-        "client_name": "Jordan Example",
-        "account_type": "Traditional IRA",
-        "status": "Flagged",
-        "summary": "IRA packet requires signature, beneficiary, and address review.",
-        "synthetic": True,
-        "processing_status": "Complete",
-        "issues": [
-            {
-                "code": "MISSING_SIGNATURE",
-                "severity": "Missing Info",
-                "message": "Client signature and signing date are missing.",
-                "sources": [
-                    {"document": "application.pdf", "page": 1}
-                ],
-                "action": "Obtain the client's signature and signing date.",
-            },
-            {
-                "code": "ADDRESS_REVIEW",
-                "severity": "Flagged",
-                "message": "Residential and mailing addresses differ.",
-                "sources": [
-                    {
-                        "document": "application.pdf",
-                        "page": 1,
-                        "value": "100 Demo Lane",
-                    },
-                    {
-                        "document": "statement.pdf",
-                        "page": 2,
-                        "value": "200 Sample Street",
-                    },
-                ],
-                "action": "Confirm whether the different addresses are intentional.",
-            },
-            {
-                "code": "MISSING_BENEFICIARY",
-                "severity": "Missing Info",
-                "message": "Beneficiary details are missing under the demo checklist.",
-                "sources": [
-                    {"document": "application.pdf", "page": 1}
-                ],
-                "action": "Confirm and complete the beneficiary designation.",
-            },
-        ],
-    }
-]
+FRONTEND_ORIGIN = os.getenv(
+    "FRONTEND_ORIGIN", "http://localhost:5173"
+)
+RESULTS = Path(__file__).parent / "results"
+TABLE = boto3.resource(
+    "dynamodb", region_name="us-east-1"
+).Table("TransitionCopilotAccounts")
+
+
+def json_number(value):
+    if isinstance(value, Decimal):
+        return int(value) if value == value.to_integral_value() else float(value)
+    raise TypeError("Unsupported JSON value")
+
 
 def load_accounts():
-    results = Path(__file__).parent / "results"
     accounts = []
 
-    for result_file in sorted(results.glob("T00[123]-checked.json")):
-        account = json.loads(result_file.read_text(encoding="utf-8"))
-        summary_file = results / f"{account['account_id']}-summary.json"
+    # Read each supported demo account directly from DynamoDB.
+    for account_id in ("T001", "T002", "T003"):
+        item = TABLE.get_item(
+            Key={"account_id": account_id},
+            ConsistentRead=True,
+        ).get("Item")
+
+        if item is None:
+            continue
+
+        account = json.loads(json.dumps(item, default=json_number))
+        summary_file = RESULTS / f"{account_id}-summary.json"
 
         if summary_file.exists():
-            saved = json.loads(summary_file.read_text(encoding="utf-8"))
-            if (
-                saved.get("account_id") == account["account_id"]
-                and saved.get("input_snapshot") == account
-            ):
-                account["summary"] = saved["summary"]
-                account["summary_source"] = "bedrock"
+            try:
+                saved = json.loads(summary_file.read_text(encoding="utf-8"))
+                if (
+                    saved.get("account_id") == account_id
+                    and saved.get("input_snapshot") == account
+                ):
+                    account["summary"] = saved["summary"]
+                    account["summary_source"] = "bedrock"
+            except (OSError, ValueError, KeyError):
+                app.logger.warning("Could not read saved summary for %s", account_id)
 
         accounts.append(account)
 
-    if accounts:
-        return "extracted", accounts
+    return "dynamodb", accounts
 
-    return "mock", ACCOUNTS
 
 @app.after_request
 def cors(response):
@@ -92,6 +66,16 @@ def cors(response):
     response.headers["Vary"] = "Origin"
     response.headers["Cache-Control"] = "no-store"
     return response
+
+
+@app.errorhandler(ClientError)
+@app.errorhandler(BotoCoreError)
+def aws_error(error):
+    app.logger.error("AWS account-data request failed.")
+    return jsonify({
+        "error": "Could not load transition results from DynamoDB. "
+                 "Check backend AWS permissions and retry."
+    }), 503
 
 
 @app.get("/api/health")
@@ -110,11 +94,7 @@ def accounts():
 def account(account_id):
     mode, items = load_accounts()
     match = next(
-        (
-            item
-            for item in items
-            if item["account_id"] == account_id
-        ),
+        (item for item in items if item["account_id"] == account_id),
         None,
     )
 

@@ -81,8 +81,68 @@ def process_upload(job_id, packet_id, files):
             update(stage="Extracting documents with Textract")
             run_script("extract_packet.py")
 
-            update(stage="Running demo-policy checks")
-            run_script("check_packet.py")
+            extracted_file = Path(temporary) / f"{packet_id}-extracted.json"
+            extracted = json.loads(extracted_file.read_text(encoding="utf-8"))
+            if extracted.get("packet_id") != packet_id:
+                raise ValueError("Unexpected extracted packet.")
+
+            update(stage="Saving extracted data to private S3")
+            s3.put_object(
+                Bucket=BUCKET,
+                Key=f"extracted/{packet_id}.json",
+                Body=extracted_file.read_bytes(),
+                ContentType="application/json",
+                ServerSideEncryption="AES256",
+            )
+
+            update(stage="Running Lambda rules and saving to DynamoDB")
+            from botocore.config import Config
+
+            lambda_client = boto3.client(
+                "lambda",
+                region_name="us-east-1",
+                config=Config(
+                    read_timeout=90,
+                    retries={"total_max_attempts": 1},
+                ),
+            )
+            response = lambda_client.invoke(
+                FunctionName="TransitionCopilotRules",
+                InvocationType="RequestResponse",
+                Payload=json.dumps({"account_id": packet_id}).encode("utf-8"),
+            )
+            outcome = json.loads(response["Payload"].read())
+
+            if response.get("FunctionError"):
+                raise RuntimeError("Lambda rule checks failed.")
+
+            if (
+                outcome.get("account_id") != packet_id
+                or outcome.get("saved_to") != "TransitionCopilotAccounts"
+            ):
+                raise RuntimeError("Unexpected Lambda response.")
+
+            # Retain a local copy for existing summary and review scripts.
+            from decimal import Decimal
+            item = boto3.resource(
+                "dynamodb", region_name="us-east-1"
+            ).Table("TransitionCopilotAccounts").get_item(
+                Key={"account_id": packet_id},
+                ConsistentRead=True,
+            ).get("Item")
+
+            if not item or item.get("account_id") != packet_id:
+                raise RuntimeError("Saved account result was not found.")
+
+            def json_number(value):
+                if isinstance(value, Decimal):
+                    return int(value) if value == value.to_integral_value() else float(value)
+                raise TypeError("Unsupported JSON value")
+
+            (Path(temporary) / f"{packet_id}-checked.json").write_text(
+                json.dumps(item, default=json_number),
+                encoding="utf-8",
+            )
 
             RESULTS.mkdir(exist_ok=True)
 
