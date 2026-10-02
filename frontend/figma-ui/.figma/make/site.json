@@ -1,0 +1,11 @@
+{
+  "title": "LPL Team 16 Product Design",
+  "description": "Streamlines financial advisor transitions by tracking document status, flagging issues, and providing AI-driven summaries for efficient client account reviews.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
