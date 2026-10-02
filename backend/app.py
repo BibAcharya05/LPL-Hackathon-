@@ -5,7 +5,7 @@ from pathlib import Path
 
 import boto3
 from botocore.exceptions import BotoCoreError, ClientError
-from flask import Flask, jsonify
+from flask import Flask, jsonify, send_from_directory
 
 from upload_api import register_upload_routes
 
@@ -102,6 +102,24 @@ def account(account_id):
         return jsonify({"error": "Account not found"}), 404
 
     return jsonify({"mode": mode, "account": match})
+
+
+
+# Serve the built React app from the same host as the API.
+FRONTEND_DIST = (
+    Path(__file__).resolve().parent.parent / "frontend" / "figma-ui" / "dist"
+)
+
+
+@app.get("/")
+@app.get("/index.html")
+def frontend_index():
+    return send_from_directory(FRONTEND_DIST, "index.html")
+
+
+@app.get("/assets/<path:filename>")
+def frontend_asset(filename):
+    return send_from_directory(FRONTEND_DIST / "assets", filename)
 
 
 if __name__ == "__main__":

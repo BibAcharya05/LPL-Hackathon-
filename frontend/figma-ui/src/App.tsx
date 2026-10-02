@@ -50,7 +50,7 @@ const REQUIRED_DOCUMENTS = [
 ];
 
 // Your frontend and backend share the workshop CloudFront domain.
-const API_URL = "/ports/8000/api/accounts";
+const API_URL = new URL("./api/accounts", window.location.href).pathname;
 
 function StatusChip({ status }: { status: string }) {
   return (
@@ -79,7 +79,7 @@ export default function App() {
 
     try {
       const response = await fetch(
-        `${API_URL}?refresh=${Date.now()}`,
+        API_URL,
         { cache: "no-store" },
       );
 

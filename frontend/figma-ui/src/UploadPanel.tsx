@@ -5,7 +5,7 @@ type Props = {
   onComplete: () => void;
 };
 
-const API = "/ports/8000/api";
+const API = new URL("./api", window.location.href).pathname;
 
 export default function UploadPanel({ onClose, onComplete }: Props) {
   const [packetId, setPacketId] = useState("T003");
@@ -28,7 +28,7 @@ export default function UploadPanel({ onClose, onComplete }: Props) {
   async function poll(jobId: string) {
     try {
       const response = await fetch(
-        `${API}/uploads/${jobId}?refresh=${Date.now()}`,
+        `${API}/uploads/${jobId}`,
         { cache: "no-store" },
       );
       const job = await response.json();
