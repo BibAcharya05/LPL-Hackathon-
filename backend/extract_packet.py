@@ -1,3 +1,7 @@
+# UPLOAD_ENV_SUPPORT
+import os
+PACKET_ID = os.environ.get("PACKET_ID", "T002")
+
 import json
 import time
 from pathlib import Path
@@ -6,9 +10,9 @@ import boto3
 
 REGION = "us-east-1"
 BUCKET = "transition-copilot-bibek-demo-2026"
-PREFIX = "T002/"
+PREFIX = os.environ.get("S3_PREFIX", f"{PACKET_ID}/")
 
-OUTPUT = Path(__file__).parent / "results"
+OUTPUT = Path(os.environ.get("RESULTS_DIR", str(Path(__file__).parent / "results")))
 OUTPUT.mkdir(exist_ok=True)
 
 s3 = boto3.client("s3", region_name=REGION)
@@ -127,7 +131,7 @@ def main():
         raise RuntimeError("No PDFs found in the packet folder.")
 
     packet = {
-        "packet_id": "T002",
+        "packet_id": PACKET_ID,
         "synthetic": True,
         "documents": [],
     }
@@ -142,7 +146,7 @@ def main():
             flush=True,
         )
 
-    output_file = OUTPUT / "T002-extracted.json"
+    output_file = OUTPUT / f"{PACKET_ID}-extracted.json"
     output_file.write_text(
         json.dumps(packet, indent=2),
         encoding="utf-8",

@@ -1,11 +1,15 @@
+# UPLOAD_ENV_SUPPORT
+import os
+PACKET_ID = os.environ.get("PACKET_ID", "T002")
+
 import json
 import re
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
-RESULTS = Path(__file__).parent / "results"
+RESULTS = Path(os.environ.get("RESULTS_DIR", str(Path(__file__).parent / "results")))
 packet = json.loads(
-    (RESULTS / "T002-extracted.json").read_text(encoding="utf-8")
+    (RESULTS / f"{PACKET_ID}-extracted.json").read_text(encoding="utf-8")
 )
 
 # Demo policy only; not official LPL requirements.
@@ -184,7 +188,7 @@ for filename in (APPLICATION, TRANSFER, AGREEMENT):
     markers = []
     for line in documents[filename].get("lines", []):
         match = re.fullmatch(
-            r"SIGNED\s+(.+)", line["text"].strip(), flags=re.IGNORECASE
+            r"SIGNED\s+(?:-\s*)?(.+)", line["text"].strip(), flags=re.IGNORECASE
         )
         if match and normalize(match.group(1)) in names:
             markers.append({
@@ -258,7 +262,7 @@ result = {
               "No signature authentication or transfer authorization.",
 }
 
-output = RESULTS / "T002-checked.json"
+output = RESULTS / f"{PACKET_ID}-checked.json"
 output.write_text(json.dumps(result, indent=2), encoding="utf-8")
 
 print(f"Client: {result['client_name']}")

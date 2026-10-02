@@ -1,11 +1,12 @@
 import json
 import os
+from upload_api import register_upload_routes
 from pathlib import Path
 
 from flask import Flask, jsonify
 
 app = Flask(__name__)
-
+register_upload_routes(app)
 FRONTEND_ORIGIN = os.getenv(
     "FRONTEND_ORIGIN",
     "http://localhost:5173",
@@ -63,26 +64,27 @@ ACCOUNTS = [
 
 def load_accounts():
     results = Path(__file__).parent / "results"
-    result_file = results / "T002-checked.json"
-    summary_file = results / "T002-summary.json"
+    accounts = []
 
-    if not result_file.exists():
-        return "mock", ACCOUNTS
+    for result_file in sorted(results.glob("T00[123]-checked.json")):
+        account = json.loads(result_file.read_text(encoding="utf-8"))
+        summary_file = results / f"{account['account_id']}-summary.json"
 
-    account = json.loads(result_file.read_text(encoding="utf-8"))
+        if summary_file.exists():
+            saved = json.loads(summary_file.read_text(encoding="utf-8"))
+            if (
+                saved.get("account_id") == account["account_id"]
+                and saved.get("input_snapshot") == account
+            ):
+                account["summary"] = saved["summary"]
+                account["summary_source"] = "bedrock"
 
-    if summary_file.exists():
-        saved = json.loads(summary_file.read_text(encoding="utf-8"))
+        accounts.append(account)
 
-        # Only use the summary if its source results still match.
-        if (
-            saved.get("account_id") == account["account_id"]
-            and saved.get("input_snapshot") == account
-        ):
-            account["summary"] = saved["summary"]
-            account["summary_source"] = "bedrock"
+    if accounts:
+        return "extracted", accounts
 
-    return "extracted", [account]
+    return "mock", ACCOUNTS
 
 @app.after_request
 def cors(response):

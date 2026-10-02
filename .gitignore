@@ -6,3 +6,7 @@ __pycache__/
 
 node_modules/
 dist/
+
+# Local backups and generated processing results
+*.py.bak
+backend/results/

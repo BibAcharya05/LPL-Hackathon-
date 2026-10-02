@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import UploadPanel from "./UploadPanel";
 type Status = "Ready" | "Missing Info" | "Flagged" | "Submitted";
 
 type Source = {
@@ -72,7 +72,7 @@ export default function App() {
   const [error, setError] = useState("");
   const [mode, setMode] = useState("");
   const [lastLoaded, setLastLoaded] = useState("");
-
+  const [uploadOpen, setUploadOpen] = useState(false);
   async function loadAccounts() {
     setLoading(true);
     setError("");
@@ -167,10 +167,9 @@ export default function App() {
 
           <button
             className="secondary-button"
-            disabled
-            title="Document uploads are not connected yet."
+            onClick={() => setUploadOpen(true)}
           >
-            Upload — coming next
+            Upload documents
           </button>
 
           <div className="user-avatar">TC</div>
@@ -533,6 +532,15 @@ export default function App() {
           </p>
         </div>
       </main>
+      {uploadOpen && (
+  <UploadPanel
+    onClose={() => setUploadOpen(false)}
+    onComplete={() => {
+      setUploadOpen(false);
+      void loadAccounts();
+    }}
+  />
+)}
     </div>
   );
 }
