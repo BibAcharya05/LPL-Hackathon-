@@ -11,7 +11,7 @@ import boto3
 
 def lambda_handler(event, context):
     account_id = event.get("account_id")
-    if account_id not in {"T001", "T002", "T003"}:
+    if account_id not in {"T001", "T002", "T003", "T004", "T005"}:
         raise ValueError("Unsupported demo account")
 
     bucket = os.environ["PACKET_BUCKET"]

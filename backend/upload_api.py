@@ -17,7 +17,7 @@ RESULTS = ROOT / "results"
 BUCKET = "transition-copilot-bibek-demo-2026"
 
 # Existing demo rules support these packet scenarios.
-PACKETS = {"T001", "T002", "T003"}
+PACKETS = {"T001", "T002", "T003", "T004", "T005"}
 
 ALLOWED_FILES = {
     "01_existing_account_statement.pdf",
@@ -26,6 +26,7 @@ ALLOWED_FILES = {
     "04_investor_profile.pdf",
     "05_beneficiary_designation.pdf",
     "06_advisory_agreement.pdf",
+    "07_transaction_activity_report.pdf",
 }
 
 MAX_FILE_BYTES = 5 * 1024 * 1024
@@ -144,6 +145,69 @@ def process_upload(job_id, packet_id, files):
                 encoding="utf-8",
             )
 
+            # AUTOMATIC_BEDROCK_SUMMARY
+            update(stage="Generating Bedrock summary")
+            try:
+                from summarize_packet import generate_summary
+
+                checked_packet = json.loads(
+                    json.dumps(item, default=json_number)
+                )
+                generated = generate_summary(checked_packet)
+
+                table = boto3.resource(
+                    "dynamodb", region_name="us-east-1"
+                ).Table("TransitionCopilotAccounts")
+
+                # Attach the summary only if the checked evidence still matches.
+                table.update_item(
+                    Key={"account_id": packet_id},
+                    UpdateExpression=(
+                        "SET #summary = :summary, "
+                        "summary_source = :source, "
+                        "summary_model_id = :model, "
+                        "requires_human_review = :review"
+                    ),
+                    ConditionExpression=(
+                        "attribute_exists(account_id) AND "
+                        "#status = :status AND "
+                        "#issues = :issues AND "
+                        "#fields = :fields"
+                    ),
+                    ExpressionAttributeNames={
+                        "#summary": "summary",
+                        "#status": "status",
+                        "#issues": "issues",
+                        "#fields": "normalized_fields",
+                    },
+                    ExpressionAttributeValues={
+                        ":summary": generated["summary"],
+                        ":source": "bedrock",
+                        ":model": generated["model_id"],
+                        ":review": True,
+                        ":status": item["status"],
+                        ":issues": item["issues"],
+                        ":fields": item["normalized_fields"],
+                    },
+                )
+
+                update(summary_status="complete")
+
+            except Exception as error:
+                # Rule results are already saved by Lambda.
+                # Do not fail the upload because an optional summary failed.
+                update(
+                    summary_status="unavailable",
+                    warning="AI summary unavailable; rule-check results are available.",
+                )
+                code = getattr(error, "response", {}).get(
+                    "Error", {}
+                ).get("Code", type(error).__name__)
+                print(
+                    f"Upload job {job_id}: summary unavailable ({code}).",
+                    flush=True,
+                )
+
             RESULTS.mkdir(exist_ok=True)
 
             # Publish complete files atomically. The checked result is
@@ -184,11 +248,11 @@ def process_upload(job_id, packet_id, files):
 
 
 def register_upload_routes(app):
-    app.config["MAX_CONTENT_LENGTH"] = 32 * 1024 * 1024
+    app.config["MAX_CONTENT_LENGTH"] = 40 * 1024 * 1024
 
     @app.errorhandler(RequestEntityTooLarge)
     def upload_too_large(error):
-        return jsonify({"error": "Total upload must be under 32 MB."}), 413
+        return jsonify({"error": "Total upload must be under 40 MB."}), 413
 
     @app.post("/api/uploads")
     def upload_documents():
@@ -196,14 +260,14 @@ def register_upload_routes(app):
 
         packet_id = request.form.get("packet_id", "")
         if packet_id not in PACKETS:
-            return jsonify({"error": "Choose T001, T002, or T003."}), 400
+            return jsonify({"error": "Choose T001, T002, T003, T004, or T005."}), 400
 
         if request.form.get("synthetic") != "true":
             return jsonify({"error": "Synthetic demo documents only."}), 400
 
         uploads = request.files.getlist("files")
-        if not 1 <= len(uploads) <= 6:
-            return jsonify({"error": "Select 1–6 PDF documents."}), 400
+        if not 1 <= len(uploads) <= 7:
+            return jsonify({"error": "Select 1–7 PDF documents."}), 400
 
         files = []
         names = set()

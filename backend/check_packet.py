@@ -227,6 +227,10 @@ for filename in (APPLICATION, TRANSFER, AGREEMENT):
         )
 
 
+# Review explicit transaction notes when an activity report is present.
+from transaction_checks import review_transaction_notes
+issues.extend(review_transaction_notes(documents))
+
 # Flagged takes priority when both kinds of issue exist.
 status = (
     "Flagged"
@@ -261,6 +265,9 @@ result = {
     "notice": "Demo preflight only. Ready means ready for human review. "
               "No signature authentication or transfer authorization.",
 }
+
+if "07_transaction_activity_report.pdf" in documents:
+    result["checks_completed"].append("transaction_report_notes")
 
 output = RESULTS / f"{PACKET_ID}-checked.json"
 output.write_text(json.dumps(result, indent=2), encoding="utf-8")

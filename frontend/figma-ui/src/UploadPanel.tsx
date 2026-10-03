@@ -121,13 +121,15 @@ export default function UploadPanel({ onClose, onComplete }: Props) {
               <option value="T001">T001 — Jordan Kim</option>
               <option value="T002">T002 — Priya Shah</option>
               <option value="T003">T003 — Marcus Lee</option>
+              <option value="T004">T004 — Elena Rodriguez</option>
+              <option value="T005">T005 — Cameron Blake</option>
             </select>
           </label>
 
           <div className="drop-zone">
             <label>
               <strong>Select this packet’s PDF documents</strong>
-              <p>Use the original filenames. Up to 6 PDFs, 5 MB each.</p>
+              <p>Use the original filenames. Up to 7 PDFs, 5 MB each.</p>
               <input
                 type="file"
                 accept=".pdf,application/pdf"

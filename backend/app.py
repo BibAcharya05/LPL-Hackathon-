@@ -31,7 +31,7 @@ def load_accounts():
     accounts = []
 
     # Read each supported demo account directly from DynamoDB.
-    for account_id in ("T001", "T002", "T003"):
+    for account_id in ("T001", "T002", "T003", "T004", "T005"):
         item = TABLE.get_item(
             Key={"account_id": account_id},
             ConsistentRead=True,
@@ -43,7 +43,7 @@ def load_accounts():
         account = json.loads(json.dumps(item, default=json_number))
         summary_file = RESULTS / f"{account_id}-summary.json"
 
-        if summary_file.exists():
+        if account.get("summary_source") != "bedrock" and summary_file.exists():
             try:
                 saved = json.loads(summary_file.read_text(encoding="utf-8"))
                 if (
