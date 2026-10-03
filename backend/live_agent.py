@@ -1,3 +1,4 @@
+from bedrock_gate import converse
 import json
 import os
 import re
@@ -149,7 +150,7 @@ def run_review(account_id, version, emit):
         time.sleep(max(0, 1.1 - (time.monotonic() - last_call)))
         last_call = time.monotonic()
         emit("Amazon Bedrock", "running", f"Agent request {turn + 1}")
-        response = bedrock.converse(
+        response = converse(bedrock,
             modelId=MODEL, system=[{"text": system}], messages=messages,
             toolConfig=config, inferenceConfig={"maxTokens": 800, "temperature": 0},
         )

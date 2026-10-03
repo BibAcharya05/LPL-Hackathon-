@@ -1,3 +1,4 @@
+from bedrock_gate import converse
 import json
 import os
 from pathlib import Path
@@ -29,7 +30,7 @@ def generate_summary(packet):
         ),
     )
 
-    response = client.converse(
+    response = converse(client,
         modelId=MODEL_ID,
         system=[{
             "text": (

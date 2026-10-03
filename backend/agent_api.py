@@ -1,3 +1,4 @@
+from agent_history import register_agent_history_routes, save_agent_review
 import threading
 import uuid
 from datetime import datetime, timezone
@@ -12,6 +13,7 @@ busy = False
 
 
 def register_agent_routes(app, table):
+    register_agent_history_routes(app, table)
     @app.post("/api/accounts/<account_id>/agent-review")
     def start_agent_review(account_id):
         global busy
@@ -56,6 +58,14 @@ def register_agent_routes(app, table):
             global busy
             try:
                 result = run_review(account_id, version, emit)
+                with lock:
+                    saved_events = list(jobs[job_id]["events"])
+                record = save_agent_review(table, account_id, version,
+                                           job_id, result, saved_events)
+                result["saved_at"] = record["saved_at"]
+                emit("Amazon DynamoDB", "complete",
+                     "AI explanation saved for this packet version")
+
                 with lock:
                     jobs[job_id].update(status="complete", **result)
             except Exception as error:

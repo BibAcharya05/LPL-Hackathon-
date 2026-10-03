@@ -1,3 +1,4 @@
+import { downloadMigrationPlan } from "../lib/migration-plan"
 import { reviewAction } from "../lib/review-actions"
 import type { Account } from "../lib/transitions"
 import { accountValue, reviewPriority } from "../lib/assessment"
@@ -20,6 +21,15 @@ export default function SpecialistQueue({ accounts, onReview }: Props) {
           <h1 tabIndex={-1} id="specialist-title">LPL Specialist Review</h1>
           <p>Resolve blockers, verify evidence, and record human decisions.</p>
         </div>
+      </div>
+      <div style={{ marginBottom: 20 }}>
+        <Button
+          variant="outline"
+          disabled={!accounts.length}
+          onClick={() => downloadMigrationPlan(accounts)}
+        >
+          Download migration plan
+        </Button>
       </div>
       <details className="priority-policy">
         <summary>How review priority is assigned</summary>
