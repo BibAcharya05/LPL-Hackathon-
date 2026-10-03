@@ -1,186 +1,185 @@
 {
-  "account_id": "T002",
-  "client_name": "Priya Shah",
-  "account_type": "Roth IRA",
-  "status": "Missing Info",
-  "summary": "Demo checks found 1 issue(s). Human review is required.",
-  "synthetic": true,
-  "processing_status": "Complete",
-  "checks_completed": [
-    "required_documents",
-    "field_comparisons",
-    "synthetic_signature_markers"
-  ],
   "normalized_fields": {
-    "client_name": [
-      {
-        "document": "01_existing_account_statement.pdf",
-        "page": 1,
-        "label": "Client Name",
-        "value": "Priya Shah",
-        "confidence": 95.81912994384766
-      },
-      {
-        "document": "02_new_account_application.pdf",
-        "page": 1,
-        "label": "Client Name",
-        "value": "Priya Shah",
-        "confidence": 95.50942993164062
-      },
-      {
-        "document": "03_account_transfer_form.pdf",
-        "page": 1,
-        "label": "Client Name",
-        "value": "Priya Shah",
-        "confidence": 95.7535171508789
-      },
-      {
-        "document": "04_investor_profile.pdf",
-        "page": 1,
-        "label": "Client Name",
-        "value": "Priya Shah",
-        "confidence": 95.05058288574219
-      },
-      {
-        "document": "06_advisory_agreement.pdf",
-        "page": 1,
-        "label": "Client Name",
-        "value": "Priya Shah",
-        "confidence": 95.21293640136719
-      }
-    ],
     "mailing_address": [
       {
-        "document": "01_existing_account_statement.pdf",
-        "page": 1,
-        "label": "Mailing Address",
         "value": "220 Test Lane, Example Town, NC 00000",
-        "confidence": 96.01773071289062
+        "confidence": 96.01773071289062,
+        "label": "Mailing Address",
+        "page": 1,
+        "document": "01_existing_account_statement.pdf"
       },
       {
-        "document": "02_new_account_application.pdf",
         "page": 1,
         "label": "Mailing Address",
         "value": "220 Test Lane, Example Town, NC 00000",
+        "document": "02_new_account_application.pdf",
         "confidence": 95.98515319824219
       }
     ],
-    "account_type": [
+    "transfer_value": [
       {
+        "label": "Ending Account Value",
         "document": "01_existing_account_statement.pdf",
-        "page": 1,
-        "label": "Account Type",
-        "value": "Roth IRA",
-        "confidence": 95.74988555908203
+        "value": "$174,880.20",
+        "confidence": 95.95613861083984,
+        "page": 1
       },
       {
-        "document": "02_new_account_application.pdf",
+        "label": "Estimated Transfer Value",
+        "confidence": 95.91722106933594,
+        "value": "$174,880.20",
         "page": 1,
-        "label": "Requested Account Type",
-        "value": "Roth IRA",
-        "confidence": 95.83172607421875
-      },
-      {
-        "document": "03_account_transfer_form.pdf",
-        "page": 1,
-        "label": "Account Type",
-        "value": "Roth IRA",
-        "confidence": 95.72416687011719
+        "document": "03_account_transfer_form.pdf"
       }
     ],
     "risk_tolerance": [
       {
-        "document": "02_new_account_application.pdf",
-        "page": 1,
+        "confidence": 94.96082305908203,
         "label": "Risk Tolerance",
-        "value": "Moderately Aggressive",
-        "confidence": 94.96082305908203
+        "page": 1,
+        "document": "02_new_account_application.pdf",
+        "value": "Moderately Aggressive"
       },
       {
-        "document": "04_investor_profile.pdf",
-        "page": 1,
+        "confidence": 95.76441955566406,
         "label": "Risk Tolerance",
-        "value": "Moderately Aggressive",
-        "confidence": 95.76441955566406
+        "page": 1,
+        "document": "04_investor_profile.pdf",
+        "value": "Moderately Aggressive"
+      }
+    ],
+    "client_name": [
+      {
+        "page": 1,
+        "document": "01_existing_account_statement.pdf",
+        "label": "Client Name",
+        "confidence": 95.81912994384766,
+        "value": "Priya Shah"
+      },
+      {
+        "confidence": 95.50942993164062,
+        "label": "Client Name",
+        "document": "02_new_account_application.pdf",
+        "page": 1,
+        "value": "Priya Shah"
+      },
+      {
+        "label": "Client Name",
+        "document": "03_account_transfer_form.pdf",
+        "confidence": 95.7535171508789,
+        "page": 1,
+        "value": "Priya Shah"
+      },
+      {
+        "confidence": 95.05058288574219,
+        "value": "Priya Shah",
+        "page": 1,
+        "document": "04_investor_profile.pdf",
+        "label": "Client Name"
+      },
+      {
+        "label": "Client Name",
+        "value": "Priya Shah",
+        "confidence": 95.21293640136719,
+        "document": "06_advisory_agreement.pdf",
+        "page": 1
+      }
+    ],
+    "account_type": [
+      {
+        "label": "Account Type",
+        "value": "Roth IRA",
+        "page": 1,
+        "document": "01_existing_account_statement.pdf",
+        "confidence": 95.74988555908203
+      },
+      {
+        "page": 1,
+        "document": "02_new_account_application.pdf",
+        "value": "Roth IRA",
+        "confidence": 95.83172607421875,
+        "label": "Requested Account Type"
+      },
+      {
+        "document": "03_account_transfer_form.pdf",
+        "value": "Roth IRA",
+        "label": "Account Type",
+        "confidence": 95.72416687011719,
+        "page": 1
       }
     ],
     "investment_objective": [
       {
-        "document": "02_new_account_application.pdf",
         "page": 1,
+        "confidence": 95.01240539550781,
         "label": "Investment Objective",
-        "value": "Long-Term Growth",
-        "confidence": 95.01240539550781
+        "document": "02_new_account_application.pdf",
+        "value": "Long-Term Growth"
       },
       {
-        "document": "04_investor_profile.pdf",
         "page": 1,
-        "label": "Investment Objective",
+        "document": "04_investor_profile.pdf",
         "value": "Long-Term Growth",
+        "label": "Investment Objective",
         "confidence": 95.97093200683594
       }
     ],
     "source_account_number": [
       {
+        "label": "Account Number",
         "document": "01_existing_account_statement.pdf",
         "page": 1,
-        "label": "Account Number",
         "value": "DEMO-ROTH-2002",
         "confidence": 95.71711730957031
       },
       {
-        "document": "03_account_transfer_form.pdf",
-        "page": 1,
         "label": "Delivering Account Number",
+        "confidence": 95.83049774169922,
         "value": "DEMO-ROTH-2002",
-        "confidence": 95.83049774169922
-      },
-      {
-        "document": "06_advisory_agreement.pdf",
-        "page": 1,
-        "label": "Account Number",
-        "value": "DEMO-ROTH-2002",
-        "confidence": 95.64349365234375
-      }
-    ],
-    "transfer_value": [
-      {
-        "document": "01_existing_account_statement.pdf",
-        "page": 1,
-        "label": "Ending Account Value",
-        "value": "$174,880.20",
-        "confidence": 95.95613861083984
-      },
-      {
         "document": "03_account_transfer_form.pdf",
+        "page": 1
+      },
+      {
         "page": 1,
-        "label": "Estimated Transfer Value",
-        "value": "$174,880.20",
-        "confidence": 95.91722106933594
+        "value": "DEMO-ROTH-2002",
+        "document": "06_advisory_agreement.pdf",
+        "confidence": 95.64349365234375,
+        "label": "Account Number"
       }
     ]
   },
+  "summary": "Demo checks found 1 issue(s). Human review is required.",
+  "notice": "Demo preflight only. Ready means ready for human review. No signature authentication or transfer authorization.",
+  "processing_status": "Complete",
   "issues": [
     {
-      "code": "MISSING_DOCUMENT",
-      "severity": "Missing Info",
-      "message": "Beneficiary designation is missing under the demo checklist.",
-      "sources": [],
       "action": "Obtain and upload the beneficiary designation.",
-      "expected_document": "05_beneficiary_designation.pdf"
+      "expected_document": "05_beneficiary_designation.pdf",
+      "code": "MISSING_DOCUMENT",
+      "message": "Beneficiary designation is missing under the demo checklist.",
+      "severity": "Missing Info",
+      "sources": []
     }
   ],
+  "status": "Missing Info",
+  "checks_completed": [
+    "required_documents",
+    "field_comparisons",
+    "synthetic_signature_markers"
+  ],
+  "synthetic": true,
+  "client_name": "Priya Shah",
   "observations": [
     {
-      "code": "SYNTHETIC_SIGNATURE_MARKER",
-      "message": "Matching synthetic signature marker found. This does not authenticate a signature.",
       "sources": [
         {
-          "document": "02_new_account_application.pdf",
+          "value": "SIGNED Priya Shah",
           "page": 1,
-          "value": "SIGNED Priya Shah"
+          "document": "02_new_account_application.pdf"
         }
-      ]
+      ],
+      "message": "Matching synthetic signature marker found. This does not authenticate a signature.",
+      "code": "SYNTHETIC_SIGNATURE_MARKER"
     },
     {
       "code": "SYNTHETIC_SIGNATURE_MARKER",
@@ -198,12 +197,13 @@
       "message": "Matching synthetic signature marker found. This does not authenticate a signature.",
       "sources": [
         {
+          "value": "SIGNED Priya Shah",
           "document": "06_advisory_agreement.pdf",
-          "page": 1,
-          "value": "SIGNED Priya Shah"
+          "page": 1
         }
       ]
     }
   ],
-  "notice": "Demo preflight only. Ready means ready for human review. No signature authentication or transfer authorization."
+  "account_id": "T002",
+  "account_type": "Roth IRA"
 }

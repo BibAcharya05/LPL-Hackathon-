@@ -1,546 +1,713 @@
-import { useEffect, useState } from "react";
-import UploadPanel from "./UploadPanel";
-type Status = "Ready" | "Missing Info" | "Flagged" | "Submitted";
+import { useEffect, useRef, useState } from "react"
+import {
+  ArrowDown,
+  ArrowRight,
+  ArrowUp,
+  ArrowUpDown,
+  ArrowRightLeft,
+  CircleCheck,
+  CircleHelp,
+  Clock3,
+  FileClock,
+  FolderOpen,
+  LayoutDashboard,
+  ListFilter,
+  LoaderCircle,
+  PanelLeftClose,
+  PanelLeftOpen,
+  RefreshCw,
+  Search,
+  Send,
+  ShieldCheck,
+  TriangleAlert,
+  Upload,
+  X,
+} from "lucide-react"
+import UploadPanel from "./UploadPanel"
+import AccountReview from "./components/account-review"
+import Button from "./components/ui/button"
+import DialogContent, {
+  Dialog,
+  DialogDescription,
+  DialogTitle,
+} from "./components/ui/dialog"
+import StatusChip from "./components/status-chip"
+import { initials, type Account } from "./lib/transitions"
 
-type Source = {
-  document: string;
-  page?: number | null;
-  label?: string;
-  value?: string;
-};
-
-type Issue = {
-  code: string;
-  severity: string;
-  message: string;
-  action: string;
-  sources: Source[];
-  expected_document?: string;
-};
-
-type Account = {
-  account_id: string;
-  client_name: string | null;
-  account_type: string | null;
-  status: Status;
-  summary: string;
-  summary_source?: string;
-  processing_status: string;
-  checks_completed?: string[];
-  issues: Issue[];
-  observations?: {
-    code: string;
-    message: string;
-    sources: Source[];
-  }[];
-};
-
-type ApiResponse = {
-  mode: string;
-  accounts: Account[];
-};
-
-const REQUIRED_DOCUMENTS = [
-  ["01_existing_account_statement.pdf", "Account statement"],
-  ["02_new_account_application.pdf", "Account application"],
-  ["03_account_transfer_form.pdf", "Transfer form"],
-  ["04_investor_profile.pdf", "Investor profile"],
-  ["05_beneficiary_designation.pdf", "Beneficiary designation"],
-  ["06_advisory_agreement.pdf", "Advisory agreement"],
-];
-
-// Your frontend and backend share the workshop CloudFront domain.
-const API_URL = new URL("./api/accounts", window.location.href).pathname;
-
-function StatusChip({ status }: { status: string }) {
-  return (
-    <span
-      className={`status-chip status-${status.toLowerCase().replace(/ /g, "-")}`}
-    >
-      <span className="status-dot" />
-      {status}
-    </span>
-  );
-}
+// Keep requests relative to the deployed workshop path as well as localhost.
+const API_URL = new URL("./api/accounts", window.location.href).pathname
+const CARDS = [
+  {
+    label: "Active Transitions",
+    filter: "All",
+    tone: "navy",
+    icon: ArrowRightLeft,
+    note: "Your account overview",
+  },
+  {
+    label: "Ready",
+    filter: "Ready",
+    tone: "green",
+    icon: CircleCheck,
+    note: "Ready for human review",
+  },
+  {
+    label: "Missing Info",
+    filter: "Missing Info",
+    tone: "yellow",
+    icon: FileClock,
+    note: "Documents need attention",
+  },
+  {
+    label: "Flagged",
+    filter: "Flagged",
+    tone: "red",
+    icon: TriangleAlert,
+    note: "Findings to investigate",
+  },
+  {
+    label: "Submitted",
+    filter: "Submitted",
+    tone: "blue",
+    icon: Send,
+    note: "Simulated submissions",
+  },
+]
 
 export default function App() {
-  const [accounts, setAccounts] = useState<Account[]>([]);
-  const [selectedId, setSelectedId] = useState<string | null>(null);
-  const [filter, setFilter] = useState("All");
-  const [search, setSearch] = useState("");
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-  const [mode, setMode] = useState("");
-  const [lastLoaded, setLastLoaded] = useState("");
-  const [uploadOpen, setUploadOpen] = useState(false);
+  const [accounts, setAccounts] = useState<Account[]>([])
+  const [selectedId, setSelectedId] = useState<string | null>(null)
+  const [section, setSection] = useState("Dashboard")
+  const [filter, setFilter] = useState("All")
+  const [search, setSearch] = useState("")
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState("")
+  const [lastLoaded, setLastLoaded] = useState("")
+  const [uploadOpen, setUploadOpen] = useState(false)
+  const [collapsed, setCollapsed] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(
+    () => window.matchMedia("(max-width: 1023px)").matches,
+  )
+  const [sort, setSort] = useState<"asc" | "desc" | null>(null)
+  const uploadTrigger = useRef<HTMLButtonElement>(null)
+  const sidebarTrigger = useRef<HTMLButtonElement>(null)
+  const pageTitle = useRef<HTMLHeadingElement>(null)
+  const tableSection = useRef<HTMLElement>(null)
+  const inFlight = useRef(false)
+
   async function loadAccounts() {
-    setLoading(true);
-    setError("");
-
+    if (inFlight.current) return
+    inFlight.current = true
+    setLoading(true)
+    setError("")
     try {
-      const response = await fetch(
-        API_URL,
-        { cache: "no-store" },
-      );
-
-      if (!response.ok) {
-        throw new Error(`Backend returned HTTP ${response.status}`);
-      }
-
-      const data: ApiResponse = await response.json();
-
-      if (!Array.isArray(data.accounts)) {
-        throw new Error("Unexpected backend response.");
-      }
-
-      setAccounts(data.accounts);
-      setMode(data.mode);
-      setLastLoaded(new Date().toLocaleTimeString());
-
+      const response = await fetch(API_URL, { cache: "no-store" })
+      if (!response.ok)
+        throw new Error(`The account service returned HTTP ${response.status}.`)
+      const data: { accounts: Account[] } = await response.json()
+      if (!Array.isArray(data.accounts))
+        throw new Error("The account service returned an unexpected response.")
+      setAccounts(data.accounts)
+      setLastLoaded(
+        new Date().toLocaleTimeString([], {
+          hour: "numeric",
+          minute: "2-digit",
+        }),
+      )
       setSelectedId((current) =>
         data.accounts.some((account) => account.account_id === current)
           ? current
           : null,
-      );
+      )
     } catch (problem) {
       setError(
         problem instanceof Error
           ? problem.message
-          : "Could not load account results.",
-      );
+          : "The account service could not be reached.",
+      )
     } finally {
-      setLoading(false);
+      inFlight.current = false
+      setLoading(false)
     }
   }
 
   useEffect(() => {
-    void loadAccounts();
-  }, []);
+    void loadAccounts()
+  }, [])
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 1024px)")
+    const closeDrawer = () => {
+      setIsMobile(!media.matches)
+      if (media.matches) setMobileOpen(false)
+    }
+    media.addEventListener("change", closeDrawer)
+    return () => media.removeEventListener("change", closeDrawer)
+  }, [])
 
-  const selected = accounts.find(
-    (account) => account.account_id === selectedId,
-  );
-
+  const selected = accounts.find((account) => account.account_id === selectedId)
+  const countFor = (status: string) =>
+    status === "All"
+      ? accounts.length
+      : accounts.filter((account) => account.status === status).length
+  const attentionCount = countFor("Flagged") + countFor("Missing Info")
   const visibleAccounts = accounts.filter((account) => {
-    const matchesStatus = filter === "All" || account.status === filter;
-    const text = `${account.client_name ?? ""} ${account.account_id}`.toLowerCase();
-    return matchesStatus && text.includes(search.toLowerCase());
-  });
+    const text =
+      `${account.client_name ?? ""} ${account.account_id}`.toLowerCase()
+    return (
+      (filter === "All" || account.status === filter) &&
+      text.includes(search.toLowerCase().trim())
+    )
+  })
+  if (sort)
+    visibleAccounts.sort(
+      (a, b) =>
+        (a.client_name ?? "").localeCompare(b.client_name ?? "") *
+        (sort === "asc" ? 1 : -1),
+    )
+  const initialLoading = loading && !lastLoaded
 
-  const cards = [
-    { label: "Active Transitions", filter: "All", tone: "navy" },
-    { label: "Ready", filter: "Ready", tone: "green" },
-    { label: "Missing Info", filter: "Missing Info", tone: "yellow" },
-    { label: "Flagged", filter: "Flagged", tone: "red" },
-    { label: "Submitted", filter: "Submitted", tone: "blue" },
-  ];
+  function navigate(nextSection: string) {
+    setSelectedId(null)
+    setSection(nextSection)
+    setMobileOpen(false)
+    requestAnimationFrame(() => {
+      if (nextSection === "Transitions")
+        tableSection.current?.scrollIntoView({ block: "start" })
+      else window.scrollTo(0, 0)
+      pageTitle.current?.focus({ preventScroll: true })
+    })
+  }
 
-  const missingDocuments = new Set(
-    (selected?.issues ?? [])
-      .filter((issue) => issue.code === "MISSING_DOCUMENT")
-      .map((issue) => issue.expected_document),
-  );
+  function selectAccount(account: Account) {
+    setSelectedId(account.account_id)
+    setSection("Transitions")
+    window.scrollTo(0, 0)
+    requestAnimationFrame(() =>
+      document.getElementById("review-title")?.focus(),
+    )
+  }
 
-  const completenessChecked =
-    selected?.checks_completed?.includes("required_documents") ?? false;
-
-  const receivedCount = REQUIRED_DOCUMENTS.filter(
-    ([filename]) => !missingDocuments.has(filename),
-  ).length;
+  const navigation = (
+    <>
+      <div className="sidebar-section-label">WORKSPACE</div>
+      <nav className="nav-list" aria-label="Main navigation">
+        {[
+          { name: "Dashboard", icon: LayoutDashboard },
+          { name: "Transitions", icon: FolderOpen },
+        ].map(({ name, icon: Icon }) => (
+          <button
+            key={name}
+            className={`nav-item ${section === name ? "active" : ""}`}
+            title={collapsed ? name : undefined}
+            aria-label={name}
+            aria-current={section === name ? "page" : undefined}
+            onClick={() => navigate(name)}
+          >
+            <Icon size={19} aria-hidden="true" />
+            <span className="nav-label">{name}</span>
+            {name === "Transitions" && (
+              <span className="nav-count">
+                {lastLoaded ? accounts.length : "—"}
+              </span>
+            )}
+          </button>
+        ))}
+      </nav>
+      <div className="sidebar-context">
+        <div className="sidebar-context-icon">
+          <ShieldCheck size={20} aria-hidden="true" />
+        </div>
+        <strong>Confidence in every move.</strong>
+        <p>
+          Clear findings. Source evidence.
+          <br />
+          An informed next step.
+        </p>
+      </div>
+      <div className="sidebar-footer">
+        <ShieldCheck size={18} aria-hidden="true" />
+        <div>
+          <strong>Synthetic demo</strong>
+          <span>Human review required</span>
+        </div>
+      </div>
+    </>
+  )
 
   return (
-    <div className="app-shell">
+    <div className={`app-shell ${collapsed ? "sidebar-collapsed" : ""}`}>
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <header className="topbar">
-        <button className="brand" onClick={() => setSelectedId(null)}>
-          <span className="brand-mark">⇄</span>
-          <span>Transition Copilot</span>
-        </button>
-
+        <div className="topbar-brand">
+          <Button
+            ref={sidebarTrigger}
+            variant="ghost"
+            size="icon"
+            className="nav-toggle"
+            aria-label={collapsed ? "Expand navigation" : "Toggle navigation"}
+            aria-controls={
+              isMobile ? "mobile-navigation" : "desktop-navigation"
+            }
+            aria-expanded={isMobile ? mobileOpen : !collapsed}
+            onClick={() =>
+              window.matchMedia("(max-width: 1023px)").matches
+                ? setMobileOpen(true)
+                : setCollapsed(!collapsed)
+            }
+          >
+            {collapsed ? (
+              <PanelLeftOpen size={19} />
+            ) : (
+              <PanelLeftClose size={19} />
+            )}
+          </Button>
+          <button className="brand" onClick={() => navigate("Dashboard")}>
+            <span className="brand-mark">
+              <ArrowRightLeft size={20} aria-hidden="true" />
+            </span>
+            <span>
+              Transition <strong>Copilot</strong>
+            </span>
+          </button>
+          <span className="workspace-label">ADVISOR WORKSPACE</span>
+        </div>
         <div className="topbar-actions">
-          <button
-            className="primary-button"
+          <Button
+            variant="ghost"
+            className="refresh-button"
+            aria-label="Refresh results"
             onClick={() => void loadAccounts()}
             disabled={loading}
           >
-            {loading ? "Loading…" : "Refresh results"}
-          </button>
-
-          <button
-            className="secondary-button"
+            <RefreshCw
+              size={16}
+              className={loading ? "spin" : ""}
+              aria-hidden="true"
+            />
+            <span>{loading ? "Refreshing…" : "Refresh results"}</span>
+          </Button>
+          <Button
+            ref={uploadTrigger}
+            aria-label="Upload documents"
+            className="upload-button"
             onClick={() => setUploadOpen(true)}
           >
-            Upload documents
-          </button>
-
-          <div className="user-avatar">TC</div>
-        </div>
-      </header>
-
-      <aside className="sidebar">
-        <nav className="nav-list" aria-label="Main navigation">
-          <button
-            className={`nav-item ${!selected ? "active" : ""}`}
-            onClick={() => setSelectedId(null)}
+            <Upload size={16} aria-hidden="true" />
+            <span>Upload documents</span>
+          </Button>
+          <div
+            className="user-avatar"
+            aria-label="Transition Copilot workspace"
           >
-            Dashboard
-          </button>
-
-          <button
-            className={`nav-item ${selected ? "active" : ""}`}
-            onClick={() => setSelectedId(null)}
-          >
-            Transitions
-            <span className="nav-count">{accounts.length}</span>
-          </button>
-        </nav>
-
-        <div className="sidebar-footer">
-          <div>
-            <strong>Synthetic demo</strong>
-            <span>Human review required</span>
+            TC
           </div>
         </div>
+      </header>
+      <aside id="desktop-navigation" className="sidebar">
+        {navigation}
       </aside>
-
-      <main className="main-content">
+      <Dialog open={mobileOpen} onOpenChange={setMobileOpen}>
+        <DialogContent
+          id="mobile-navigation"
+          className="navigation-drawer"
+          onCloseAutoFocus={(event) => {
+            event.preventDefault()
+            sidebarTrigger.current?.focus()
+          }}
+        >
+          <div className="drawer-heading">
+            <DialogTitle>Workspace</DialogTitle>
+            <Button
+              variant="ghost"
+              size="icon"
+              aria-label="Close navigation"
+              onClick={() => setMobileOpen(false)}
+            >
+              <X size={20} />
+            </Button>
+          </div>
+          <DialogDescription className="sr-only">
+            Navigate your advisor workspace.
+          </DialogDescription>
+          {navigation}
+        </DialogContent>
+      </Dialog>
+      <main id="main-content" className="main-content" tabIndex={-1}>
         <div className="page">
-          <p className="heading-subtitle" role="status">
-            {loading
-              ? "Loading saved account results…"
-              : `Data: ${mode || "unavailable"} · Last fetched: ${lastLoaded || "not yet"}`}
-          </p>
-
+          <div className="page-utility">
+            <div className="breadcrumb">
+              <span>Workspace</span>
+              <span aria-hidden="true">/</span>
+              <span>{selected ? "Account review" : section}</span>
+            </div>
+            <span className="last-updated" role="status">
+              <Clock3 size={13} aria-hidden="true" />
+              {loading
+                ? "Refreshing results…"
+                : lastLoaded
+                  ? `Last updated ${lastLoaded}`
+                  : "Awaiting account results"}
+            </span>
+          </div>
           {error && (
-            <div role="alert" style={{ color: "#a52a2a", marginBottom: 20 }}>
-              Could not refresh: {error}. Ensure the backend is running on
-              port 8000.
-              {accounts.length > 0 && " Previously loaded results remain visible."}
+            <div className="error-banner" role="alert">
+              <TriangleAlert size={20} aria-hidden="true" />
+              <div>
+                <strong>Unable to refresh accounts</strong>
+                <p>
+                  {error} Please try again.
+                  {lastLoaded && " Previously loaded results are shown below."}
+                </p>
+              </div>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => void loadAccounts()}
+                disabled={loading}
+              >
+                Try again
+              </Button>
             </div>
           )}
-
           {!selected ? (
             <>
               <div className="page-heading">
                 <div>
-                  <p className="eyebrow">Transition operations</p>
-                  <h1>Advisor Transition Dashboard</h1>
-                  <p className="heading-subtitle">
-                    Review transition packets and identify items needing attention.
+                  <h1 ref={pageTitle} tabIndex={-1}>
+                    Advisor Transition Dashboard
+                  </h1>
+                  <p>
+                    Every account, every detail. Keep your next move on track.
                   </p>
                 </div>
+                <span className="workspace-badge">
+                  <ShieldCheck size={14} aria-hidden="true" />
+                  Transition operations
+                </span>
               </div>
-
-              <section className="summary-grid" aria-label="Transition summary">
-                {cards.map((card) => {
-                  const count =
-                    card.filter === "All"
-                      ? accounts.length
-                      : accounts.filter(
-                          (account) => account.status === card.filter,
-                        ).length;
-
-                  return (
+              <section
+                className="summary-grid"
+                aria-label="Transition summary"
+                aria-busy={initialLoading}
+              >
+                {CARDS.map(
+                  ({ label, filter: cardFilter, tone, icon: Icon, note }) => (
                     <button
-                      key={card.label}
-                      className={`summary-card ${filter === card.filter ? "selected" : ""}`}
-                      onClick={() => setFilter(card.filter)}
-                      aria-pressed={filter === card.filter}
+                      key={label}
+                      className={`summary-card tone-${tone} ${
+                        filter === cardFilter ? "selected" : ""
+                      }`}
+                      aria-pressed={filter === cardFilter}
+                      onClick={() => setFilter(cardFilter)}
                     >
-                      <div className={`summary-icon tone-${card.tone}`}>⇄</div>
-                      <span className="summary-label">{card.label}</span>
-                      <strong className="summary-value">{count}</strong>
-                      <span className="summary-note">
-                        {card.filter === "Ready"
-                          ? "Ready for human review"
-                          : card.filter === "Submitted"
-                            ? "Simulated submissions"
-                            : "Loaded account results"}
+                      <span className="summary-card-top">
+                        <span className="summary-label">{label}</span>
+                        <span className="summary-icon">
+                          <Icon size={17} aria-hidden="true" />
+                        </span>
                       </span>
+                      <strong className="summary-value">
+                        {lastLoaded ? (
+                          countFor(cardFilter)
+                        ) : (
+                          <span
+                            className={
+                              initialLoading ? "skeleton metric-skeleton" : ""
+                            }
+                          >
+                            {initialLoading ? "" : "—"}
+                          </span>
+                        )}
+                      </strong>
+                      <span className="summary-note">{note}</span>
                     </button>
-                  );
-                })}
+                  ),
+                )}
               </section>
-
-              <section className="table-card">
-                <div className="table-toolbar">
+              <section
+                className="table-card"
+                ref={tableSection}
+                aria-labelledby="accounts-title"
+              >
+                <div className="table-heading">
                   <div>
-                    <h2>Transition accounts</h2>
+                    <h2 id="accounts-title">
+                      Transition accounts{" "}
+                      <span className="count-label">
+                        {lastLoaded ? accounts.length : "—"}
+                      </span>
+                    </h2>
+                    <p>
+                      Review readiness and take the next step for each account.
+                    </p>
+                  </div>
+                  {lastLoaded && (
+                    <span className="attention-label">
+                      <span
+                        className={
+                          attentionCount ? "attention-dot" : "ready-dot"
+                        }
+                      />
+                      {attentionCount
+                        ? `${attentionCount} ${
+                            attentionCount === 1
+                              ? "account needs"
+                              : "accounts need"
+                          } attention`
+                        : "No accounts needing attention"}
+                    </span>
+                  )}
+                </div>
+                <div className="table-toolbar">
+                  <div className="search-field">
+                    <Search size={17} aria-hidden="true" />
+                    <label className="sr-only" htmlFor="account-search">
+                      Search accounts
+                    </label>
                     <input
-                      aria-label="Search accounts"
+                      id="account-search"
                       placeholder="Search client or account ID"
                       value={search}
                       onChange={(event) => setSearch(event.target.value)}
-                      style={{
-                        padding: "10px 12px",
-                        border: "1px solid #dce3ec",
-                        borderRadius: 8,
-                      }}
                     />
-                  </div>
-
-                  <div className="filter-tabs" aria-label="Filter transitions">
-                    {cards.map((card) => (
+                    {search && (
                       <button
-                        key={card.filter}
-                        className={filter === card.filter ? "active" : ""}
-                        onClick={() => setFilter(card.filter)}
+                        aria-label="Clear search"
+                        className="search-clear"
+                        onClick={() => setSearch("")}
                       >
-                        {card.filter}
+                        <X size={15} />
                       </button>
-                    ))}
+                    )}
+                  </div>
+                  <div className="filter-group">
+                    <ListFilter size={16} aria-hidden="true" />
+                    <div
+                      className="filter-tabs"
+                      role="group"
+                      aria-label="Filter transitions"
+                    >
+                      {CARDS.map((card) => (
+                        <button
+                          key={card.filter}
+                          aria-pressed={filter === card.filter}
+                          className={filter === card.filter ? "active" : ""}
+                          onClick={() => setFilter(card.filter)}
+                        >
+                          {card.filter}
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
-
-                <div className="table-wrap">
+                <div
+                  className="table-wrap"
+                  tabIndex={0}
+                  role="region"
+                  aria-label="Transition accounts table; scroll horizontally on smaller screens"
+                  aria-busy={initialLoading}
+                >
                   <table>
                     <thead>
                       <tr>
-                        <th>Client</th>
+                        <th
+                          aria-sort={
+                            sort === "asc"
+                              ? "ascending"
+                              : sort === "desc"
+                                ? "descending"
+                                : "none"
+                          }
+                        >
+                          <button
+                            className="sort-button"
+                            onClick={() =>
+                              setSort(sort === "asc" ? "desc" : "asc")
+                            }
+                          >
+                            Client
+                            {sort === "asc" ? (
+                              <ArrowUp size={13} />
+                            ) : sort === "desc" ? (
+                              <ArrowDown size={13} />
+                            ) : (
+                              <ArrowUpDown size={13} />
+                            )}
+                          </button>
+                        </th>
                         <th>Account</th>
                         <th>Status</th>
-                        <th>Issues</th>
+                        <th className="numeric">Issues</th>
                         <th>Main reason</th>
-                        <th>Details</th>
+                        <th>
+                          <span className="sr-only">Review account</span>
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
-                      {visibleAccounts.map((account) => (
-                        <tr key={account.account_id}>
-                          <td>
-                            <div className="client-cell">
-                              <div className="client-avatar">
-                                {(account.client_name || "Unknown")
-                                  .split(" ")
-                                  .map((part) => part[0])
-                                  .join("")}
-                              </div>
-                              <div>
-                                <strong>{account.client_name || "Unknown client"}</strong>
-                                <span>{account.account_id}</span>
-                              </div>
-                            </div>
-                          </td>
-                          <td>{account.account_type || "Unavailable"}</td>
-                          <td><StatusChip status={account.status} /></td>
-                          <td>
-                            <span
-                              className={`issue-count ${account.issues.length ? "active" : ""}`}
-                            >
-                              {account.issues.length}
-                            </span>
-                          </td>
-                          <td className="reason-cell">
-                            {account.issues[0]?.message || "No issues reported"}
-                          </td>
-                          <td>
-                            <button
-                              className="secondary-button"
-                              onClick={() => {
-                                setSelectedId(account.account_id);
-                                window.scrollTo(0, 0);
-                              }}
-                            >
-                              Review
-                            </button>
-                          </td>
-                        </tr>
-                      ))}
+                      {initialLoading
+                        ? Array.from({ length: 3 }, (_, index) => (
+                            <tr key={index} aria-hidden="true">
+                              {Array.from({ length: 6 }, (_, column) => (
+                                <td key={column}>
+                                  <span className="skeleton row-skeleton" />
+                                </td>
+                              ))}
+                            </tr>
+                          ))
+                        : visibleAccounts.map((account) => (
+                            <tr key={account.account_id}>
+                              <td>
+                                <div className="client-cell">
+                                  <span className="client-avatar">
+                                    {initials(account.client_name)}
+                                  </span>
+                                  <div>
+                                    <strong>
+                                      {account.client_name || "Unknown client"}
+                                    </strong>
+                                    <span>{account.account_id}</span>
+                                  </div>
+                                </div>
+                              </td>
+                              <td className="account-type">
+                                {account.account_type || "Unavailable"}
+                              </td>
+                              <td>
+                                <StatusChip status={account.status} />
+                              </td>
+                              <td className="numeric">
+                                <span
+                                  className={`issue-count ${
+                                    account.issues.length ? "has-issues" : ""
+                                  }`}
+                                >
+                                  {account.issues.length}
+                                </span>
+                              </td>
+                              <td className="reason-cell">
+                                {account.issues[0]?.message || (
+                                  <span className="no-issues">
+                                    <CircleCheck size={14} aria-hidden="true" />
+                                    No issues reported
+                                  </span>
+                                )}
+                              </td>
+                              <td>
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  className="review-button"
+                                  aria-label={`Review ${account.client_name || account.account_id}`}
+                                  onClick={() => selectAccount(account)}
+                                >
+                                  Review
+                                  <ArrowRight size={14} aria-hidden="true" />
+                                </Button>
+                              </td>
+                            </tr>
+                          ))}
                     </tbody>
                   </table>
-
-                  {!loading && !visibleAccounts.length && (
-                    <p style={{ padding: 24 }}>No matching accounts.</p>
-                  )}
                 </div>
-
-                <div className="table-footer">
-                  <span>
-                    Showing {visibleAccounts.length} of {accounts.length} accounts
-                  </span>
-                  <span>Synthetic test data</span>
-                </div>
-              </section>
-            </>
-          ) : (
-            <>
-              <button className="back-link" onClick={() => setSelectedId(null)}>
-                ← All transitions
-              </button>
-
-              <div className="detail-header">
-                <div className="title-with-status">
-                  <h1>{selected.client_name || "Unknown client"}</h1>
-                  <StatusChip status={selected.status} />
-                </div>
-                <div className="metadata">
-                  <span>Account: <strong>{selected.account_type}</strong></span>
-                  <span>Transition ID: <strong>{selected.account_id}</strong></span>
-                  <span>Processing: <strong>{selected.processing_status}</strong></span>
-                </div>
-              </div>
-
-              <div className="detail-layout">
-                <div className="detail-primary">
-                  <section className="ai-summary-card">
-                    <div className="ai-summary-icon">✦</div>
-                    <div>
-                      <div className="section-kicker">
-                        {selected.summary_source === "bedrock"
-                          ? "Bedrock-generated summary"
-                          : "Rule-check summary"}
-                      </div>
-                      <h2>Transition Copilot Summary</h2>
-                      <p>{selected.summary}</p>
-                      <div className="ai-disclaimer">
-                        Verify against source documents · Human review required
-                      </div>
-                    </div>
-                  </section>
-
-                  <section className="issues-section">
-                    <div className="section-heading">
-                      <div>
-                        <p className="eyebrow">Review queue</p>
-                        <h2>Items needing attention</h2>
-                      </div>
-                      <span>{selected.issues.length} findings</span>
-                    </div>
-
-                    <div className="issue-list">
-                      {selected.issues.map((issue, index) => (
-                        <article
-                          className="issue-card"
-                          key={`${issue.code}-${index}`}
-                          style={{ textAlign: "left" }}
-                        >
-                          <div className="issue-card-top">
-                            <div>
-                              <StatusChip status={issue.severity} />
-                              <h3>{issue.message}</h3>
-                            </div>
-                          </div>
-
-                          <p>{issue.action}</p>
-
-                          {issue.expected_document && (
-                            <p>Expected document: {issue.expected_document}</p>
-                          )}
-
-                          {issue.sources.length > 0 && (
-                            <div className="comparison-values">
-                              {issue.sources.map((source, sourceIndex) => (
-                                <div key={sourceIndex}>
-                                  <span>{source.label || "Source"}</span>
-                                  <strong>{source.value || "Inspect document"}</strong>
-                                  <small>
-                                    {source.document}
-                                    {source.page ? ` · Page ${source.page}` : ""}
-                                  </small>
-                                </div>
-                              ))}
-                            </div>
-                          )}
-                        </article>
-                      ))}
-
-                      {!selected.issues.length && (
-                        <p>
-                          No findings from the implemented checks.
-                          Human review is still required.
-                        </p>
+                {!initialLoading && !visibleAccounts.length && (
+                  <div className="empty-state">
+                    <div className="empty-icon">
+                      {error && !lastLoaded ? (
+                        <CircleHelp size={27} />
+                      ) : (
+                        <FolderOpen size={27} />
                       )}
                     </div>
-                  </section>
-
-                  {(selected.observations?.length ?? 0) > 0 && (
-                    <section className="next-step-card">
-                      <strong>Review notes</strong>
-                      {selected.observations?.map((note, index) => (
-                        <p key={index}>
-                          {note.message}
-                          {" "}
-                          {note.sources.map((source) => source.document).join(", ")}
-                        </p>
-                      ))}
-                    </section>
-                  )}
-                </div>
-
-                <aside className="detail-sidebar">
-                  <section className="checklist-card">
-                    <div className="checklist-heading">
-                      <div>
-                        <p className="eyebrow">Demo checklist</p>
-                        <h2>Required documents</h2>
-                      </div>
-                      <span>
-                        {completenessChecked
-                          ? `${receivedCount} of ${REQUIRED_DOCUMENTS.length}`
-                          : "Not checked"}
-                      </span>
-                    </div>
-
-                    <div className="document-list">
-                      {REQUIRED_DOCUMENTS.map(([filename, label]) => {
-                        const missing = missingDocuments.has(filename);
-                        return (
-                          <div
-                            className={`document-row ${missing ? "missing" : ""}`}
-                            key={filename}
-                          >
-                            <span
-                              className={`document-check ${missing ? "missing" : ""}`}
-                            >
-                              {!completenessChecked ? "?" : missing ? "×" : "✓"}
-                            </span>
-                            <div>
-                              <strong>{label}</strong>
-                              <span>
-                                {!completenessChecked
-                                  ? "Not checked"
-                                  : missing
-                                    ? "Not received"
-                                    : "Present under demo checklist"}
-                              </span>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </section>
-
-                  <section className="next-step-card">
-                    <span className="next-step-label">Next step</span>
-                    <strong>
-                      {selected.issues.length
-                        ? "Resolve findings and recheck"
-                        : "Complete human review"}
-                    </strong>
+                    <h3>
+                      {error && !lastLoaded
+                        ? "Account results are unavailable"
+                        : search || filter !== "All"
+                          ? "No matching accounts"
+                          : "Your next transition starts here"}
+                    </h3>
                     <p>
-                      {selected.issues[0]?.action ||
-                        "Review the source documents before proceeding."}
+                      {error && !lastLoaded
+                        ? "Reconnect to the account service and try refreshing."
+                        : search || filter !== "All"
+                          ? "Try another name or account ID, or clear your filters."
+                          : "Upload a synthetic document packet to begin your review."}
                     </p>
-                  </section>
-                </aside>
+                    {search || filter !== "All" ? (
+                      <Button
+                        variant="outline"
+                        onClick={() => {
+                          setSearch("")
+                          setFilter("All")
+                        }}
+                      >
+                        Clear filters
+                      </Button>
+                    ) : (
+                      !error && (
+                        <Button onClick={() => setUploadOpen(true)}>
+                          <Upload size={16} />
+                          Upload documents
+                        </Button>
+                      )
+                    )}
+                  </div>
+                )}
+                <div className="table-footer">
+                  <span>
+                    {initialLoading ? (
+                      <>
+                        <LoaderCircle className="spin" size={14} />
+                        Loading accounts…
+                      </>
+                    ) : (
+                      `Showing ${visibleAccounts.length} of ${accounts.length} accounts`
+                    )}
+                  </span>
+                  <span>Ready means ready for human review</span>
+                </div>
+              </section>
+              <div className="workspace-note">
+                <ShieldCheck size={16} aria-hidden="true" />
+                <p>
+                  Your decisions, supported by evidence. Open an account to
+                  review its documents and findings.
+                </p>
               </div>
             </>
+          ) : (
+            <AccountReview
+              account={selected}
+              onBack={() => navigate("Transitions")}
+              onUpload={() => setUploadOpen(true)}
+            />
           )}
-
-          <p className="heading-subtitle" style={{ marginTop: 24 }}>
-            Demo checklist only. Ready means ready for human review.
-            No transfer submission or signature authentication.
-          </p>
+          <footer className="page-footer">
+            <span>
+              Transition Copilot <span className="footer-divider">/</span>{" "}
+              Advisor workspace
+            </span>
+            <span>
+              Synthetic demo · No transfer submission or signature
+              authentication
+            </span>
+          </footer>
         </div>
       </main>
       {uploadOpen && (
-  <UploadPanel
-    onClose={() => setUploadOpen(false)}
-    onComplete={() => {
-      setUploadOpen(false);
-      void loadAccounts();
-    }}
-  />
-)}
+        <UploadPanel
+          initialPacketId={selected?.account_id}
+          onClose={() => setUploadOpen(false)}
+          onComplete={() => {
+            setUploadOpen(false)
+            void loadAccounts()
+          }}
+          onRestoreFocus={() => uploadTrigger.current?.focus()}
+        />
+      )}
     </div>
-  );
+  )
 }
