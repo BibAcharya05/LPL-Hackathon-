@@ -12,4 +12,4 @@ Contents:
 
 Each folder includes PDF documents, ground_truth.json, expected_detection.json, and a package README.
 The dataset is designed for OCR/document extraction, normalization, cross-document reconciliation, issue classification, and dashboard testing.
-All names, accounts, identifiers, addresses, holdings, values, and signatures are fictional.
+All names, accounts, identifiers, addresses, holdings, values, and signatures are completely fictional. 
