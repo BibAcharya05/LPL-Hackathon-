@@ -1,3 +1,8 @@
+import { FileCheck2 } from "lucide-react"
+import AgentReview from "./components/agent-review"
+import BookOverview from "./components/book-overview"
+import SpecialistQueue from "./components/specialist-queue"
+import { accountValue } from "./lib/assessment"
 import HumanReview from "./components/human-review"
 import { useEffect, useRef, useState } from "react"
 import {
@@ -173,9 +178,9 @@ export default function App() {
     setSection(nextSection)
     setMobileOpen(false)
     requestAnimationFrame(() => {
+      window.scrollTo(0, 0)
       if (nextSection === "Transitions")
-        tableSection.current?.scrollIntoView({ block: "start" })
-      else window.scrollTo(0, 0)
+        document.getElementById("specialist-title")?.focus({ preventScroll: true })
       pageTitle.current?.focus({ preventScroll: true })
     })
   }
@@ -200,13 +205,13 @@ export default function App() {
           <button
             key={name}
             className={`nav-item ${section === name ? "active" : ""}`}
-            title={collapsed ? name : undefined}
-            aria-label={name}
+            title={collapsed ? (name === "Transitions" ? "LPL Specialist Review" : name) : undefined}
+            aria-label={name === "Transitions" ? "LPL Specialist Review" : name}
             aria-current={section === name ? "page" : undefined}
             onClick={() => navigate(name)}
           >
             <Icon size={19} aria-hidden="true" />
-            <span className="nav-label">{name}</span>
+            <span className="nav-label">{name === "Transitions" ? "LPL Specialist Review" : name}</span>
             {name === "Transitions" && (
               <span className="nav-count">
                 {lastLoaded ? accounts.length : "—"}
@@ -215,18 +220,7 @@ export default function App() {
           </button>
         ))}
       </nav>
-      <div className="sidebar-context">
-        <div className="sidebar-context-icon">
-          <ShieldCheck size={20} aria-hidden="true" />
-        </div>
-        <strong>Confidence in every move.</strong>
-        <p>
-          Clear findings. Source evidence.
-          <br />
-          An informed next step.
-        </p>
-      </div>
-      <div className="sidebar-footer">
+<div className="sidebar-footer">
         <ShieldCheck size={18} aria-hidden="true" />
         <div>
           <strong>Synthetic demo</strong>
@@ -267,7 +261,7 @@ export default function App() {
           </Button>
           <button className="brand" onClick={() => navigate("Dashboard")}>
             <span className="brand-mark">
-              <ArrowRightLeft size={20} aria-hidden="true" />
+              <FileCheck2 size={22} aria-hidden="true" />
             </span>
             <span>
               Transition <strong>Copilot</strong>
@@ -342,7 +336,7 @@ export default function App() {
             <div className="breadcrumb">
               <span>Workspace</span>
               <span aria-hidden="true">/</span>
-              <span>{selected ? "Account review" : section}</span>
+              <span>{selected ? "Account review" : section === "Transitions" ? "LPL Specialist Review" : section}</span>
             </div>
             <span className="last-updated" role="status">
               <Clock3 size={13} aria-hidden="true" />
@@ -373,7 +367,9 @@ export default function App() {
               </Button>
             </div>
           )}
-          {!selected ? (
+          {!selected && section === "Transitions" ? (
+            <SpecialistQueue accounts={accounts} onReview={selectAccount} />
+          ) : !selected ? (
             <>
               <div className="page-heading">
                 <div>
@@ -381,7 +377,7 @@ export default function App() {
                     Advisor Transition Dashboard
                   </h1>
                   <p>
-                    Every account, every detail. Keep your next move on track.
+                    Review account readiness and resolve outstanding findings.
                   </p>
                 </div>
                 <span className="workspace-badge">
@@ -389,13 +385,14 @@ export default function App() {
                   Transition operations
                 </span>
               </div>
+              {lastLoaded && <BookOverview accounts={accounts} />}
               <section
                 className="summary-grid"
                 aria-label="Transition summary"
                 aria-busy={initialLoading}
               >
                 {CARDS.map(
-                  ({ label, filter: cardFilter, tone, icon: Icon, note }) => (
+                  ({ label, filter: cardFilter, tone, icon: Icon }) => (
                     <button
                       key={label}
                       className={`summary-card tone-${tone} ${
@@ -423,7 +420,7 @@ export default function App() {
                           </span>
                         )}
                       </strong>
-                      <span className="summary-note">{note}</span>
+                      
                     </button>
                   ),
                 )}
@@ -539,6 +536,7 @@ export default function App() {
                             )}
                           </button>
                         </th>
+                        <th>Account value</th>
                         <th>Account</th>
                         <th>Status</th>
                         <th>Human review</th>
@@ -553,7 +551,7 @@ export default function App() {
                       {initialLoading
                         ? Array.from({ length: 3 }, (_, index) => (
                             <tr key={index} aria-hidden="true">
-                              {Array.from({ length: 7 }, (_, column) => (
+                              {Array.from({ length: 8 }, (_, column) => (
                                 <td key={column}>
                                   <span className="skeleton row-skeleton" />
                                 </td>
@@ -575,6 +573,7 @@ export default function App() {
                                   </div>
                                 </div>
                               </td>
+                              <td className="value-cell">{accountValue(account).label}</td>
                               <td className="account-type">
                                 {account.account_type || "Unavailable"}
                               </td>
@@ -679,13 +678,7 @@ export default function App() {
                   <span>Ready means ready for human review</span>
                 </div>
               </section>
-              <div className="workspace-note">
-                <ShieldCheck size={16} aria-hidden="true" />
-                <p>
-                  Your decisions, supported by evidence. Open an account to
-                  review its documents and findings.
-                </p>
-              </div>
+
             </>
           ) : (
             <>
@@ -693,6 +686,10 @@ export default function App() {
                 account={selected}
                 onBack={() => navigate("Transitions")}
                 onUpload={() => setUploadOpen(true)}
+              />
+              <AgentReview
+                key={"agent:" + selected.account_id + ":" + (selected.packet_version || "")}
+                account={selected}
               />
               <HumanReview
                 key={selected.account_id + ":" + (selected.packet_version || "")}

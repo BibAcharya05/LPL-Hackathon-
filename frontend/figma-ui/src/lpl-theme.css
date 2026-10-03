@@ -1,0 +1,225 @@
+:root {
+  --navy: #09183d;
+  --navy-dark: #06112d;
+  --navy-soft: #edf1f7;
+  --text: #12213e;
+  --muted: #596579;
+  --border: #dddfe5;
+  --canvas: #f6f1ed;
+  --surface: #ffffff;
+  --primary: #b54d00;
+  --primary-foreground: #ffffff;
+  --ring: #b54d00;
+  --lpl-orange: #b54d00;
+}
+
+body {
+  background: var(--canvas);
+  color: var(--text);
+  font-size: 14px;
+}
+
+/* White header with navy identity */
+.topbar {
+  background: #fff;
+  color: var(--navy);
+  border-bottom: 1px solid var(--border);
+  box-shadow: none;
+}
+.topbar .brand,
+.topbar .button-ghost,
+.topbar .workspace-label {
+  color: var(--navy);
+}
+.brand-mark {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+  border-radius: 2px;
+}
+.brand {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+  letter-spacing: -.4px;
+}
+.brand strong { font-weight: 400; }
+.workspace-label {
+  border-color: var(--border);
+  letter-spacing: 1px;
+}
+.user-avatar {
+  background: var(--navy-soft);
+  color: var(--navy);
+  border-color: #d6deeb;
+}
+
+/* Navigation */
+.sidebar {
+  background: #fff;
+  border-right: 1px solid var(--border);
+}
+.nav-item {
+  color: var(--navy);
+  border-radius: 3px;
+}
+.nav-item.active {
+  background: #f6eee6;
+  color: #914000;
+  box-shadow: inset 3px 0 0 var(--lpl-orange);
+}
+.nav-item:hover { background: #f6f1ed; }
+.nav-count {
+  background: #fff;
+  border-color: var(--border);
+  color: var(--navy);
+}
+
+/* Editorial headings; readable sans-serif data */
+.page-heading h1,
+.review-heading h1,
+.book-overview h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -.7px;
+}
+.page-heading h1,
+.review-heading h1 {
+  font-size: clamp(29px, 2.6vw, 39px);
+  line-height: 1.2;
+}
+h2, h3 { color: var(--navy); }
+.page-heading p { margin-top: 10px; }
+.page-utility { color: var(--muted); }
+.main-content { background: var(--canvas); }
+
+/* Orange primary actions */
+.button-primary,
+.topbar .upload-button {
+  background: var(--lpl-orange);
+  border-color: var(--lpl-orange);
+  color: #fff;
+  border-radius: 2px;
+}
+.button-primary:hover:not(:disabled),
+.topbar .upload-button:hover:not(:disabled) {
+  background: #943f00;
+  border-color: #943f00;
+  color: #fff;
+}
+.button-outline {
+  background: #fff;
+  color: var(--navy);
+  border-color: #c8cdd6;
+  border-radius: 2px;
+}
+.button-outline:hover:not(:disabled) {
+  color: #914000;
+  background: #fff8f1;
+  border-color: var(--lpl-orange);
+}
+.button-default { min-height: 42px; }
+.filter-tabs { background: #f3f0ed; }
+.filter-tabs button.active {
+  color: #914000;
+  background: #fff;
+  box-shadow: 0 1px 3px #09183d12;
+}
+
+/* Navy book overview */
+.book-overview {
+  background: var(--navy);
+  border-radius: 3px;
+  padding: 30px;
+}
+.book-overview h2 { color: #fff; font-size: 29px; }
+.book-overview-heading > span { color: #edb283; }
+.book-overview p,
+.book-overview small,
+.book-metrics span { color: #d9e1ee; }
+.book-metrics strong {
+  font-size: clamp(23px, 2vw, 31px);
+  font-weight: 500;
+  letter-spacing: -.5px;
+}
+.book-metrics > div {
+  border-left: 2px solid #b54d00;
+  padding-left: 16px;
+}
+
+/* Clean, squared cards */
+.summary-card,
+.table-card,
+.summary-panel,
+.issue-card,
+.checklist-card,
+.review-notes,
+.specialist-card,
+.human-review-panel,
+.agent-panel,
+.next-step-card {
+  border-radius: 3px;
+  box-shadow: 0 2px 5px #09183d06;
+}
+.summary-card { background: #fff; }
+.summary-card.selected {
+  border-color: var(--navy);
+  box-shadow: inset 0 3px 0 var(--navy);
+}
+.summary-value {
+  color: var(--navy);
+  font-weight: 500;
+}
+.summary-panel { border-top-color: var(--navy); }
+.table-heading { background: #fff; }
+thead th {
+  background: #faf7f4;
+  color: var(--navy);
+  letter-spacing: .4px;
+}
+tbody tr:hover { background: #fcfaf7; }
+.client-avatar {
+  color: var(--navy);
+  background: #edf1f7;
+}
+.evidence {
+  background: #faf7f4;
+  border-radius: 3px;
+}
+.finding-action,
+.evidence-source { color: var(--navy); }
+.next-step-card {
+  background: #f8ece0;
+  border-color: #ebd8c6;
+}
+.next-step-card .panel-icon {
+  color: var(--lpl-orange);
+  background: #fff;
+}
+.agent-answer {
+  background: #faf7f4;
+  border-left-color: var(--lpl-orange);
+}
+.agent-activity,
+.review-record { background: #faf7f4; }
+.review-field input,
+.review-field textarea,
+.search-field,
+.select-control { border-radius: 3px; }
+.review-confirmation input { accent-color: var(--lpl-orange); }
+.human-review-panel,
+.agent-panel { border-top: 3px solid var(--navy); }
+.human-review-actions .button { border-radius: 2px; }
+
+/* Keep status colors meaningful */
+.status-ready { color: var(--green); background: var(--green-bg); }
+.status-missing-info { color: var(--yellow); background: var(--yellow-bg); }
+.status-flagged { color: var(--red); background: var(--red-bg); }
+
+@media (max-width: 767px) {
+  .brand { font-size: 18px; }
+  .book-overview { padding: 22px; }
+  .book-overview h2 { font-size: 25px; }
+  .page-heading h1,
+  .review-heading h1,
+  .title-with-status h1 { font-size: 29px; }
+}

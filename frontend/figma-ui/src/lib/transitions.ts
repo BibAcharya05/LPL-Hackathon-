@@ -14,6 +14,8 @@ export type Issue = {
   expected_document?: string
 }
 export type Account = {
+  normalized_fields?: Record<string, Source[]>
+
   packet_version?: string
   review_status?: "pending" | "approved" | "corrections_requested"
   review_revision?: number

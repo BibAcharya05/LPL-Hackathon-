@@ -24,6 +24,9 @@ TABLE = boto3.resource(
 from review_api import register_review_routes
 register_review_routes(app, TABLE)
 
+from agent_api import register_agent_routes
+register_agent_routes(app, TABLE)
+
 
 def json_number(value):
     if isinstance(value, Decimal):

@@ -25,16 +25,7 @@ export default function HumanReview({ account, onSaved }: Props) {
   const canSubmit = Boolean(
     name.trim() && confirmed && account.packet_version && !busy,
   )
-  const controlStyle = {
-    display: "block",
-    width: "100%",
-    padding: "10px",
-    border: "1px solid #cbd5e1",
-    borderRadius: "6px",
-    marginTop: "6px",
-  }
-
-  async function decide(decision: "approved" | "corrections_requested") {
+async function decide(decision: "approved" | "corrections_requested") {
     setBusy(true)
     setError("")
     setMessage("")
@@ -68,71 +59,102 @@ export default function HumanReview({ account, onSaved }: Props) {
   }
 
   return (
-    <section className="summary-panel" style={{ marginTop: 24 }} aria-labelledby="human-review-title">
-      <h2 id="human-review-title">Human review</h2>
-      <p><strong>{labels[reviewStatus]}</strong></p>
+    <section className="human-review-panel" aria-labelledby="human-review-title">
+      <div className="human-review-heading">
+        <div>
+          <h2 id="human-review-title">Human review</h2>
+          <p>Record your decision for this packet.</p>
+        </div>
+        <span className={`review-badge review-${reviewStatus}`}>
+          {labels[reviewStatus]}
+        </span>
+      </div>
 
       {account.reviewed_at && (
-        <div style={{ margin: "12px 0" }}>
-          <p>Reviewed by {account.reviewer_name} · {new Date(account.reviewed_at).toLocaleString()}</p>
-          <p style={{ whiteSpace: "pre-wrap" }}>{account.review_notes}</p>
+        <div className="review-record">
+          <strong>{account.reviewer_name}</strong>
+          <span>{new Date(account.reviewed_at).toLocaleString()}</span>
+          {account.review_notes && <p>{account.review_notes}</p>}
         </div>
       )}
 
-      <p>Demo reviewer names are self-reported; this is not authenticated sign-off.</p>
+      <div className="human-review-fields">
+        <label className="review-field">
+          <span>Demo reviewer name</span>
+          <input
+            placeholder="Enter your name"
+            autoComplete="name"
+            maxLength={100}
+            value={name}
+            disabled={busy}
+            onChange={(event) => setName(event.target.value)}
+          />
+        </label>
 
-      <label style={{ display: "block", marginTop: 16 }}>
-        Demo reviewer name
-        <input
-          style={controlStyle}
-          maxLength={100}
-          value={name}
-          disabled={busy}
-          onChange={(event) => setName(event.target.value)}
-        />
-      </label>
+        <label className="review-field">
+          <span>Review notes</span>
+          <textarea
+            placeholder="Add decision context or requested corrections"
+            rows={3}
+            maxLength={2000}
+            value={notes}
+            disabled={busy}
+            onChange={(event) => setNotes(event.target.value)}
+          />
+          <small>Required when requesting corrections.</small>
+        </label>
+      </div>
 
-      <label style={{ display: "block", marginTop: 16 }}>
-        Review notes — required when requesting corrections
-        <textarea
-          style={controlStyle}
-          rows={3}
-          maxLength={2000}
-          value={notes}
-          disabled={busy}
-          onChange={(event) => setNotes(event.target.value)}
-        />
-      </label>
-
-      <label style={{ display: "block", margin: "16px 0" }}>
+      <label className="review-confirmation">
         <input
           type="checkbox"
           checked={confirmed}
           disabled={busy}
           onChange={(event) => setConfirmed(event.target.checked)}
-        />{" "}
-        I reviewed the source documents and findings.
+        />
+        <span>I reviewed the source documents and findings.</span>
       </label>
 
-      {!ready && <p>Resolve findings and upload the corrected packet before approval.</p>}
-      {!account.packet_version && <p>Refresh the account before reviewing.</p>}
+      {!ready && (
+        <p className="review-notice">
+          Resolve findings and recheck before approval.
+        </p>
+      )}
+      {!account.packet_version && (
+        <p className="review-notice">Refresh the account before reviewing.</p>
+      )}
 
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 16 }}>
-        <Button disabled={!canSubmit || !ready} onClick={() => void decide("approved")}>
-          {busy ? "Saving…" : "Approve packet"}
-        </Button>
-        <Button
-          variant="outline"
-          disabled={!canSubmit || !notes.trim()}
-          onClick={() => void decide("corrections_requested")}
-        >
-          Request corrections
-        </Button>
+      {error && (
+        <p role="alert" className="review-feedback review-feedback-error">{error}</p>
+      )}
+      {message && (
+        <p role="status" className="review-feedback review-feedback-success">{message}</p>
+      )}
+
+      <div className="human-review-footer">
+        <details className="review-scope">
+          <summary>Demo review scope</summary>
+          <p>
+            Reviewer names are self-reported. Approval records a demo decision;
+            it does not submit a transfer.
+          </p>
+        </details>
+        <div className="human-review-actions">
+          <Button
+            variant="outline"
+            disabled={!canSubmit || !notes.trim()}
+            onClick={() => void decide("corrections_requested")}
+          >
+            Request corrections
+          </Button>
+          <Button
+            disabled={!canSubmit || !ready}
+            onClick={() => void decide("approved")}
+          >
+            {busy ? "Saving…" : "Approve packet"}
+          </Button>
+        </div>
       </div>
-
-      {error && <p role="alert" style={{ color: "#b91c1c", marginTop: 12 }}>{error}</p>}
-      {message && <p role="status" style={{ marginTop: 12 }}>{message}</p>}
-      <p style={{ marginTop: 16 }}>Approval records a demo review decision. No transfer is submitted.</p>
     </section>
   )
 }

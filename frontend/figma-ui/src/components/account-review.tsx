@@ -95,7 +95,7 @@ export default function AccountReview({ account, onBack, onUpload }: Props) {
                 Items needing attention{" "}
                 <span className="count-label">{account.issues.length}</span>
               </h2>
-              <span>Source-backed findings</span>
+              
             </div>
             <div className="issue-list">
               {account.issues.map((issue, index) => (
@@ -120,7 +120,7 @@ export default function AccountReview({ account, onBack, onUpload }: Props) {
                             {documentLabel(source.document)}
                             {source.page ? ` · Page ${source.page}` : ""}
                           </span>
-                          <small>{source.document}</small>
+                          
                         </div>
                       ))}
                     </div>
@@ -193,7 +193,7 @@ export default function AccountReview({ account, onBack, onUpload }: Props) {
                     ? `${present} of ${REQUIRED_DOCUMENTS.length} received`
                     : "Completeness not checked"}
                 </strong>
-                <span>Demo checklist</span>
+                
               </div>
               {checked && (
                 <progress
@@ -235,7 +235,7 @@ export default function AccountReview({ account, onBack, onUpload }: Props) {
                         ? "Not checked"
                         : missing.has(filename)
                           ? "Not received"
-                          : "Present under demo checklist"}
+                          : "Received"}
                     </span>
                   </div>
                 </div>
