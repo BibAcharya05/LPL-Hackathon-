@@ -1,3 +1,4 @@
+import HumanReview from "./components/human-review"
 import { useEffect, useRef, useState } from "react"
 import {
   ArrowDown,
@@ -540,6 +541,7 @@ export default function App() {
                         </th>
                         <th>Account</th>
                         <th>Status</th>
+                        <th>Human review</th>
                         <th className="numeric">Issues</th>
                         <th>Main reason</th>
                         <th>
@@ -551,7 +553,7 @@ export default function App() {
                       {initialLoading
                         ? Array.from({ length: 3 }, (_, index) => (
                             <tr key={index} aria-hidden="true">
-                              {Array.from({ length: 6 }, (_, column) => (
+                              {Array.from({ length: 7 }, (_, column) => (
                                 <td key={column}>
                                   <span className="skeleton row-skeleton" />
                                 </td>
@@ -578,6 +580,13 @@ export default function App() {
                               </td>
                               <td>
                                 <StatusChip status={account.status} />
+                              </td>
+                              <td>
+                                {account.review_status === "approved"
+                                  ? "Approved"
+                                  : account.review_status === "corrections_requested"
+                                    ? "Corrections requested"
+                                    : "Pending review"}
                               </td>
                               <td className="numeric">
                                 <span
@@ -679,11 +688,18 @@ export default function App() {
               </div>
             </>
           ) : (
-            <AccountReview
-              account={selected}
-              onBack={() => navigate("Transitions")}
-              onUpload={() => setUploadOpen(true)}
-            />
+            <>
+              <AccountReview
+                account={selected}
+                onBack={() => navigate("Transitions")}
+                onUpload={() => setUploadOpen(true)}
+              />
+              <HumanReview
+                key={selected.account_id + ":" + (selected.packet_version || "")}
+                account={selected}
+                onSaved={loadAccounts}
+              />
+            </>
           )}
           <footer className="page-footer">
             <span>

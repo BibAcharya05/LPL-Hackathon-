@@ -4,6 +4,7 @@ import json
 import os
 import runpy
 import tempfile
+import uuid
 from decimal import Decimal
 from pathlib import Path
 
@@ -53,6 +54,11 @@ def lambda_handler(event, context):
 
             # DynamoDB accepts Decimal rather than Python float.
             item = json.loads(checked_text, parse_float=Decimal)
+            # Every successful processing run requires a fresh human review.
+            item["packet_version"] = uuid.uuid4().hex
+            item["review_status"] = "pending"
+            item["review_revision"] = 0
+
             boto3.resource("dynamodb").Table(
                 os.environ["TABLE_NAME"]
             ).put_item(Item=item)

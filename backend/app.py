@@ -21,6 +21,10 @@ TABLE = boto3.resource(
 ).Table("TransitionCopilotAccounts")
 
 
+from review_api import register_review_routes
+register_review_routes(app, TABLE)
+
+
 def json_number(value):
     if isinstance(value, Decimal):
         return int(value) if value == value.to_integral_value() else float(value)

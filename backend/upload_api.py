@@ -172,13 +172,14 @@ def process_upload(job_id, packet_id, files):
                         "attribute_exists(account_id) AND "
                         "#status = :status AND "
                         "#issues = :issues AND "
-                        "#fields = :fields"
+                        "#fields = :fields AND #version = :version"
                     ),
                     ExpressionAttributeNames={
                         "#summary": "summary",
                         "#status": "status",
                         "#issues": "issues",
                         "#fields": "normalized_fields",
+                        "#version": "packet_version",
                     },
                     ExpressionAttributeValues={
                         ":summary": generated["summary"],
@@ -188,6 +189,7 @@ def process_upload(job_id, packet_id, files):
                         ":status": item["status"],
                         ":issues": item["issues"],
                         ":fields": item["normalized_fields"],
+                        ":version": item["packet_version"],
                     },
                 )
 

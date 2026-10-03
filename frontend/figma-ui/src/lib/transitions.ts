@@ -14,6 +14,14 @@ export type Issue = {
   expected_document?: string
 }
 export type Account = {
+  packet_version?: string
+  review_status?: "pending" | "approved" | "corrections_requested"
+  review_revision?: number
+  reviewer_name?: string
+  review_notes?: string
+  reviewed_at?: string
+  reviewed_packet_version?: string
+
   account_id: string
   client_name: string | null
   account_type: string | null
