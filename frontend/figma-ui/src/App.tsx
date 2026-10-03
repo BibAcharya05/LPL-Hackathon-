@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import UploadPanel from "./UploadPanel";
 type Status = "Ready" | "Missing Info" | "Flagged" | "Submitted";
 
 type Source = {
@@ -50,7 +50,7 @@ const REQUIRED_DOCUMENTS = [
 ];
 
 // Your frontend and backend share the workshop CloudFront domain.
-const API_URL = "/ports/8000/api/accounts";
+const API_URL = new URL("./api/accounts", window.location.href).pathname;
 
 function StatusChip({ status }: { status: string }) {
   return (
@@ -72,14 +72,14 @@ export default function App() {
   const [error, setError] = useState("");
   const [mode, setMode] = useState("");
   const [lastLoaded, setLastLoaded] = useState("");
-
+  const [uploadOpen, setUploadOpen] = useState(false);
   async function loadAccounts() {
     setLoading(true);
     setError("");
 
     try {
       const response = await fetch(
-        `${API_URL}?refresh=${Date.now()}`,
+        API_URL,
         { cache: "no-store" },
       );
 
@@ -167,10 +167,9 @@ export default function App() {
 
           <button
             className="secondary-button"
-            disabled
-            title="Document uploads are not connected yet."
+            onClick={() => setUploadOpen(true)}
           >
-            Upload — coming next
+            Upload documents
           </button>
 
           <div className="user-avatar">TC</div>
@@ -533,6 +532,15 @@ export default function App() {
           </p>
         </div>
       </main>
+      {uploadOpen && (
+  <UploadPanel
+    onClose={() => setUploadOpen(false)}
+    onComplete={() => {
+      setUploadOpen(false);
+      void loadAccounts();
+    }}
+  />
+)}
     </div>
   );
 }

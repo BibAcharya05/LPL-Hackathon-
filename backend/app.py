@@ -1,88 +1,64 @@
 import json
 import os
+from decimal import Decimal
 from pathlib import Path
 
-from flask import Flask, jsonify
+import boto3
+from botocore.exceptions import BotoCoreError, ClientError
+from flask import Flask, jsonify, send_from_directory
+
+from upload_api import register_upload_routes
 
 app = Flask(__name__)
+register_upload_routes(app)
 
 FRONTEND_ORIGIN = os.getenv(
-    "FRONTEND_ORIGIN",
-    "http://localhost:5173",
+    "FRONTEND_ORIGIN", "http://localhost:5173"
 )
+RESULTS = Path(__file__).parent / "results"
+TABLE = boto3.resource(
+    "dynamodb", region_name="us-east-1"
+).Table("TransitionCopilotAccounts")
 
-ACCOUNTS = [
-    {
-        "account_id": "DEMO-001",
-        "client_name": "Jordan Example",
-        "account_type": "Traditional IRA",
-        "status": "Flagged",
-        "summary": "IRA packet requires signature, beneficiary, and address review.",
-        "synthetic": True,
-        "processing_status": "Complete",
-        "issues": [
-            {
-                "code": "MISSING_SIGNATURE",
-                "severity": "Missing Info",
-                "message": "Client signature and signing date are missing.",
-                "sources": [
-                    {"document": "application.pdf", "page": 1}
-                ],
-                "action": "Obtain the client's signature and signing date.",
-            },
-            {
-                "code": "ADDRESS_REVIEW",
-                "severity": "Flagged",
-                "message": "Residential and mailing addresses differ.",
-                "sources": [
-                    {
-                        "document": "application.pdf",
-                        "page": 1,
-                        "value": "100 Demo Lane",
-                    },
-                    {
-                        "document": "statement.pdf",
-                        "page": 2,
-                        "value": "200 Sample Street",
-                    },
-                ],
-                "action": "Confirm whether the different addresses are intentional.",
-            },
-            {
-                "code": "MISSING_BENEFICIARY",
-                "severity": "Missing Info",
-                "message": "Beneficiary details are missing under the demo checklist.",
-                "sources": [
-                    {"document": "application.pdf", "page": 1}
-                ],
-                "action": "Confirm and complete the beneficiary designation.",
-            },
-        ],
-    }
-]
+
+def json_number(value):
+    if isinstance(value, Decimal):
+        return int(value) if value == value.to_integral_value() else float(value)
+    raise TypeError("Unsupported JSON value")
+
 
 def load_accounts():
-    results = Path(__file__).parent / "results"
-    result_file = results / "T002-checked.json"
-    summary_file = results / "T002-summary.json"
+    accounts = []
 
-    if not result_file.exists():
-        return "mock", ACCOUNTS
+    # Read each supported demo account directly from DynamoDB.
+    for account_id in ("T001", "T002", "T003", "T004", "T005"):
+        item = TABLE.get_item(
+            Key={"account_id": account_id},
+            ConsistentRead=True,
+        ).get("Item")
 
-    account = json.loads(result_file.read_text(encoding="utf-8"))
+        if item is None:
+            continue
 
-    if summary_file.exists():
-        saved = json.loads(summary_file.read_text(encoding="utf-8"))
+        account = json.loads(json.dumps(item, default=json_number))
+        summary_file = RESULTS / f"{account_id}-summary.json"
 
-        # Only use the summary if its source results still match.
-        if (
-            saved.get("account_id") == account["account_id"]
-            and saved.get("input_snapshot") == account
-        ):
-            account["summary"] = saved["summary"]
-            account["summary_source"] = "bedrock"
+        if account.get("summary_source") != "bedrock" and summary_file.exists():
+            try:
+                saved = json.loads(summary_file.read_text(encoding="utf-8"))
+                if (
+                    saved.get("account_id") == account_id
+                    and saved.get("input_snapshot") == account
+                ):
+                    account["summary"] = saved["summary"]
+                    account["summary_source"] = "bedrock"
+            except (OSError, ValueError, KeyError):
+                app.logger.warning("Could not read saved summary for %s", account_id)
 
-    return "extracted", [account]
+        accounts.append(account)
+
+    return "dynamodb", accounts
+
 
 @app.after_request
 def cors(response):
@@ -90,6 +66,16 @@ def cors(response):
     response.headers["Vary"] = "Origin"
     response.headers["Cache-Control"] = "no-store"
     return response
+
+
+@app.errorhandler(ClientError)
+@app.errorhandler(BotoCoreError)
+def aws_error(error):
+    app.logger.error("AWS account-data request failed.")
+    return jsonify({
+        "error": "Could not load transition results from DynamoDB. "
+                 "Check backend AWS permissions and retry."
+    }), 503
 
 
 @app.get("/api/health")
@@ -108,11 +94,7 @@ def accounts():
 def account(account_id):
     mode, items = load_accounts()
     match = next(
-        (
-            item
-            for item in items
-            if item["account_id"] == account_id
-        ),
+        (item for item in items if item["account_id"] == account_id),
         None,
     )
 
@@ -120,6 +102,24 @@ def account(account_id):
         return jsonify({"error": "Account not found"}), 404
 
     return jsonify({"mode": mode, "account": match})
+
+
+
+# Serve the built React app from the same host as the API.
+FRONTEND_DIST = (
+    Path(__file__).resolve().parent.parent / "frontend" / "figma-ui" / "dist"
+)
+
+
+@app.get("/")
+@app.get("/index.html")
+def frontend_index():
+    return send_from_directory(FRONTEND_DIST, "index.html")
+
+
+@app.get("/assets/<path:filename>")
+def frontend_asset(filename):
+    return send_from_directory(FRONTEND_DIST / "assets", filename)
 
 
 if __name__ == "__main__":
