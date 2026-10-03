@@ -13,3 +13,6 @@ backend/results/
 
 # AWS CloudTrail exports
 cloudtrail-*.json
+
+# AWS CloudTrail exports
+cloudtrail-*.json
