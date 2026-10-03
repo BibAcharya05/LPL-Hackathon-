@@ -1,0 +1,1707 @@
+{
+    "Items": [
+        {
+            "normalized_fields": {
+                "M": {
+                    "client_name": {
+                        "L": [
+                            {
+                                "M": {
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "confidence": {
+                                        "N": "95.73702239990234"
+                                    },
+                                    "document": {
+                                        "S": "01_existing_account_statement.pdf"
+                                    },
+                                    "label": {
+                                        "S": "Client Name"
+                                    },
+                                    "value": {
+                                        "S": "Jordan Kim"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "confidence": {
+                                        "N": "95.39757537841797"
+                                    },
+                                    "document": {
+                                        "S": "02_new_account_application.pdf"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "label": {
+                                        "S": "Client Name"
+                                    },
+                                    "value": {
+                                        "S": "Jordan Kim"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "value": {
+                                        "S": "Jordan Kim"
+                                    },
+                                    "confidence": {
+                                        "N": "95.53123474121094"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "label": {
+                                        "S": "Client Name"
+                                    },
+                                    "document": {
+                                        "S": "03_account_transfer_form.pdf"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "label": {
+                                        "S": "Client Name"
+                                    },
+                                    "value": {
+                                        "S": "Jordan Kim"
+                                    },
+                                    "confidence": {
+                                        "N": "94.91515350341797"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "document": {
+                                        "S": "04_investor_profile.pdf"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "value": {
+                                        "S": "Jordan Kim"
+                                    },
+                                    "label": {
+                                        "S": "Client Name"
+                                    },
+                                    "document": {
+                                        "S": "06_advisory_agreement.pdf"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "confidence": {
+                                        "N": "95.25407409667969"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "source_account_number": {
+                        "L": [
+                            {
+                                "M": {
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "confidence": {
+                                        "N": "95.71078491210938"
+                                    },
+                                    "value": {
+                                        "S": "DEMO-IRA-1001"
+                                    },
+                                    "label": {
+                                        "S": "Account Number"
+                                    },
+                                    "document": {
+                                        "S": "01_existing_account_statement.pdf"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "document": {
+                                        "S": "03_account_transfer_form.pdf"
+                                    },
+                                    "value": {
+                                        "S": "DEMO-IRA-1001"
+                                    },
+                                    "confidence": {
+                                        "N": "95.79488372802734"
+                                    },
+                                    "label": {
+                                        "S": "Delivering Account Number"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "label": {
+                                        "S": "Account Number"
+                                    },
+                                    "document": {
+                                        "S": "06_advisory_agreement.pdf"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "value": {
+                                        "S": "DEMO-IRA-1001"
+                                    },
+                                    "confidence": {
+                                        "N": "95.6487808227539"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "transfer_value": {
+                        "L": [
+                            {
+                                "M": {
+                                    "value": {
+                                        "S": "$286,420.55"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "confidence": {
+                                        "N": "95.94284057617188"
+                                    },
+                                    "label": {
+                                        "S": "Ending Account Value"
+                                    },
+                                    "document": {
+                                        "S": "01_existing_account_statement.pdf"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "document": {
+                                        "S": "03_account_transfer_form.pdf"
+                                    },
+                                    "label": {
+                                        "S": "Estimated Transfer Value"
+                                    },
+                                    "confidence": {
+                                        "N": "95.87332916259766"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "value": {
+                                        "S": "$286,420.55"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "risk_tolerance": {
+                        "L": [
+                            {
+                                "M": {
+                                    "document": {
+                                        "S": "02_new_account_application.pdf"
+                                    },
+                                    "label": {
+                                        "S": "Risk Tolerance"
+                                    },
+                                    "value": {
+                                        "S": "Moderate"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "confidence": {
+                                        "N": "94.73746490478516"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "value": {
+                                        "S": "Moderate"
+                                    },
+                                    "label": {
+                                        "S": "Risk Tolerance"
+                                    },
+                                    "document": {
+                                        "S": "04_investor_profile.pdf"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "confidence": {
+                                        "N": "95.7811050415039"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "account_type": {
+                        "L": [
+                            {
+                                "M": {
+                                    "confidence": {
+                                        "N": "95.77964782714844"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "value": {
+                                        "S": "Traditional IRA"
+                                    },
+                                    "document": {
+                                        "S": "01_existing_account_statement.pdf"
+                                    },
+                                    "label": {
+                                        "S": "Account Type"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "label": {
+                                        "S": "Requested Account Type"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "value": {
+                                        "S": "Traditional IRA"
+                                    },
+                                    "confidence": {
+                                        "N": "95.77957916259766"
+                                    },
+                                    "document": {
+                                        "S": "02_new_account_application.pdf"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "value": {
+                                        "S": "Traditional IRA"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "label": {
+                                        "S": "Account Type"
+                                    },
+                                    "document": {
+                                        "S": "03_account_transfer_form.pdf"
+                                    },
+                                    "confidence": {
+                                        "N": "95.81092834472656"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "investment_objective": {
+                        "L": [
+                            {
+                                "M": {
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "label": {
+                                        "S": "Investment Objective"
+                                    },
+                                    "document": {
+                                        "S": "02_new_account_application.pdf"
+                                    },
+                                    "value": {
+                                        "S": "Growth and Income"
+                                    },
+                                    "confidence": {
+                                        "N": "94.97416687011719"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "confidence": {
+                                        "N": "95.7923583984375"
+                                    },
+                                    "document": {
+                                        "S": "04_investor_profile.pdf"
+                                    },
+                                    "label": {
+                                        "S": "Investment Objective"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "value": {
+                                        "S": "Growth and Income"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "mailing_address": {
+                        "L": [
+                            {
+                                "M": {
+                                    "document": {
+                                        "S": "01_existing_account_statement.pdf"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "label": {
+                                        "S": "Mailing Address"
+                                    },
+                                    "value": {
+                                        "S": "100 Demo Avenue, Sample City, NC 00000"
+                                    },
+                                    "confidence": {
+                                        "N": "95.9908676147461"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "value": {
+                                        "S": "100 Demo Avenue, Sample City, NC 00000"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "document": {
+                                        "S": "02_new_account_application.pdf"
+                                    },
+                                    "confidence": {
+                                        "N": "95.9836196899414"
+                                    },
+                                    "label": {
+                                        "S": "Mailing Address"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "summary": {
+                "S": "Demo checks found 0 issue(s). Human review is required."
+            },
+            "notice": {
+                "S": "Demo preflight only. Ready means ready for human review. No signature authentication or transfer authorization."
+            },
+            "processing_status": {
+                "S": "Complete"
+            },
+            "issues": {
+                "L": []
+            },
+            "status": {
+                "S": "Ready"
+            },
+            "checks_completed": {
+                "L": [
+                    {
+                        "S": "required_documents"
+                    },
+                    {
+                        "S": "field_comparisons"
+                    },
+                    {
+                        "S": "synthetic_signature_markers"
+                    }
+                ]
+            },
+            "synthetic": {
+                "BOOL": true
+            },
+            "client_name": {
+                "S": "Jordan Kim"
+            },
+            "observations": {
+                "L": [
+                    {
+                        "M": {
+                            "message": {
+                                "S": "Matching synthetic signature marker found. This does not authenticate a signature."
+                            },
+                            "sources": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "document": {
+                                                "S": "02_new_account_application.pdf"
+                                            },
+                                            "value": {
+                                                "S": "SIGNED Jordan Kim"
+                                            },
+                                            "page": {
+                                                "N": "1"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "code": {
+                                "S": "SYNTHETIC_SIGNATURE_MARKER"
+                            }
+                        }
+                    },
+                    {
+                        "M": {
+                            "code": {
+                                "S": "SYNTHETIC_SIGNATURE_MARKER"
+                            },
+                            "message": {
+                                "S": "Matching synthetic signature marker found. This does not authenticate a signature."
+                            },
+                            "sources": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "page": {
+                                                "N": "1"
+                                            },
+                                            "value": {
+                                                "S": "SIGNED - Jordan Kim"
+                                            },
+                                            "document": {
+                                                "S": "03_account_transfer_form.pdf"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "M": {
+                            "message": {
+                                "S": "Matching synthetic signature marker found. This does not authenticate a signature."
+                            },
+                            "code": {
+                                "S": "SYNTHETIC_SIGNATURE_MARKER"
+                            },
+                            "sources": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "document": {
+                                                "S": "06_advisory_agreement.pdf"
+                                            },
+                                            "page": {
+                                                "N": "1"
+                                            },
+                                            "value": {
+                                                "S": "SIGNED Jordan Kim"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "account_type": {
+                "S": "Traditional IRA"
+            },
+            "account_id": {
+                "S": "T001"
+            }
+        },
+        {
+            "normalized_fields": {
+                "M": {
+                    "mailing_address": {
+                        "L": [
+                            {
+                                "M": {
+                                    "value": {
+                                        "S": "220 Test Lane, Example Town, NC 00000"
+                                    },
+                                    "confidence": {
+                                        "N": "96.01773071289062"
+                                    },
+                                    "label": {
+                                        "S": "Mailing Address"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "document": {
+                                        "S": "01_existing_account_statement.pdf"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "label": {
+                                        "S": "Mailing Address"
+                                    },
+                                    "value": {
+                                        "S": "220 Test Lane, Example Town, NC 00000"
+                                    },
+                                    "document": {
+                                        "S": "02_new_account_application.pdf"
+                                    },
+                                    "confidence": {
+                                        "N": "95.98515319824219"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "transfer_value": {
+                        "L": [
+                            {
+                                "M": {
+                                    "label": {
+                                        "S": "Ending Account Value"
+                                    },
+                                    "document": {
+                                        "S": "01_existing_account_statement.pdf"
+                                    },
+                                    "value": {
+                                        "S": "$174,880.20"
+                                    },
+                                    "confidence": {
+                                        "N": "95.95613861083984"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "label": {
+                                        "S": "Estimated Transfer Value"
+                                    },
+                                    "confidence": {
+                                        "N": "95.91722106933594"
+                                    },
+                                    "value": {
+                                        "S": "$174,880.20"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "document": {
+                                        "S": "03_account_transfer_form.pdf"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "risk_tolerance": {
+                        "L": [
+                            {
+                                "M": {
+                                    "confidence": {
+                                        "N": "94.96082305908203"
+                                    },
+                                    "label": {
+                                        "S": "Risk Tolerance"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "document": {
+                                        "S": "02_new_account_application.pdf"
+                                    },
+                                    "value": {
+                                        "S": "Moderately Aggressive"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "confidence": {
+                                        "N": "95.76441955566406"
+                                    },
+                                    "label": {
+                                        "S": "Risk Tolerance"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "document": {
+                                        "S": "04_investor_profile.pdf"
+                                    },
+                                    "value": {
+                                        "S": "Moderately Aggressive"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "client_name": {
+                        "L": [
+                            {
+                                "M": {
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "document": {
+                                        "S": "01_existing_account_statement.pdf"
+                                    },
+                                    "label": {
+                                        "S": "Client Name"
+                                    },
+                                    "confidence": {
+                                        "N": "95.81912994384766"
+                                    },
+                                    "value": {
+                                        "S": "Priya Shah"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "confidence": {
+                                        "N": "95.50942993164062"
+                                    },
+                                    "label": {
+                                        "S": "Client Name"
+                                    },
+                                    "document": {
+                                        "S": "02_new_account_application.pdf"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "value": {
+                                        "S": "Priya Shah"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "label": {
+                                        "S": "Client Name"
+                                    },
+                                    "document": {
+                                        "S": "03_account_transfer_form.pdf"
+                                    },
+                                    "confidence": {
+                                        "N": "95.7535171508789"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "value": {
+                                        "S": "Priya Shah"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "confidence": {
+                                        "N": "95.05058288574219"
+                                    },
+                                    "value": {
+                                        "S": "Priya Shah"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "document": {
+                                        "S": "04_investor_profile.pdf"
+                                    },
+                                    "label": {
+                                        "S": "Client Name"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "label": {
+                                        "S": "Client Name"
+                                    },
+                                    "value": {
+                                        "S": "Priya Shah"
+                                    },
+                                    "confidence": {
+                                        "N": "95.21293640136719"
+                                    },
+                                    "document": {
+                                        "S": "06_advisory_agreement.pdf"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "account_type": {
+                        "L": [
+                            {
+                                "M": {
+                                    "label": {
+                                        "S": "Account Type"
+                                    },
+                                    "value": {
+                                        "S": "Roth IRA"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "document": {
+                                        "S": "01_existing_account_statement.pdf"
+                                    },
+                                    "confidence": {
+                                        "N": "95.74988555908203"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "document": {
+                                        "S": "02_new_account_application.pdf"
+                                    },
+                                    "value": {
+                                        "S": "Roth IRA"
+                                    },
+                                    "confidence": {
+                                        "N": "95.83172607421875"
+                                    },
+                                    "label": {
+                                        "S": "Requested Account Type"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "document": {
+                                        "S": "03_account_transfer_form.pdf"
+                                    },
+                                    "value": {
+                                        "S": "Roth IRA"
+                                    },
+                                    "label": {
+                                        "S": "Account Type"
+                                    },
+                                    "confidence": {
+                                        "N": "95.72416687011719"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "investment_objective": {
+                        "L": [
+                            {
+                                "M": {
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "confidence": {
+                                        "N": "95.01240539550781"
+                                    },
+                                    "label": {
+                                        "S": "Investment Objective"
+                                    },
+                                    "document": {
+                                        "S": "02_new_account_application.pdf"
+                                    },
+                                    "value": {
+                                        "S": "Long-Term Growth"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "document": {
+                                        "S": "04_investor_profile.pdf"
+                                    },
+                                    "value": {
+                                        "S": "Long-Term Growth"
+                                    },
+                                    "label": {
+                                        "S": "Investment Objective"
+                                    },
+                                    "confidence": {
+                                        "N": "95.97093200683594"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "source_account_number": {
+                        "L": [
+                            {
+                                "M": {
+                                    "label": {
+                                        "S": "Account Number"
+                                    },
+                                    "document": {
+                                        "S": "01_existing_account_statement.pdf"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "value": {
+                                        "S": "DEMO-ROTH-2002"
+                                    },
+                                    "confidence": {
+                                        "N": "95.71711730957031"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "label": {
+                                        "S": "Delivering Account Number"
+                                    },
+                                    "confidence": {
+                                        "N": "95.83049774169922"
+                                    },
+                                    "value": {
+                                        "S": "DEMO-ROTH-2002"
+                                    },
+                                    "document": {
+                                        "S": "03_account_transfer_form.pdf"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "value": {
+                                        "S": "DEMO-ROTH-2002"
+                                    },
+                                    "document": {
+                                        "S": "06_advisory_agreement.pdf"
+                                    },
+                                    "confidence": {
+                                        "N": "95.64349365234375"
+                                    },
+                                    "label": {
+                                        "S": "Account Number"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "summary": {
+                "S": "Demo checks found 1 issue(s). Human review is required."
+            },
+            "notice": {
+                "S": "Demo preflight only. Ready means ready for human review. No signature authentication or transfer authorization."
+            },
+            "processing_status": {
+                "S": "Complete"
+            },
+            "issues": {
+                "L": [
+                    {
+                        "M": {
+                            "action": {
+                                "S": "Obtain and upload the beneficiary designation."
+                            },
+                            "expected_document": {
+                                "S": "05_beneficiary_designation.pdf"
+                            },
+                            "code": {
+                                "S": "MISSING_DOCUMENT"
+                            },
+                            "message": {
+                                "S": "Beneficiary designation is missing under the demo checklist."
+                            },
+                            "severity": {
+                                "S": "Missing Info"
+                            },
+                            "sources": {
+                                "L": []
+                            }
+                        }
+                    }
+                ]
+            },
+            "status": {
+                "S": "Missing Info"
+            },
+            "checks_completed": {
+                "L": [
+                    {
+                        "S": "required_documents"
+                    },
+                    {
+                        "S": "field_comparisons"
+                    },
+                    {
+                        "S": "synthetic_signature_markers"
+                    }
+                ]
+            },
+            "synthetic": {
+                "BOOL": true
+            },
+            "client_name": {
+                "S": "Priya Shah"
+            },
+            "observations": {
+                "L": [
+                    {
+                        "M": {
+                            "sources": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "value": {
+                                                "S": "SIGNED Priya Shah"
+                                            },
+                                            "page": {
+                                                "N": "1"
+                                            },
+                                            "document": {
+                                                "S": "02_new_account_application.pdf"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "message": {
+                                "S": "Matching synthetic signature marker found. This does not authenticate a signature."
+                            },
+                            "code": {
+                                "S": "SYNTHETIC_SIGNATURE_MARKER"
+                            }
+                        }
+                    },
+                    {
+                        "M": {
+                            "code": {
+                                "S": "SYNTHETIC_SIGNATURE_MARKER"
+                            },
+                            "message": {
+                                "S": "Matching synthetic signature marker found. This does not authenticate a signature."
+                            },
+                            "sources": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "document": {
+                                                "S": "03_account_transfer_form.pdf"
+                                            },
+                                            "page": {
+                                                "N": "1"
+                                            },
+                                            "value": {
+                                                "S": "SIGNED Priya Shah"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "M": {
+                            "code": {
+                                "S": "SYNTHETIC_SIGNATURE_MARKER"
+                            },
+                            "message": {
+                                "S": "Matching synthetic signature marker found. This does not authenticate a signature."
+                            },
+                            "sources": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "value": {
+                                                "S": "SIGNED Priya Shah"
+                                            },
+                                            "document": {
+                                                "S": "06_advisory_agreement.pdf"
+                                            },
+                                            "page": {
+                                                "N": "1"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "account_id": {
+                "S": "T002"
+            },
+            "account_type": {
+                "S": "Roth IRA"
+            }
+        },
+        {
+            "normalized_fields": {
+                "M": {
+                    "transfer_value": {
+                        "L": [
+                            {
+                                "M": {
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "confidence": {
+                                        "N": "95.92366027832031"
+                                    },
+                                    "document": {
+                                        "S": "01_existing_account_statement.pdf"
+                                    },
+                                    "value": {
+                                        "S": "$512,335.10"
+                                    },
+                                    "label": {
+                                        "S": "Ending Account Value"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "confidence": {
+                                        "N": "95.85977172851562"
+                                    },
+                                    "document": {
+                                        "S": "03_account_transfer_form.pdf"
+                                    },
+                                    "label": {
+                                        "S": "Estimated Transfer Value"
+                                    },
+                                    "value": {
+                                        "S": "$512,335.10"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "source_account_number": {
+                        "L": [
+                            {
+                                "M": {
+                                    "document": {
+                                        "S": "01_existing_account_statement.pdf"
+                                    },
+                                    "value": {
+                                        "S": "DEMO-IRA-3003"
+                                    },
+                                    "confidence": {
+                                        "N": "95.69532012939453"
+                                    },
+                                    "label": {
+                                        "S": "Account Number"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "document": {
+                                        "S": "03_account_transfer_form.pdf"
+                                    },
+                                    "label": {
+                                        "S": "Delivering Account Number"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "value": {
+                                        "S": "DEMO-IRA-3003"
+                                    },
+                                    "confidence": {
+                                        "N": "95.76514434814453"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "label": {
+                                        "S": "Account Number"
+                                    },
+                                    "confidence": {
+                                        "N": "95.56927490234375"
+                                    },
+                                    "document": {
+                                        "S": "06_advisory_agreement.pdf"
+                                    },
+                                    "value": {
+                                        "S": "DEMO-IRA-3003"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "mailing_address": {
+                        "L": [
+                            {
+                                "M": {
+                                    "label": {
+                                        "S": "Mailing Address"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "value": {
+                                        "S": "350 Prototype Road, Mocksville, NC 00000"
+                                    },
+                                    "confidence": {
+                                        "N": "96.03032684326172"
+                                    },
+                                    "document": {
+                                        "S": "01_existing_account_statement.pdf"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "confidence": {
+                                        "N": "96.02278137207031"
+                                    },
+                                    "label": {
+                                        "S": "Mailing Address"
+                                    },
+                                    "document": {
+                                        "S": "02_new_account_application.pdf"
+                                    },
+                                    "value": {
+                                        "S": "305 Prototype Road, Mocksville, NC 00000"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "client_name": {
+                        "L": [
+                            {
+                                "M": {
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "value": {
+                                        "S": "Marcus Lee"
+                                    },
+                                    "confidence": {
+                                        "N": "95.67970275878906"
+                                    },
+                                    "document": {
+                                        "S": "01_existing_account_statement.pdf"
+                                    },
+                                    "label": {
+                                        "S": "Client Name"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "value": {
+                                        "S": "Marcus Lee"
+                                    },
+                                    "label": {
+                                        "S": "Client Name"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "confidence": {
+                                        "N": "95.39088439941406"
+                                    },
+                                    "document": {
+                                        "S": "02_new_account_application.pdf"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "value": {
+                                        "S": "Marcus Lee"
+                                    },
+                                    "label": {
+                                        "S": "Client Name"
+                                    },
+                                    "confidence": {
+                                        "N": "95.52149963378906"
+                                    },
+                                    "document": {
+                                        "S": "03_account_transfer_form.pdf"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "confidence": {
+                                        "N": "94.99722290039062"
+                                    },
+                                    "value": {
+                                        "S": "Marcus Lee"
+                                    },
+                                    "document": {
+                                        "S": "04_investor_profile.pdf"
+                                    },
+                                    "label": {
+                                        "S": "Client Name"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "document": {
+                                        "S": "06_advisory_agreement.pdf"
+                                    },
+                                    "label": {
+                                        "S": "Client Name"
+                                    },
+                                    "confidence": {
+                                        "N": "95.07836151123047"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "value": {
+                                        "S": "Marcus Lee"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "account_type": {
+                        "L": [
+                            {
+                                "M": {
+                                    "confidence": {
+                                        "N": "95.77635955810547"
+                                    },
+                                    "label": {
+                                        "S": "Account Type"
+                                    },
+                                    "value": {
+                                        "S": "Traditional IRA"
+                                    },
+                                    "document": {
+                                        "S": "01_existing_account_statement.pdf"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "document": {
+                                        "S": "02_new_account_application.pdf"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "value": {
+                                        "S": "Traditional IRA"
+                                    },
+                                    "label": {
+                                        "S": "Requested Account Type"
+                                    },
+                                    "confidence": {
+                                        "N": "95.78411102294922"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "value": {
+                                        "S": "Traditional IRA"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "document": {
+                                        "S": "03_account_transfer_form.pdf"
+                                    },
+                                    "label": {
+                                        "S": "Account Type"
+                                    },
+                                    "confidence": {
+                                        "N": "95.81227111816406"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "risk_tolerance": {
+                        "L": [
+                            {
+                                "M": {
+                                    "document": {
+                                        "S": "02_new_account_application.pdf"
+                                    },
+                                    "value": {
+                                        "S": "Conservative"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "label": {
+                                        "S": "Risk Tolerance"
+                                    },
+                                    "confidence": {
+                                        "N": "94.802978515625"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "value": {
+                                        "S": "Moderate"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "document": {
+                                        "S": "04_investor_profile.pdf"
+                                    },
+                                    "confidence": {
+                                        "N": "95.79537200927734"
+                                    },
+                                    "label": {
+                                        "S": "Risk Tolerance"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "investment_objective": {
+                        "L": [
+                            {
+                                "M": {
+                                    "value": {
+                                        "S": "Capital Preservation and Income"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "label": {
+                                        "S": "Investment Objective"
+                                    },
+                                    "document": {
+                                        "S": "02_new_account_application.pdf"
+                                    },
+                                    "confidence": {
+                                        "N": "95.16636657714844"
+                                    }
+                                }
+                            },
+                            {
+                                "M": {
+                                    "confidence": {
+                                        "N": "95.94080352783203"
+                                    },
+                                    "label": {
+                                        "S": "Investment Objective"
+                                    },
+                                    "page": {
+                                        "N": "1"
+                                    },
+                                    "value": {
+                                        "S": "Capital Preservation and Income"
+                                    },
+                                    "document": {
+                                        "S": "04_investor_profile.pdf"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "summary": {
+                "S": "Demo checks found 2 issue(s). Human review is required."
+            },
+            "notice": {
+                "S": "Demo preflight only. Ready means ready for human review. No signature authentication or transfer authorization."
+            },
+            "processing_status": {
+                "S": "Complete"
+            },
+            "issues": {
+                "L": [
+                    {
+                        "M": {
+                            "code": {
+                                "S": "FIELD_DIFFERENCE"
+                            },
+                            "action": {
+                                "S": "Review the sources and confirm whether the difference is expected. Do not automatically overwrite either value."
+                            },
+                            "severity": {
+                                "S": "Flagged"
+                            },
+                            "message": {
+                                "S": "Different values found for mailing address."
+                            },
+                            "sources": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "value": {
+                                                "S": "350 Prototype Road, Mocksville, NC 00000"
+                                            },
+                                            "confidence": {
+                                                "N": "96.03032684326172"
+                                            },
+                                            "page": {
+                                                "N": "1"
+                                            },
+                                            "label": {
+                                                "S": "Mailing Address"
+                                            },
+                                            "document": {
+                                                "S": "01_existing_account_statement.pdf"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "document": {
+                                                "S": "02_new_account_application.pdf"
+                                            },
+                                            "label": {
+                                                "S": "Mailing Address"
+                                            },
+                                            "value": {
+                                                "S": "305 Prototype Road, Mocksville, NC 00000"
+                                            },
+                                            "confidence": {
+                                                "N": "96.02278137207031"
+                                            },
+                                            "page": {
+                                                "N": "1"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "M": {
+                            "code": {
+                                "S": "FIELD_DIFFERENCE"
+                            },
+                            "sources": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "page": {
+                                                "N": "1"
+                                            },
+                                            "confidence": {
+                                                "N": "94.802978515625"
+                                            },
+                                            "label": {
+                                                "S": "Risk Tolerance"
+                                            },
+                                            "document": {
+                                                "S": "02_new_account_application.pdf"
+                                            },
+                                            "value": {
+                                                "S": "Conservative"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "M": {
+                                            "document": {
+                                                "S": "04_investor_profile.pdf"
+                                            },
+                                            "confidence": {
+                                                "N": "95.79537200927734"
+                                            },
+                                            "page": {
+                                                "N": "1"
+                                            },
+                                            "value": {
+                                                "S": "Moderate"
+                                            },
+                                            "label": {
+                                                "S": "Risk Tolerance"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "message": {
+                                "S": "Different values found for risk tolerance."
+                            },
+                            "action": {
+                                "S": "Review the sources and confirm whether the difference is expected. Do not automatically overwrite either value."
+                            },
+                            "severity": {
+                                "S": "Flagged"
+                            }
+                        }
+                    }
+                ]
+            },
+            "status": {
+                "S": "Flagged"
+            },
+            "checks_completed": {
+                "L": [
+                    {
+                        "S": "required_documents"
+                    },
+                    {
+                        "S": "field_comparisons"
+                    },
+                    {
+                        "S": "synthetic_signature_markers"
+                    }
+                ]
+            },
+            "client_name": {
+                "S": "Marcus Lee"
+            },
+            "synthetic": {
+                "BOOL": true
+            },
+            "observations": {
+                "L": [
+                    {
+                        "M": {
+                            "code": {
+                                "S": "SYNTHETIC_SIGNATURE_MARKER"
+                            },
+                            "message": {
+                                "S": "Matching synthetic signature marker found. This does not authenticate a signature."
+                            },
+                            "sources": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "value": {
+                                                "S": "SIGNED Marcus Lee"
+                                            },
+                                            "page": {
+                                                "N": "1"
+                                            },
+                                            "document": {
+                                                "S": "02_new_account_application.pdf"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "M": {
+                            "code": {
+                                "S": "SYNTHETIC_SIGNATURE_MARKER"
+                            },
+                            "sources": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "value": {
+                                                "S": "SIGNED - Marcus Lee"
+                                            },
+                                            "page": {
+                                                "N": "1"
+                                            },
+                                            "document": {
+                                                "S": "03_account_transfer_form.pdf"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "message": {
+                                "S": "Matching synthetic signature marker found. This does not authenticate a signature."
+                            }
+                        }
+                    },
+                    {
+                        "M": {
+                            "message": {
+                                "S": "Matching synthetic signature marker found. This does not authenticate a signature."
+                            },
+                            "code": {
+                                "S": "SYNTHETIC_SIGNATURE_MARKER"
+                            },
+                            "sources": {
+                                "L": [
+                                    {
+                                        "M": {
+                                            "document": {
+                                                "S": "06_advisory_agreement.pdf"
+                                            },
+                                            "value": {
+                                                "S": "SIGNED - Marcus Lee"
+                                            },
+                                            "page": {
+                                                "N": "1"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            "account_id": {
+                "S": "T003"
+            },
+            "account_type": {
+                "S": "Traditional IRA"
+            }
+        }
+    ],
+    "Count": 3,
+    "ScannedCount": 3,
+    "ConsumedCapacity": null
+}

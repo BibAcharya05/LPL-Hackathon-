@@ -1,0 +1,12 @@
+account_id	S
+account_type	S
+checks_completed	L
+client_name	S
+issues	L
+normalized_fields	M
+notice	S
+observations	L
+processing_status	S
+status	S
+summary	S
+synthetic	BOOL

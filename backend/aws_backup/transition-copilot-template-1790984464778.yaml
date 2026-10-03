@@ -1,0 +1,183 @@
+---
+Metadata:
+  AWSToolsMetrics:
+    IaC_Generator: "arn:aws:cloudformation:us-east-1:644669036718:generatedTemplate/601b249a-a474-4967-a208-7049e54a8b78"
+Parameters:
+  LambdaFunctionTransitionCopilotRulesCodeS3Bucketopv2W:
+    NoEcho: "true"
+    Type: "String"
+    Description: "An Amazon S3 bucket in the same AWS-Region as your function. The\
+      \ bucket can be in a different AWS-account."
+  LambdaFunctionTransitionCopilotRulesCodeS3ObjectStorageModeGOKNU:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Specifies the storage mode for the deployment package. Use ``COPY``\
+      \ to store the package in LAMlong-managed storage. Use ``REFERENCE`` to read\
+      \ the package directly from the Amazon S3 bucket. If omitted, the default is\
+      \ ``COPY``.Possible values: [COPY, REFERENCE]\nThis property can be replaced\
+      \ with other types"
+  LambdaFunctionTransitionCopilotRulesCodeImageUrib4JFI:
+    NoEcho: "true"
+    Type: "String"
+    Description: "URI of a [container image](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html)\
+      \ in the Amazon ECR registry."
+  LambdaFunctionTransitionCopilotRulesCodeZipFileFIbtC:
+    NoEcho: "true"
+    Type: "String"
+    Description: "(Node.js and Python) The source code of your Lambda function. If\
+      \ you include your function source inline with this parameter, CFN places it\
+      \ in a file named ``index`` and zips it to create a [deployment package](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html).\
+      \ This zip file cannot exceed 4MB. For the ``Handler`` property, the first part\
+      \ of the handler identifier must be ``index``. For example, ``index.handler``.\n\
+      \  When you specify source code inline for a Node.js function, the ``index``\
+      \ file that CFN creates uses the extension ``.js``. This means that Node.js\
+      \ treats the file as a CommonJS module.\n When using Node.js 24 or later, Node.js\
+      \ can automatically detect if a ``.js`` file should be treated as CommonJS or\
+      \ as an ES module. To enable auto-detection, add the ``--experimental-detect-module``\
+      \ flag to the ``NODE_OPTIONS`` environment variable. For more information, see\
+      \ [Experimental Node.js features](https://docs.aws.amazon.com//lambda/latest/dg/lambda-nodejs.html#nodejs-experimental-features).\n\
+      \   For JSON, you must escape quotes and special characters such as newline\
+      \ (``\\n``) with a backslash.\n If you specify a function that interacts with\
+      \ an AWS CloudFormation custom resource, you don't have to write your own functions\
+      \ to send responses to the custom resource that invoked the function. AWS CloudFormation\
+      \ provides a response module ([cfn-response](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-lambda-function-code-cfnresponsemodule.html))\
+      \ that simplifies sending responses. See [Using Lambda with CloudFormation](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html)\
+      \ for details."
+  LambdaFunctionTransitionCopilotRulesCodeSourceKMSKeyArn1x38i:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The ARN of the KMSlong (KMS) customer managed key that's used to\
+      \ encrypt your function's .zip deployment package. If you don't provide a customer\
+      \ managed key, Lambda uses an [owned key](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk)."
+  LambdaFunctionTransitionCopilotRulesCodeS3KeyhBWR6:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The Amazon S3 key of the deployment package."
+  LambdaFunctionTransitionCopilotRulesCodeS3ObjectVersion95dyt:
+    NoEcho: "true"
+    Type: "String"
+    Description: "For versioned objects, the version of the deployment package object\
+      \ to use."
+Resources:
+  S3BucketTransitioncopilotbibekdemo2026:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::S3::Bucket"
+    DeletionPolicy: "Retain"
+    Properties:
+      AbacStatus: "Disabled"
+      PublicAccessBlockConfiguration:
+        RestrictPublicBuckets: true
+        IgnorePublicAcls: true
+        BlockPublicPolicy: true
+        BlockPublicAcls: true
+      BucketName: "transition-copilot-bibek-demo-2026"
+      OwnershipControls:
+        Rules:
+        - ObjectOwnership: "BucketOwnerEnforced"
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+        - BucketKeyEnabled: true
+          BlockedEncryptionTypes:
+            EncryptionType:
+            - "SSE-C"
+          ServerSideEncryptionByDefault:
+            SSEAlgorithm: "AES256"
+  DynamoDBTableTransitionCopilotAccounts:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::DynamoDB::Table"
+    DeletionPolicy: "Retain"
+    Properties:
+      SSESpecification:
+        SSEEnabled: false
+      TableName: "TransitionCopilotAccounts"
+      AttributeDefinitions:
+      - AttributeType: "S"
+        AttributeName: "account_id"
+      ContributorInsightsSpecification:
+        Enabled: false
+      BillingMode: "PAY_PER_REQUEST"
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: false
+      KeySchema:
+      - KeyType: "HASH"
+        AttributeName: "account_id"
+      WarmThroughput:
+        ReadUnitsPerSecond: 12000
+        WriteUnitsPerSecond: 4000
+      DeletionProtectionEnabled: false
+      Tags: []
+      TimeToLiveSpecification:
+        Enabled: false
+  IAMRoleTransitionCopilotRulesRole:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Retain"
+    Properties:
+      Path: "/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      MaxSessionDuration: 3600
+      RoleName: "TransitionCopilotRulesRole"
+      Policies:
+      - PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+          - Resource: "arn:aws:s3:::transition-copilot-bibek-demo-2026/extracted/*"
+            Action: "s3:GetObject"
+            Effect: "Allow"
+          - Resource: "arn:aws:dynamodb:us-east-1:644669036718:table/TransitionCopilotAccounts"
+            Action: "dynamodb:PutItem"
+            Effect: "Allow"
+        PolicyName: "TransitionCopilotDataAccess"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "lambda.amazonaws.com"
+  LambdaFunctionTransitionCopilotRules:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Function"
+    DeletionPolicy: "Retain"
+    Properties:
+      MemorySize: 256
+      Description: ""
+      TracingConfig:
+        Mode: "PassThrough"
+      Timeout: 60
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: "Auto"
+      Handler: "lambda_function.lambda_handler"
+      Code:
+        SourceKMSKeyArn:
+          Ref: "LambdaFunctionTransitionCopilotRulesCodeSourceKMSKeyArn1x38i"
+        S3ObjectVersion:
+          Ref: "LambdaFunctionTransitionCopilotRulesCodeS3ObjectVersion95dyt"
+        S3Bucket:
+          Ref: "LambdaFunctionTransitionCopilotRulesCodeS3Bucketopv2W"
+        ZipFile:
+          Ref: "LambdaFunctionTransitionCopilotRulesCodeZipFileFIbtC"
+        S3Key:
+          Ref: "LambdaFunctionTransitionCopilotRulesCodeS3KeyhBWR6"
+        S3ObjectStorageMode:
+          Ref: "LambdaFunctionTransitionCopilotRulesCodeS3ObjectStorageModeGOKNU"
+        ImageUri:
+          Ref: "LambdaFunctionTransitionCopilotRulesCodeImageUrib4JFI"
+      Role: "arn:aws:iam::644669036718:role/TransitionCopilotRulesRole"
+      FileSystemConfigs: []
+      FunctionName: "TransitionCopilotRules"
+      Runtime: "python3.11"
+      PackageType: "Zip"
+      LoggingConfig:
+        LogFormat: "Text"
+        LogGroup: "/aws/lambda/TransitionCopilotRules"
+      RecursiveLoop: "Terminate"
+      Environment:
+        Variables:
+          PACKET_BUCKET: "transition-copilot-bibek-demo-2026"
+          TABLE_NAME: "TransitionCopilotAccounts"
+      EphemeralStorage:
+        Size: 512
+      Architectures:
+      - "x86_64"

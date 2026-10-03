@@ -1,0 +1,1412 @@
+{
+  "packet_id": "T003",
+  "synthetic": true,
+  "documents": [
+    {
+      "document": "01_existing_account_statement.pdf",
+      "s3_key": "uploads/41c3e28da63d4c79b1753619b206df3b/T003/01_existing_account_statement.pdf",
+      "job_id": "e78d435f292b7f325f07363010b98342719ada787d77309f8bdbe9cfb15fce5c",
+      "lines": [
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 97.46794128417969
+        },
+        {
+          "text": "Northstar Wealth Partners",
+          "page": 1,
+          "confidence": 99.9867172241211
+        },
+        {
+          "text": "Synthetic Existing Account Statement",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 98.66462707519531
+        },
+        {
+          "text": "Account Summary",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Delivering Firm",
+          "page": 1,
+          "confidence": 99.9951171875
+        },
+        {
+          "text": "Northstar Wealth Partners - Fictional",
+          "page": 1,
+          "confidence": 98.62420654296875
+        },
+        {
+          "text": "Statement Period",
+          "page": 1,
+          "confidence": 99.9951171875
+        },
+        {
+          "text": "September 1-30, 2026",
+          "page": 1,
+          "confidence": 99.78734588623047
+        },
+        {
+          "text": "Client Name",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "Marcus Lee",
+          "page": 1,
+          "confidence": 99.94061279296875
+        },
+        {
+          "text": "Mailing Address",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "350 Prototype Road, Mocksville, NC 00000",
+          "page": 1,
+          "confidence": 99.92543029785156
+        },
+        {
+          "text": "Account Number",
+          "page": 1,
+          "confidence": 99.9951171875
+        },
+        {
+          "text": "DEMO-IRA-3003",
+          "page": 1,
+          "confidence": 99.72337341308594
+        },
+        {
+          "text": "Account Type",
+          "page": 1,
+          "confidence": 99.97518920898438
+        },
+        {
+          "text": "Traditional IRA",
+          "page": 1,
+          "confidence": 99.90154266357422
+        },
+        {
+          "text": "Ending Account Value",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "$512,335.10",
+          "page": 1,
+          "confidence": 99.892578125
+        },
+        {
+          "text": "Cash Balance",
+          "page": 1,
+          "confidence": 99.98046875
+        },
+        {
+          "text": "$32,335.10",
+          "page": 1,
+          "confidence": 99.912109375
+        },
+        {
+          "text": "Holdings",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Holding",
+          "page": 1,
+          "confidence": 99.970703125
+        },
+        {
+          "text": "Symbol",
+          "page": 1,
+          "confidence": 99.95037078857422
+        },
+        {
+          "text": "Quantity",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Market Value",
+          "page": 1,
+          "confidence": 99.92595672607422
+        },
+        {
+          "text": "Intermediate Bond Fund",
+          "page": 1,
+          "confidence": 99.79093933105469
+        },
+        {
+          "text": "IBND",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "2,500",
+          "page": 1,
+          "confidence": 99.833984375
+        },
+        {
+          "text": "$250,000.00",
+          "page": 1,
+          "confidence": 99.970703125
+        },
+        {
+          "text": "Dividend Equity Fund",
+          "page": 1,
+          "confidence": 99.98345947265625
+        },
+        {
+          "text": "DIVX",
+          "page": 1,
+          "confidence": 99.990234375
+        },
+        {
+          "text": "1,300",
+          "page": 1,
+          "confidence": 99.6875
+        },
+        {
+          "text": "$130,000.00",
+          "page": 1,
+          "confidence": 99.921875
+        },
+        {
+          "text": "Treasury Ladder Fund",
+          "page": 1,
+          "confidence": 99.97694396972656
+        },
+        {
+          "text": "TLDR",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "1,000",
+          "page": 1,
+          "confidence": 99.72576141357422
+        },
+        {
+          "text": "$100,000.00",
+          "page": 1,
+          "confidence": 99.951171875
+        },
+        {
+          "text": "This statement is entirely synthetic and contains no real customer information.",
+          "page": 1,
+          "confidence": 99.86888122558594
+        },
+        {
+          "text": "Transition Copilot synthetic test fixture",
+          "page": 1,
+          "confidence": 99.74992370605469
+        },
+        {
+          "text": "Page 1",
+          "page": 1,
+          "confidence": 98.86639404296875
+        }
+      ],
+      "fields": [
+        {
+          "label": "Mailing Address",
+          "value": "350 Prototype Road, Mocksville, NC 00000",
+          "page": 1,
+          "confidence": 96.03032684326172
+        },
+        {
+          "label": "Account Number",
+          "value": "DEMO-IRA-3003",
+          "page": 1,
+          "confidence": 95.69532012939453
+        },
+        {
+          "label": "Delivering Firm",
+          "value": "Northstar Wealth Partners - Fictional",
+          "page": 1,
+          "confidence": 95.10823822021484
+        },
+        {
+          "label": "Account Type",
+          "value": "Traditional IRA",
+          "page": 1,
+          "confidence": 95.77635955810547
+        },
+        {
+          "label": "Ending Account Value",
+          "value": "$512,335.10",
+          "page": 1,
+          "confidence": 95.92366027832031
+        },
+        {
+          "label": "Statement Period",
+          "value": "September 1-30, 2026",
+          "page": 1,
+          "confidence": 95.71377563476562
+        },
+        {
+          "label": "Client Name",
+          "value": "Marcus Lee",
+          "page": 1,
+          "confidence": 95.67970275878906
+        },
+        {
+          "label": "Cash Balance",
+          "value": "$32,335.10",
+          "page": 1,
+          "confidence": 95.58488464355469
+        },
+        {
+          "label": "Page",
+          "value": "1",
+          "page": 1,
+          "confidence": 92.99246978759766
+        }
+      ]
+    },
+    {
+      "document": "02_new_account_application.pdf",
+      "s3_key": "uploads/41c3e28da63d4c79b1753619b206df3b/T003/02_new_account_application.pdf",
+      "job_id": "a75fe30c7543bfd7a0f26177cc11be8e3cf3636b987f66845abe9fd5db9d9dcd",
+      "lines": [
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 97.076904296875
+        },
+        {
+          "text": "New Account Application",
+          "page": 1,
+          "confidence": 99.99674224853516
+        },
+        {
+          "text": "Synthetic LPL Transition Intake Form",
+          "page": 1,
+          "confidence": 99.97444915771484
+        },
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 98.7047119140625
+        },
+        {
+          "text": "Account Registration",
+          "page": 1,
+          "confidence": 99.9951171875
+        },
+        {
+          "text": "Receiving Firm",
+          "page": 1,
+          "confidence": 99.9951171875
+        },
+        {
+          "text": "LPL Financial - Hackathon Demo",
+          "page": 1,
+          "confidence": 98.63970947265625
+        },
+        {
+          "text": "Client Name",
+          "page": 1,
+          "confidence": 99.98046875
+        },
+        {
+          "text": "Marcus Lee",
+          "page": 1,
+          "confidence": 99.94140625
+        },
+        {
+          "text": "Date of Birth",
+          "page": 1,
+          "confidence": 99.98046875
+        },
+        {
+          "text": "07/22/1971",
+          "page": 1,
+          "confidence": 99.990234375
+        },
+        {
+          "text": "Mailing Address",
+          "page": 1,
+          "confidence": 99.9951171875
+        },
+        {
+          "text": "305 Prototype Road, Mocksville, NC 00000",
+          "page": 1,
+          "confidence": 99.92921447753906
+        },
+        {
+          "text": "Email",
+          "page": 1,
+          "confidence": 99.990234375
+        },
+        {
+          "text": "marcus.lee@example.com",
+          "page": 1,
+          "confidence": 77.56058502197266
+        },
+        {
+          "text": "Phone",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "555-0103",
+          "page": 1,
+          "confidence": 99.970703125
+        },
+        {
+          "text": "Requested Account Type",
+          "page": 1,
+          "confidence": 99.9867172241211
+        },
+        {
+          "text": "Traditional IRA",
+          "page": 1,
+          "confidence": 99.88201141357422
+        },
+        {
+          "text": "Employment Status",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "Employed",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Annual Income Range",
+          "page": 1,
+          "confidence": 99.97694396972656
+        },
+        {
+          "text": "$75,000-$99,999",
+          "page": 1,
+          "confidence": 99.81365966796875
+        },
+        {
+          "text": "Estimated Net Worth",
+          "page": 1,
+          "confidence": 99.99349212646484
+        },
+        {
+          "text": "$1,000,000-$1,999,999",
+          "page": 1,
+          "confidence": 66.7420654296875
+        },
+        {
+          "text": "Account Preferences",
+          "page": 1,
+          "confidence": 99.88042449951172
+        },
+        {
+          "text": "Investment Objective",
+          "page": 1,
+          "confidence": 99.9353256225586
+        },
+        {
+          "text": "Capital Preservation and Income",
+          "page": 1,
+          "confidence": 99.95789337158203
+        },
+        {
+          "text": "Risk Tolerance",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "Conservative",
+          "page": 1,
+          "confidence": 99.96014404296875
+        },
+        {
+          "text": "Time Horizon",
+          "page": 1,
+          "confidence": 99.970703125
+        },
+        {
+          "text": "5-10 years",
+          "page": 1,
+          "confidence": 99.6044921875
+        },
+        {
+          "text": "Liquidity Need",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "Moderate",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Attestation",
+          "page": 1,
+          "confidence": 99.92028045654297
+        },
+        {
+          "text": "Client Signature",
+          "page": 1,
+          "confidence": 99.970703125
+        },
+        {
+          "text": "SIGNED Marcus Lee",
+          "page": 1,
+          "confidence": 99.7555923461914
+        },
+        {
+          "text": "Signature Date",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "09/30/2026",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "No Social Security number is included in this synthetic dataset.",
+          "page": 1,
+          "confidence": 99.94174194335938
+        },
+        {
+          "text": "Transition Copilot synthetic test fixture",
+          "page": 1,
+          "confidence": 99.73641204833984
+        },
+        {
+          "text": "Page 1",
+          "page": 1,
+          "confidence": 98.4352035522461
+        }
+      ],
+      "fields": [
+        {
+          "label": "SIGNED",
+          "value": "Marcus Lee",
+          "page": 1,
+          "confidence": 90.45989227294922
+        },
+        {
+          "label": "Email",
+          "value": "marcus.lee@example.com",
+          "page": 1,
+          "confidence": 95.77508544921875
+        },
+        {
+          "label": "Mailing Address",
+          "value": "305 Prototype Road, Mocksville, NC 00000",
+          "page": 1,
+          "confidence": 96.02278137207031
+        },
+        {
+          "label": "Signature Date",
+          "value": "09/30/2026",
+          "page": 1,
+          "confidence": 94.2691421508789
+        },
+        {
+          "label": "Investment Objective",
+          "value": "Capital Preservation and Income",
+          "page": 1,
+          "confidence": 95.16636657714844
+        },
+        {
+          "label": "Time Horizon",
+          "value": "5-10 years",
+          "page": 1,
+          "confidence": 95.22185516357422
+        },
+        {
+          "label": "Phone",
+          "value": "555-0103",
+          "page": 1,
+          "confidence": 95.57917022705078
+        },
+        {
+          "label": "Requested Account Type",
+          "value": "Traditional IRA",
+          "page": 1,
+          "confidence": 95.78411102294922
+        },
+        {
+          "label": "Client Name",
+          "value": "Marcus Lee",
+          "page": 1,
+          "confidence": 95.39088439941406
+        },
+        {
+          "label": "Estimated Net Worth",
+          "value": "$1,000,000-$1,999,999",
+          "page": 1,
+          "confidence": 95.13014221191406
+        },
+        {
+          "label": "Client Signature",
+          "value": "",
+          "page": 1,
+          "confidence": 93.60282135009766
+        },
+        {
+          "label": "Liquidity Need",
+          "value": "Moderate",
+          "page": 1,
+          "confidence": 95.0262451171875
+        },
+        {
+          "label": "Annual Income Range",
+          "value": "$75,000-$99,999",
+          "page": 1,
+          "confidence": 95.7194595336914
+        },
+        {
+          "label": "Date of Birth",
+          "value": "07/22/1971",
+          "page": 1,
+          "confidence": 95.7125473022461
+        },
+        {
+          "label": "Risk Tolerance",
+          "value": "Conservative",
+          "page": 1,
+          "confidence": 94.802978515625
+        },
+        {
+          "label": "Receiving Firm",
+          "value": "LPL Financial - Hackathon Demo",
+          "page": 1,
+          "confidence": 94.72282409667969
+        },
+        {
+          "label": "Employment Status",
+          "value": "Employed",
+          "page": 1,
+          "confidence": 95.75764465332031
+        },
+        {
+          "label": "Page",
+          "value": "1",
+          "page": 1,
+          "confidence": 91.52653503417969
+        }
+      ]
+    },
+    {
+      "document": "03_account_transfer_form.pdf",
+      "s3_key": "uploads/41c3e28da63d4c79b1753619b206df3b/T003/03_account_transfer_form.pdf",
+      "job_id": "3b65fee37c0673b637fde0e52d5b981a6848169a3af9712d5466f6d2773fbcf6",
+      "lines": [
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 97.42536926269531
+        },
+        {
+          "text": "Account Transfer Form",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Synthetic ACAT-style Transition Document",
+          "page": 1,
+          "confidence": 99.86572265625
+        },
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 98.62260437011719
+        },
+        {
+          "text": "Transfer Instructions",
+          "page": 1,
+          "confidence": 99.97518920898438
+        },
+        {
+          "text": "Delivering Firm",
+          "page": 1,
+          "confidence": 99.9951171875
+        },
+        {
+          "text": "Northstar Wealth Partners - Fictional",
+          "page": 1,
+          "confidence": 98.82099151611328
+        },
+        {
+          "text": "Client Name",
+          "page": 1,
+          "confidence": 99.98046875
+        },
+        {
+          "text": "Marcus Lee",
+          "page": 1,
+          "confidence": 99.95565795898438
+        },
+        {
+          "text": "Delivering Account Number",
+          "page": 1,
+          "confidence": 99.990234375
+        },
+        {
+          "text": "DEMO-IRA-3003",
+          "page": 1,
+          "confidence": 99.73473358154297
+        },
+        {
+          "text": "Account Type",
+          "page": 1,
+          "confidence": 99.96542358398438
+        },
+        {
+          "text": "Traditional IRA",
+          "page": 1,
+          "confidence": 99.9011459350586
+        },
+        {
+          "text": "Transfer Type",
+          "page": 1,
+          "confidence": 99.91539764404297
+        },
+        {
+          "text": "Full",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Transfer Instruction",
+          "page": 1,
+          "confidence": 99.96054077148438
+        },
+        {
+          "text": "Transfer all eligible assets in kind.",
+          "page": 1,
+          "confidence": 99.9189224243164
+        },
+        {
+          "text": "Estimated Transfer Value",
+          "page": 1,
+          "confidence": 99.9867172241211
+        },
+        {
+          "text": "$512,335.10",
+          "page": 1,
+          "confidence": 99.814453125
+        },
+        {
+          "text": "Client Signature",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "SIGNED - Marcus Lee",
+          "page": 1,
+          "confidence": 97.15681457519531
+        },
+        {
+          "text": "Signature Date",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "09/30/2026",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Operational note: transferability of individual assets is outside the scope of this synthetic test fixture.",
+          "page": 1,
+          "confidence": 99.921142578125
+        },
+        {
+          "text": "Transition Copilot synthetic test fixture",
+          "page": 1,
+          "confidence": 99.75593566894531
+        },
+        {
+          "text": "Page 1",
+          "page": 1,
+          "confidence": 98.7634506225586
+        }
+      ],
+      "fields": [
+        {
+          "label": "SIGNED",
+          "value": "",
+          "page": 1,
+          "confidence": 96.08919525146484
+        },
+        {
+          "label": "Account Type",
+          "value": "Traditional IRA",
+          "page": 1,
+          "confidence": 95.81227111816406
+        },
+        {
+          "label": "Transfer Type",
+          "value": "Full",
+          "page": 1,
+          "confidence": 95.74224090576172
+        },
+        {
+          "label": "Estimated Transfer Value",
+          "value": "$512,335.10",
+          "page": 1,
+          "confidence": 95.85977172851562
+        },
+        {
+          "label": "Client Name",
+          "value": "Marcus Lee",
+          "page": 1,
+          "confidence": 95.52149963378906
+        },
+        {
+          "label": "Operational note:",
+          "value": "transferability of individual assets is outside the scope of this synthetic test fixture.",
+          "page": 1,
+          "confidence": 92.6675796508789
+        },
+        {
+          "label": "Signature Date",
+          "value": "09/30/2026",
+          "page": 1,
+          "confidence": 95.62071990966797
+        },
+        {
+          "label": "Delivering Account Number",
+          "value": "DEMO-IRA-3003",
+          "page": 1,
+          "confidence": 95.76514434814453
+        },
+        {
+          "label": "Delivering Firm",
+          "value": "Northstar Wealth Partners - Fictional",
+          "page": 1,
+          "confidence": 95.03868103027344
+        },
+        {
+          "label": "Transfer Instruction",
+          "value": "Transfer all eligible assets in kind.",
+          "page": 1,
+          "confidence": 95.89550018310547
+        },
+        {
+          "label": "Client Signature",
+          "value": "- Marcus Lee",
+          "page": 1,
+          "confidence": 95.65360260009766
+        },
+        {
+          "label": "Page",
+          "value": "1",
+          "page": 1,
+          "confidence": 92.37181854248047
+        },
+        {
+          "label": "Synthetic",
+          "value": "ACAT-style Transition Document",
+          "page": 1,
+          "confidence": 46.94051742553711
+        }
+      ]
+    },
+    {
+      "document": "04_investor_profile.pdf",
+      "s3_key": "uploads/41c3e28da63d4c79b1753619b206df3b/T003/04_investor_profile.pdf",
+      "job_id": "af87b181ec5f874875632373f49e5d18ddf4dcc3e68629b5b3fbb6d731d8aaca",
+      "lines": [
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 97.55719757080078
+        },
+        {
+          "text": "Investor Profile Questionnaire",
+          "page": 1,
+          "confidence": 99.89044952392578
+        },
+        {
+          "text": "Synthetic Suitability / Profile Data",
+          "page": 1,
+          "confidence": 99.05592346191406
+        },
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 98.63951873779297
+        },
+        {
+          "text": "Investor Profile",
+          "page": 1,
+          "confidence": 99.98007202148438
+        },
+        {
+          "text": "Client Name",
+          "page": 1,
+          "confidence": 99.98046875
+        },
+        {
+          "text": "Marcus Lee",
+          "page": 1,
+          "confidence": 99.90154266357422
+        },
+        {
+          "text": "Annual Income Range",
+          "page": 1,
+          "confidence": 99.98371887207031
+        },
+        {
+          "text": "$75,000-$99,999",
+          "page": 1,
+          "confidence": 99.80388641357422
+        },
+        {
+          "text": "Estimated Net Worth",
+          "page": 1,
+          "confidence": 99.99674224853516
+        },
+        {
+          "text": "$1,000,000-$1,999,999",
+          "page": 1,
+          "confidence": 98.09550476074219
+        },
+        {
+          "text": "Liquid Net Worth",
+          "page": 1,
+          "confidence": 99.99349212646484
+        },
+        {
+          "text": "$500,000-$999,999",
+          "page": 1,
+          "confidence": 99.76403045654297
+        },
+        {
+          "text": "Investment Objective",
+          "page": 1,
+          "confidence": 99.96014404296875
+        },
+        {
+          "text": "Capital Preservation and Income",
+          "page": 1,
+          "confidence": 99.95525360107422
+        },
+        {
+          "text": "Risk Tolerance",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "Moderate",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Investment Experience",
+          "page": 1,
+          "confidence": 99.95037078857422
+        },
+        {
+          "text": "10+ years",
+          "page": 1,
+          "confidence": 99.443359375
+        },
+        {
+          "text": "Time Horizon",
+          "page": 1,
+          "confidence": 99.9755859375
+        },
+        {
+          "text": "5-10 years",
+          "page": 1,
+          "confidence": 99.62890625
+        },
+        {
+          "text": "Liquidity Need",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "Moderate",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "This questionnaire is a simplified synthetic demo and is not intended to represent any real firm form or regulatory requirement.",
+          "page": 1,
+          "confidence": 99.88988494873047
+        },
+        {
+          "text": "Transition Copilot synthetic test fixture",
+          "page": 1,
+          "confidence": 99.73039245605469
+        },
+        {
+          "text": "Page 1",
+          "page": 1,
+          "confidence": 98.75289154052734
+        }
+      ],
+      "fields": [
+        {
+          "label": "Liquid Net Worth",
+          "value": "$500,000-$999,999",
+          "page": 1,
+          "confidence": 96.01277923583984
+        },
+        {
+          "label": "Investment Objective",
+          "value": "Capital Preservation and Income",
+          "page": 1,
+          "confidence": 95.94080352783203
+        },
+        {
+          "label": "Client Name",
+          "value": "Marcus Lee",
+          "page": 1,
+          "confidence": 94.99722290039062
+        },
+        {
+          "label": "Risk Tolerance",
+          "value": "Moderate",
+          "page": 1,
+          "confidence": 95.79537200927734
+        },
+        {
+          "label": "Investment Experience",
+          "value": "10+ years",
+          "page": 1,
+          "confidence": 95.75126647949219
+        },
+        {
+          "label": "Liquidity Need",
+          "value": "Moderate",
+          "page": 1,
+          "confidence": 95.53632354736328
+        },
+        {
+          "label": "Estimated Net Worth",
+          "value": "$1,000,000-$1,999,999",
+          "page": 1,
+          "confidence": 95.79069519042969
+        },
+        {
+          "label": "Time Horizon",
+          "value": "5-10 years",
+          "page": 1,
+          "confidence": 95.67028045654297
+        },
+        {
+          "label": "Annual Income Range",
+          "value": "$75,000-$99,999",
+          "page": 1,
+          "confidence": 95.78440856933594
+        },
+        {
+          "label": "Page",
+          "value": "1",
+          "page": 1,
+          "confidence": 92.35904693603516
+        },
+        {
+          "label": "Synthetic Suitability / Profile",
+          "value": "Data",
+          "page": 1,
+          "confidence": 34.2706298828125
+        }
+      ]
+    },
+    {
+      "document": "05_beneficiary_designation.pdf",
+      "s3_key": "uploads/41c3e28da63d4c79b1753619b206df3b/T003/05_beneficiary_designation.pdf",
+      "job_id": "af073e25961a64b9b3f5af3b911f62aef98f48a4037539c6dea25d8a49e4a0c0",
+      "lines": [
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 97.08750915527344
+        },
+        {
+          "text": "Beneficiary Designation",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Synthetic Transition Document",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 98.65362548828125
+        },
+        {
+          "text": "Beneficiary Designation",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Client Name",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "Marcus Lee",
+          "page": 1,
+          "confidence": 99.95565795898438
+        },
+        {
+          "text": "Account Number",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "DEMO-IRA-3003",
+          "page": 1,
+          "confidence": 99.73394012451172
+        },
+        {
+          "text": "Primary Beneficiary",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Dana Lee",
+          "page": 1,
+          "confidence": 99.92636108398438
+        },
+        {
+          "text": "Relationship",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Spouse",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Allocation",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "100%",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Contingent Beneficiary",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "None listed",
+          "page": 1,
+          "confidence": 99.9755859375
+        },
+        {
+          "text": "Client Signature",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "SIGNED - Marcus Lee",
+          "page": 1,
+          "confidence": 97.24793243408203
+        },
+        {
+          "text": "Signature Date",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "09/30/2026",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Beneficiary rules in this file are synthetic workflow rules for testing only.",
+          "page": 1,
+          "confidence": 99.97036743164062
+        },
+        {
+          "text": "Transition Copilot synthetic test fixture",
+          "page": 1,
+          "confidence": 99.78977966308594
+        },
+        {
+          "text": "Page 1",
+          "page": 1,
+          "confidence": 98.51422882080078
+        }
+      ],
+      "fields": [
+        {
+          "label": "SIGNED",
+          "value": "- Marcus Lee",
+          "page": 1,
+          "confidence": 91.01702880859375
+        },
+        {
+          "label": "Relationship",
+          "value": "Spouse",
+          "page": 1,
+          "confidence": 95.6109619140625
+        },
+        {
+          "label": "Allocation",
+          "value": "100%",
+          "page": 1,
+          "confidence": 95.16708374023438
+        },
+        {
+          "label": "Client Name",
+          "value": "Marcus Lee",
+          "page": 1,
+          "confidence": 95.12619018554688
+        },
+        {
+          "label": "Client Signature",
+          "value": "",
+          "page": 1,
+          "confidence": 95.50660705566406
+        },
+        {
+          "label": "Account Number",
+          "value": "DEMO-IRA-3003",
+          "page": 1,
+          "confidence": 95.60236358642578
+        },
+        {
+          "label": "Primary Beneficiary",
+          "value": "Dana Lee",
+          "page": 1,
+          "confidence": 95.590576171875
+        },
+        {
+          "label": "Contingent Beneficiary",
+          "value": "None listed",
+          "page": 1,
+          "confidence": 95.77558135986328
+        },
+        {
+          "label": "Signature Date",
+          "value": "09/30/2026",
+          "page": 1,
+          "confidence": 95.51850128173828
+        },
+        {
+          "label": "Page",
+          "value": "1",
+          "page": 1,
+          "confidence": 92.35618591308594
+        }
+      ]
+    },
+    {
+      "document": "06_advisory_agreement.pdf",
+      "s3_key": "uploads/41c3e28da63d4c79b1753619b206df3b/T003/06_advisory_agreement.pdf",
+      "job_id": "31dc0329db7e8df448ae223fe3ec0bf760ce6da62c58e89bb1eb67c00d728995",
+      "lines": [
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 97.34944915771484
+        },
+        {
+          "text": "Advisory Agreement",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Synthetic Demonstration Agreement",
+          "page": 1,
+          "confidence": 99.9867172241211
+        },
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 98.663818359375
+        },
+        {
+          "text": "Advisory Relationship",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Client Name",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "Marcus Lee",
+          "page": 1,
+          "confidence": 99.92595672607422
+        },
+        {
+          "text": "Account Number",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "DEMO-IRA-3003",
+          "page": 1,
+          "confidence": 99.79332733154297
+        },
+        {
+          "text": "Program",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Income Portfolio Demo",
+          "page": 1,
+          "confidence": 99.75293731689453
+        },
+        {
+          "text": "Billing Method",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Quarterly in arrears",
+          "page": 1,
+          "confidence": 99.96392822265625
+        },
+        {
+          "text": "Annual Advisory Fee",
+          "page": 1,
+          "confidence": 99.99349212646484
+        },
+        {
+          "text": "0.70%",
+          "page": 1,
+          "confidence": 99.970703125
+        },
+        {
+          "text": "Effective Upon Transfer",
+          "page": 1,
+          "confidence": 99.9802017211914
+        },
+        {
+          "text": "Yes",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Client Signature",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "SIGNED - Marcus Lee",
+          "page": 1,
+          "confidence": 96.70350646972656
+        },
+        {
+          "text": "Signature Date",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "09/30/2026",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Demo Terms",
+          "page": 1,
+          "confidence": 99.96014404296875
+        },
+        {
+          "text": "This synthetic agreement exists solely to create a realistic test artifact for document extraction and consistency checks. It has no legal effect.",
+          "page": 1,
+          "confidence": 99.94053649902344
+        },
+        {
+          "text": "Transition Copilot synthetic test fixture",
+          "page": 1,
+          "confidence": 99.6983413696289
+        },
+        {
+          "text": "Page 1",
+          "page": 1,
+          "confidence": 98.62842559814453
+        }
+      ],
+      "fields": [
+        {
+          "label": "SIGNED -",
+          "value": "",
+          "page": 1,
+          "confidence": 98.73263549804688
+        },
+        {
+          "label": "Billing Method",
+          "value": "Quarterly in arrears",
+          "page": 1,
+          "confidence": 95.92131805419922
+        },
+        {
+          "label": "Annual Advisory Fee",
+          "value": "0.70%",
+          "page": 1,
+          "confidence": 95.73080444335938
+        },
+        {
+          "label": "Client Name",
+          "value": "Marcus Lee",
+          "page": 1,
+          "confidence": 95.07836151123047
+        },
+        {
+          "label": "Client Signature",
+          "value": "Marcus Lee",
+          "page": 1,
+          "confidence": 95.55613708496094
+        },
+        {
+          "label": "Account Number",
+          "value": "DEMO-IRA-3003",
+          "page": 1,
+          "confidence": 95.56927490234375
+        },
+        {
+          "label": "Program",
+          "value": "Income Portfolio Demo",
+          "page": 1,
+          "confidence": 95.23680114746094
+        },
+        {
+          "label": "Effective Upon Transfer",
+          "value": "Yes",
+          "page": 1,
+          "confidence": 96.00165557861328
+        },
+        {
+          "label": "Signature Date",
+          "value": "09/30/2026",
+          "page": 1,
+          "confidence": 95.57769012451172
+        },
+        {
+          "label": "Page",
+          "value": "1",
+          "page": 1,
+          "confidence": 92.45995330810547
+        },
+        {
+          "label": "Demo Terms",
+          "value": "This synthetic agreement exists solely to create a realistic test artifact for document extraction and consistency checks. It has no legal effect.",
+          "page": 1,
+          "confidence": 74.02802276611328
+        }
+      ]
+    }
+  ]
+}

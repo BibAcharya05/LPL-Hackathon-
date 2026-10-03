@@ -1,0 +1,38 @@
+{
+    "Table": {
+        "AttributeDefinitions": [
+            {
+                "AttributeName": "account_id",
+                "AttributeType": "S"
+            }
+        ],
+        "TableName": "TransitionCopilotAccounts",
+        "KeySchema": [
+            {
+                "AttributeName": "account_id",
+                "KeyType": "HASH"
+            }
+        ],
+        "TableStatus": "ACTIVE",
+        "CreationDateTime": "2026-10-02T22:58:33.498000+00:00",
+        "ProvisionedThroughput": {
+            "NumberOfDecreasesToday": 0,
+            "ReadCapacityUnits": 0,
+            "WriteCapacityUnits": 0
+        },
+        "TableSizeBytes": 0,
+        "ItemCount": 0,
+        "TableArn": "arn:aws:dynamodb:us-east-1:644669036718:table/TransitionCopilotAccounts",
+        "TableId": "69245292-19cd-4be3-a808-46c74fc39f2d",
+        "BillingModeSummary": {
+            "BillingMode": "PAY_PER_REQUEST",
+            "LastUpdateToPayPerRequestDateTime": "2026-10-02T22:58:33.498000+00:00"
+        },
+        "DeletionProtectionEnabled": false,
+        "WarmThroughput": {
+            "ReadUnitsPerSecond": 12000,
+            "WriteUnitsPerSecond": 4000,
+            "Status": "ACTIVE"
+        }
+    }
+}

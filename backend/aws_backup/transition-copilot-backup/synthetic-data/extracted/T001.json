@@ -1,0 +1,1394 @@
+{
+  "packet_id": "T001",
+  "synthetic": true,
+  "documents": [
+    {
+      "document": "01_existing_account_statement.pdf",
+      "s3_key": "uploads/f94cb38884834c7eac931f06be85a368/T001/01_existing_account_statement.pdf",
+      "job_id": "d74bd187c5e02697dc87b30170b6ca0e442f1461e8e43f05b4db61617095370b",
+      "lines": [
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 97.49681091308594
+        },
+        {
+          "text": "Northstar Wealth Partners",
+          "page": 1,
+          "confidence": 99.9867172241211
+        },
+        {
+          "text": "Synthetic Existing Account Statement",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 98.64655303955078
+        },
+        {
+          "text": "Account Summary",
+          "page": 1,
+          "confidence": 99.98007202148438
+        },
+        {
+          "text": "Delivering Firm",
+          "page": 1,
+          "confidence": 99.9951171875
+        },
+        {
+          "text": "Northstar Wealth Partners - Fictional",
+          "page": 1,
+          "confidence": 98.50310516357422
+        },
+        {
+          "text": "Statement Period",
+          "page": 1,
+          "confidence": 99.9951171875
+        },
+        {
+          "text": "September 1-30, 2026",
+          "page": 1,
+          "confidence": 99.777587890625
+        },
+        {
+          "text": "Client Name",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "Jordan Kim",
+          "page": 1,
+          "confidence": 99.93083953857422
+        },
+        {
+          "text": "Mailing Address",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "100 Demo Avenue, Sample City, NC 00000",
+          "page": 1,
+          "confidence": 99.94339752197266
+        },
+        {
+          "text": "Account Number",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "DEMO-IRA-1001",
+          "page": 1,
+          "confidence": 99.677734375
+        },
+        {
+          "text": "Account Type",
+          "page": 1,
+          "confidence": 99.97518920898438
+        },
+        {
+          "text": "Traditional IRA",
+          "page": 1,
+          "confidence": 99.89178466796875
+        },
+        {
+          "text": "Ending Account Value",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "$286,420.55",
+          "page": 1,
+          "confidence": 99.921875
+        },
+        {
+          "text": "Cash Balance",
+          "page": 1,
+          "confidence": 99.98046875
+        },
+        {
+          "text": "$18,420.55",
+          "page": 1,
+          "confidence": 99.833984375
+        },
+        {
+          "text": "Holdings",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Holding",
+          "page": 1,
+          "confidence": 99.970703125
+        },
+        {
+          "text": "Symbol",
+          "page": 1,
+          "confidence": 99.990234375
+        },
+        {
+          "text": "Quantity",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Market Value",
+          "page": 1,
+          "confidence": 99.94100952148438
+        },
+        {
+          "text": "Total Market ETF",
+          "page": 1,
+          "confidence": 99.95767974853516
+        },
+        {
+          "text": "TMKT",
+          "page": 1,
+          "confidence": 96.41262817382812
+        },
+        {
+          "text": "700",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "$154,000.00",
+          "page": 1,
+          "confidence": 99.921875
+        },
+        {
+          "text": "US Bond Fund",
+          "page": 1,
+          "confidence": 99.9574203491211
+        },
+        {
+          "text": "USBX",
+          "page": 1,
+          "confidence": 99.96014404296875
+        },
+        {
+          "text": "900",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "$72,000.00",
+          "page": 1,
+          "confidence": 99.970703125
+        },
+        {
+          "text": "Dividend Equity Fund",
+          "page": 1,
+          "confidence": 99.98345947265625
+        },
+        {
+          "text": "DIVX",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "420",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "$42,000.00",
+          "page": 1,
+          "confidence": 99.970703125
+        },
+        {
+          "text": "This statement is entirely synthetic and contains no real customer information.",
+          "page": 1,
+          "confidence": 99.86976623535156
+        },
+        {
+          "text": "Transition Copilot synthetic test fixture",
+          "page": 1,
+          "confidence": 99.77578735351562
+        },
+        {
+          "text": "Page 1",
+          "page": 1,
+          "confidence": 98.83181762695312
+        }
+      ],
+      "fields": [
+        {
+          "label": "Mailing Address",
+          "value": "100 Demo Avenue, Sample City, NC 00000",
+          "page": 1,
+          "confidence": 95.9908676147461
+        },
+        {
+          "label": "Account Number",
+          "value": "DEMO-IRA-1001",
+          "page": 1,
+          "confidence": 95.71078491210938
+        },
+        {
+          "label": "Delivering Firm",
+          "value": "Northstar Wealth Partners - Fictional",
+          "page": 1,
+          "confidence": 95.11931610107422
+        },
+        {
+          "label": "Account Type",
+          "value": "Traditional IRA",
+          "page": 1,
+          "confidence": 95.77964782714844
+        },
+        {
+          "label": "Ending Account Value",
+          "value": "$286,420.55",
+          "page": 1,
+          "confidence": 95.94284057617188
+        },
+        {
+          "label": "Statement Period",
+          "value": "September 1-30, 2026",
+          "page": 1,
+          "confidence": 95.7029037475586
+        },
+        {
+          "label": "Client Name",
+          "value": "Jordan Kim",
+          "page": 1,
+          "confidence": 95.73702239990234
+        },
+        {
+          "label": "Cash Balance",
+          "value": "$18,420.55",
+          "page": 1,
+          "confidence": 95.56925201416016
+        },
+        {
+          "label": "Page",
+          "value": "1",
+          "page": 1,
+          "confidence": 93.0185317993164
+        }
+      ]
+    },
+    {
+      "document": "02_new_account_application.pdf",
+      "s3_key": "uploads/f94cb38884834c7eac931f06be85a368/T001/02_new_account_application.pdf",
+      "job_id": "4313de8d95469b3aefb0a59a7734511356301a447dd5ffbfba627d4fc2383d73",
+      "lines": [
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 97.19003295898438
+        },
+        {
+          "text": "New Account Application",
+          "page": 1,
+          "confidence": 99.99674224853516
+        },
+        {
+          "text": "Synthetic LPL Transition Intake Form",
+          "page": 1,
+          "confidence": 99.97444915771484
+        },
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 98.34465026855469
+        },
+        {
+          "text": "Account Registration",
+          "page": 1,
+          "confidence": 99.9951171875
+        },
+        {
+          "text": "Receiving Firm",
+          "page": 1,
+          "confidence": 99.9951171875
+        },
+        {
+          "text": "LPL Financial - Hackathon Demo",
+          "page": 1,
+          "confidence": 98.62133026123047
+        },
+        {
+          "text": "Client Name",
+          "page": 1,
+          "confidence": 99.98046875
+        },
+        {
+          "text": "Jordan Kim",
+          "page": 1,
+          "confidence": 99.86656951904297
+        },
+        {
+          "text": "Date of Birth",
+          "page": 1,
+          "confidence": 99.98371887207031
+        },
+        {
+          "text": "02/14/1978",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Mailing Address",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "100 Demo Avenue, Sample City, NC 00000",
+          "page": 1,
+          "confidence": 99.9395523071289
+        },
+        {
+          "text": "Email",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "jordan.kim@example.com",
+          "page": 1,
+          "confidence": 98.45683288574219
+        },
+        {
+          "text": "Phone",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "555-0101",
+          "page": 1,
+          "confidence": 99.9609375
+        },
+        {
+          "text": "Requested Account Type",
+          "page": 1,
+          "confidence": 99.9867172241211
+        },
+        {
+          "text": "Traditional IRA",
+          "page": 1,
+          "confidence": 99.8767318725586
+        },
+        {
+          "text": "Employment Status",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "Employed",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Annual Income Range",
+          "page": 1,
+          "confidence": 99.9802017211914
+        },
+        {
+          "text": "$100,000-$149,999",
+          "page": 1,
+          "confidence": 99.560546875
+        },
+        {
+          "text": "Estimated Net Worth",
+          "page": 1,
+          "confidence": 99.98697662353516
+        },
+        {
+          "text": "$500,000-$999,999",
+          "page": 1,
+          "confidence": 99.833984375
+        },
+        {
+          "text": "Account Preferences",
+          "page": 1,
+          "confidence": 99.96014404296875
+        },
+        {
+          "text": "Investment Objective",
+          "page": 1,
+          "confidence": 99.9353256225586
+        },
+        {
+          "text": "Growth and Income",
+          "page": 1,
+          "confidence": 99.96392822265625
+        },
+        {
+          "text": "Risk Tolerance",
+          "page": 1,
+          "confidence": 99.90563201904297
+        },
+        {
+          "text": "Moderate",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Time Horizon",
+          "page": 1,
+          "confidence": 99.98046875
+        },
+        {
+          "text": "10+ years",
+          "page": 1,
+          "confidence": 99.1748046875
+        },
+        {
+          "text": "Liquidity Need",
+          "page": 1,
+          "confidence": 99.9755859375
+        },
+        {
+          "text": "Low",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Attestation",
+          "page": 1,
+          "confidence": 99.92028045654297
+        },
+        {
+          "text": "Client Signature",
+          "page": 1,
+          "confidence": 99.990234375
+        },
+        {
+          "text": "SIGNED Jordan Kim",
+          "page": 1,
+          "confidence": 99.6991958618164
+        },
+        {
+          "text": "Signature Date",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "10/01/2026",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "No Social Security number is included in this synthetic dataset.",
+          "page": 1,
+          "confidence": 99.91082763671875
+        },
+        {
+          "text": "Transition Copilot synthetic test fixture",
+          "page": 1,
+          "confidence": 99.74437713623047
+        },
+        {
+          "text": "Page 1",
+          "page": 1,
+          "confidence": 98.44985961914062
+        }
+      ],
+      "fields": [
+        {
+          "label": "SIGNED",
+          "value": "Jordan Kim",
+          "page": 1,
+          "confidence": 91.35017395019531
+        },
+        {
+          "label": "Client Signature",
+          "value": "",
+          "page": 1,
+          "confidence": 93.57823944091797
+        },
+        {
+          "label": "Page",
+          "value": "1",
+          "page": 1,
+          "confidence": 91.74644470214844
+        },
+        {
+          "label": "Mailing Address",
+          "value": "100 Demo Avenue, Sample City, NC 00000",
+          "page": 1,
+          "confidence": 95.9836196899414
+        },
+        {
+          "label": "Signature Date",
+          "value": "10/01/2026",
+          "page": 1,
+          "confidence": 94.21158599853516
+        },
+        {
+          "label": "Email",
+          "value": "jordan.kim@example.com",
+          "page": 1,
+          "confidence": 95.71341705322266
+        },
+        {
+          "label": "Investment Objective",
+          "value": "Growth and Income",
+          "page": 1,
+          "confidence": 94.97416687011719
+        },
+        {
+          "label": "Time Horizon",
+          "value": "10+ years",
+          "page": 1,
+          "confidence": 95.02980041503906
+        },
+        {
+          "label": "Phone",
+          "value": "555-0101",
+          "page": 1,
+          "confidence": 95.58232116699219
+        },
+        {
+          "label": "Requested Account Type",
+          "value": "Traditional IRA",
+          "page": 1,
+          "confidence": 95.77957916259766
+        },
+        {
+          "label": "Client Name",
+          "value": "Jordan Kim",
+          "page": 1,
+          "confidence": 95.39757537841797
+        },
+        {
+          "label": "Estimated Net Worth",
+          "value": "$500,000-$999,999",
+          "page": 1,
+          "confidence": 95.17611694335938
+        },
+        {
+          "label": "Liquidity Need",
+          "value": "Low",
+          "page": 1,
+          "confidence": 94.96636962890625
+        },
+        {
+          "label": "Annual Income Range",
+          "value": "$100,000-$149,999",
+          "page": 1,
+          "confidence": 95.72332000732422
+        },
+        {
+          "label": "Date of Birth",
+          "value": "02/14/1978",
+          "page": 1,
+          "confidence": 95.69774627685547
+        },
+        {
+          "label": "Risk Tolerance",
+          "value": "Moderate",
+          "page": 1,
+          "confidence": 94.73746490478516
+        },
+        {
+          "label": "Receiving Firm",
+          "value": "LPL Financial - Hackathon Demo",
+          "page": 1,
+          "confidence": 94.74420166015625
+        },
+        {
+          "label": "Employment Status",
+          "value": "Employed",
+          "page": 1,
+          "confidence": 95.74862670898438
+        }
+      ]
+    },
+    {
+      "document": "03_account_transfer_form.pdf",
+      "s3_key": "uploads/f94cb38884834c7eac931f06be85a368/T001/03_account_transfer_form.pdf",
+      "job_id": "0ab92d43a67324fd957e018bfb101f8ee3769856a91f8453954780a76f77d6cc",
+      "lines": [
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 97.4197769165039
+        },
+        {
+          "text": "Account Transfer Form",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Synthetic ACAT-style Transition Document",
+          "page": 1,
+          "confidence": 99.86083984375
+        },
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 98.61306762695312
+        },
+        {
+          "text": "Transfer Instructions",
+          "page": 1,
+          "confidence": 99.9951171875
+        },
+        {
+          "text": "Delivering Firm",
+          "page": 1,
+          "confidence": 99.9951171875
+        },
+        {
+          "text": "Northstar Wealth Partners - Fictional",
+          "page": 1,
+          "confidence": 98.8113784790039
+        },
+        {
+          "text": "Client Name",
+          "page": 1,
+          "confidence": 99.98046875
+        },
+        {
+          "text": "Jordan Kim",
+          "page": 1,
+          "confidence": 99.8864974975586
+        },
+        {
+          "text": "Delivering Account Number",
+          "page": 1,
+          "confidence": 99.990234375
+        },
+        {
+          "text": "DEMO-IRA-1001",
+          "page": 1,
+          "confidence": 99.482421875
+        },
+        {
+          "text": "Account Type",
+          "page": 1,
+          "confidence": 99.96542358398438
+        },
+        {
+          "text": "Traditional IRA",
+          "page": 1,
+          "confidence": 99.91131591796875
+        },
+        {
+          "text": "Transfer Type",
+          "page": 1,
+          "confidence": 99.91539764404297
+        },
+        {
+          "text": "Full",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Transfer Instruction",
+          "page": 1,
+          "confidence": 99.93083953857422
+        },
+        {
+          "text": "Transfer all eligible assets in kind; transfer cash balance as cash.",
+          "page": 1,
+          "confidence": 99.9341049194336
+        },
+        {
+          "text": "Estimated Transfer Value",
+          "page": 1,
+          "confidence": 99.9867172241211
+        },
+        {
+          "text": "$286,420.55",
+          "page": 1,
+          "confidence": 99.873046875
+        },
+        {
+          "text": "Client Signature",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "SIGNED - Jordan Kim",
+          "page": 1,
+          "confidence": 96.48116302490234
+        },
+        {
+          "text": "Signature Date",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "10/01/2026",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Operational note: transferability of individual assets is outside the scope of this synthetic test fixture.",
+          "page": 1,
+          "confidence": 99.91848754882812
+        },
+        {
+          "text": "Transition Copilot synthetic test fixture",
+          "page": 1,
+          "confidence": 99.69232177734375
+        },
+        {
+          "text": "Page 1",
+          "page": 1,
+          "confidence": 98.7292709350586
+        }
+      ],
+      "fields": [
+        {
+          "label": "SIGNED",
+          "value": "",
+          "page": 1,
+          "confidence": 96.01026916503906
+        },
+        {
+          "label": "Account Type",
+          "value": "Traditional IRA",
+          "page": 1,
+          "confidence": 95.81092834472656
+        },
+        {
+          "label": "Transfer Type",
+          "value": "Full",
+          "page": 1,
+          "confidence": 95.75523376464844
+        },
+        {
+          "label": "Estimated Transfer Value",
+          "value": "$286,420.55",
+          "page": 1,
+          "confidence": 95.87332916259766
+        },
+        {
+          "label": "Client Name",
+          "value": "Jordan Kim",
+          "page": 1,
+          "confidence": 95.53123474121094
+        },
+        {
+          "label": "Signature Date",
+          "value": "10/01/2026",
+          "page": 1,
+          "confidence": 95.6258773803711
+        },
+        {
+          "label": "Delivering Account Number",
+          "value": "DEMO-IRA-1001",
+          "page": 1,
+          "confidence": 95.79488372802734
+        },
+        {
+          "label": "Delivering Firm",
+          "value": "Northstar Wealth Partners - Fictional",
+          "page": 1,
+          "confidence": 95.03866577148438
+        },
+        {
+          "label": "Transfer Instruction",
+          "value": "Transfer all eligible assets in kind; transfer cash balance as cash.",
+          "page": 1,
+          "confidence": 95.87653350830078
+        },
+        {
+          "label": "Client Signature",
+          "value": "- Jordan Kim",
+          "page": 1,
+          "confidence": 95.67477416992188
+        },
+        {
+          "label": "Page",
+          "value": "1",
+          "page": 1,
+          "confidence": 92.39530181884766
+        },
+        {
+          "label": "Operational note:",
+          "value": "transferability of individual assets is outside the scope of this synthetic test fixture.",
+          "page": 1,
+          "confidence": 73.66252899169922
+        }
+      ]
+    },
+    {
+      "document": "04_investor_profile.pdf",
+      "s3_key": "uploads/f94cb38884834c7eac931f06be85a368/T001/04_investor_profile.pdf",
+      "job_id": "ea1328e8cbe2aaef7a69dbcc32727f41b90c895c741f49deba0db399fc2c15e1",
+      "lines": [
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 97.53144073486328
+        },
+        {
+          "text": "Investor Profile Questionnaire",
+          "page": 1,
+          "confidence": 99.89370727539062
+        },
+        {
+          "text": "Synthetic Suitability / Profile Data",
+          "page": 1,
+          "confidence": 99.03443908691406
+        },
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 98.6214370727539
+        },
+        {
+          "text": "Investor Profile",
+          "page": 1,
+          "confidence": 99.97518920898438
+        },
+        {
+          "text": "Client Name",
+          "page": 1,
+          "confidence": 99.98046875
+        },
+        {
+          "text": "Jordan Kim",
+          "page": 1,
+          "confidence": 99.88162231445312
+        },
+        {
+          "text": "Annual Income Range",
+          "page": 1,
+          "confidence": 99.97721099853516
+        },
+        {
+          "text": "$100,000-$149,999",
+          "page": 1,
+          "confidence": 99.619140625
+        },
+        {
+          "text": "Estimated Net Worth",
+          "page": 1,
+          "confidence": 99.99674224853516
+        },
+        {
+          "text": "$500,000-$999,999",
+          "page": 1,
+          "confidence": 99.80388641357422
+        },
+        {
+          "text": "Liquid Net Worth",
+          "page": 1,
+          "confidence": 99.990234375
+        },
+        {
+          "text": "$250,000-$499,999",
+          "page": 1,
+          "confidence": 99.8046875
+        },
+        {
+          "text": "Investment Objective",
+          "page": 1,
+          "confidence": 99.96014404296875
+        },
+        {
+          "text": "Growth and Income",
+          "page": 1,
+          "confidence": 99.9473876953125
+        },
+        {
+          "text": "Risk Tolerance",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "Moderate",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Investment Experience",
+          "page": 1,
+          "confidence": 99.95037078857422
+        },
+        {
+          "text": "10+ years",
+          "page": 1,
+          "confidence": 99.4580078125
+        },
+        {
+          "text": "Time Horizon",
+          "page": 1,
+          "confidence": 99.970703125
+        },
+        {
+          "text": "10+ years",
+          "page": 1,
+          "confidence": 99.345703125
+        },
+        {
+          "text": "Liquidity Need",
+          "page": 1,
+          "confidence": 99.98046875
+        },
+        {
+          "text": "Low",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "This questionnaire is a simplified synthetic demo and is not intended to represent any real firm form or regulatory requirement.",
+          "page": 1,
+          "confidence": 99.87503814697266
+        },
+        {
+          "text": "Transition Copilot synthetic test fixture",
+          "page": 1,
+          "confidence": 99.73233795166016
+        },
+        {
+          "text": "Page 1",
+          "page": 1,
+          "confidence": 98.7536849975586
+        }
+      ],
+      "fields": [
+        {
+          "label": "Liquid Net Worth",
+          "value": "$250,000-$499,999",
+          "page": 1,
+          "confidence": 95.92688751220703
+        },
+        {
+          "label": "Investment Objective",
+          "value": "Growth and Income",
+          "page": 1,
+          "confidence": 95.7923583984375
+        },
+        {
+          "label": "Client Name",
+          "value": "Jordan Kim",
+          "page": 1,
+          "confidence": 94.91515350341797
+        },
+        {
+          "label": "Risk Tolerance",
+          "value": "Moderate",
+          "page": 1,
+          "confidence": 95.7811050415039
+        },
+        {
+          "label": "Investment Experience",
+          "value": "10+ years",
+          "page": 1,
+          "confidence": 95.66870880126953
+        },
+        {
+          "label": "Liquidity Need",
+          "value": "Low",
+          "page": 1,
+          "confidence": 95.63575744628906
+        },
+        {
+          "label": "Estimated Net Worth",
+          "value": "$500,000-$999,999",
+          "page": 1,
+          "confidence": 95.71570587158203
+        },
+        {
+          "label": "Time Horizon",
+          "value": "10+ years",
+          "page": 1,
+          "confidence": 95.51934051513672
+        },
+        {
+          "label": "Annual Income Range",
+          "value": "$100,000-$149,999",
+          "page": 1,
+          "confidence": 95.6578140258789
+        },
+        {
+          "label": "Page",
+          "value": "1",
+          "page": 1,
+          "confidence": 92.41082763671875
+        }
+      ]
+    },
+    {
+      "document": "05_beneficiary_designation.pdf",
+      "s3_key": "uploads/f94cb38884834c7eac931f06be85a368/T001/05_beneficiary_designation.pdf",
+      "job_id": "dbb58fc62568a925fda8ac376beb8d4abe7bf26f9cc042457245b19c172d1c63",
+      "lines": [
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 97.90898895263672
+        },
+        {
+          "text": "Beneficiary Designation",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Synthetic Transition Document",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 98.38939666748047
+        },
+        {
+          "text": "Beneficiary Designation",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Client Name",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "Jordan Kim",
+          "page": 1,
+          "confidence": 99.77140808105469
+        },
+        {
+          "text": "Account Number",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "DEMO-IRA-1001",
+          "page": 1,
+          "confidence": 99.638671875
+        },
+        {
+          "text": "Primary Beneficiary",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Taylor Kim",
+          "page": 1,
+          "confidence": 99.90642547607422
+        },
+        {
+          "text": "Relationship",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Spouse",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Allocation",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "100%",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Contingent Beneficiary",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "None listed",
+          "page": 1,
+          "confidence": 99.9609375
+        },
+        {
+          "text": "Client Signature",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "SIGNED Jordan Kim",
+          "page": 1,
+          "confidence": 99.68377685546875
+        },
+        {
+          "text": "Signature Date",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "10/01/2026",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Beneficiary rules in this file are synthetic workflow rules for testing only.",
+          "page": 1,
+          "confidence": 99.96623229980469
+        },
+        {
+          "text": "Transition Copilot synthetic test fixture",
+          "page": 1,
+          "confidence": 99.76602172851562
+        },
+        {
+          "text": "Page 1",
+          "page": 1,
+          "confidence": 98.52030944824219
+        }
+      ],
+      "fields": [
+        {
+          "label": "Relationship",
+          "value": "Spouse",
+          "page": 1,
+          "confidence": 95.61300659179688
+        },
+        {
+          "label": "Allocation",
+          "value": "100%",
+          "page": 1,
+          "confidence": 95.16507720947266
+        },
+        {
+          "label": "Client Name",
+          "value": "Jordan Kim",
+          "page": 1,
+          "confidence": 95.14257049560547
+        },
+        {
+          "label": "Client Signature",
+          "value": "SIGNED Jordan Kim",
+          "page": 1,
+          "confidence": 95.50272369384766
+        },
+        {
+          "label": "Account Number",
+          "value": "DEMO-IRA-1001",
+          "page": 1,
+          "confidence": 95.59942626953125
+        },
+        {
+          "label": "Primary Beneficiary",
+          "value": "Taylor Kim",
+          "page": 1,
+          "confidence": 95.76117706298828
+        },
+        {
+          "label": "Contingent Beneficiary",
+          "value": "None listed",
+          "page": 1,
+          "confidence": 95.79240417480469
+        },
+        {
+          "label": "Signature Date",
+          "value": "10/01/2026",
+          "page": 1,
+          "confidence": 95.4871597290039
+        },
+        {
+          "label": "Page",
+          "value": "1",
+          "page": 1,
+          "confidence": 92.30105590820312
+        }
+      ]
+    },
+    {
+      "document": "06_advisory_agreement.pdf",
+      "s3_key": "uploads/f94cb38884834c7eac931f06be85a368/T001/06_advisory_agreement.pdf",
+      "job_id": "6ee08250c855f5ff265857a0f873620b0d822529506f6789968f653850f58de7",
+      "lines": [
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 97.58233642578125
+        },
+        {
+          "text": "Advisory Agreement",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Synthetic Demonstration Agreement",
+          "page": 1,
+          "confidence": 99.9867172241211
+        },
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 98.639404296875
+        },
+        {
+          "text": "Advisory Relationship",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Client Name",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "Jordan Kim",
+          "page": 1,
+          "confidence": 99.9109115600586
+        },
+        {
+          "text": "Account Number",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "DEMO-IRA-1001",
+          "page": 1,
+          "confidence": 99.59881591796875
+        },
+        {
+          "text": "Program",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Managed Portfolio - Demo",
+          "page": 1,
+          "confidence": 97.75151824951172
+        },
+        {
+          "text": "Billing Method",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "Quarterly in arrears",
+          "page": 1,
+          "confidence": 99.9704360961914
+        },
+        {
+          "text": "Annual Advisory Fee",
+          "page": 1,
+          "confidence": 99.99349212646484
+        },
+        {
+          "text": "0.85%",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Effective Upon Transfer",
+          "page": 1,
+          "confidence": 99.9802017211914
+        },
+        {
+          "text": "Yes",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Client Signature",
+          "page": 1,
+          "confidence": 99.990234375
+        },
+        {
+          "text": "SIGNED Jordan Kim",
+          "page": 1,
+          "confidence": 99.80362701416016
+        },
+        {
+          "text": "Signature Date",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "10/01/2026",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Demo Terms",
+          "page": 1,
+          "confidence": 99.96014404296875
+        },
+        {
+          "text": "This synthetic agreement exists solely to create a realistic test artifact for document extraction and consistency checks. It has no legal effect.",
+          "page": 1,
+          "confidence": 99.93920135498047
+        },
+        {
+          "text": "Transition Copilot synthetic test fixture",
+          "page": 1,
+          "confidence": 99.71428680419922
+        },
+        {
+          "text": "Page 1",
+          "page": 1,
+          "confidence": 98.75289154052734
+        }
+      ],
+      "fields": [
+        {
+          "label": "SIGNED",
+          "value": "",
+          "page": 1,
+          "confidence": 98.4322280883789
+        },
+        {
+          "label": "Billing Method",
+          "value": "Quarterly in arrears",
+          "page": 1,
+          "confidence": 95.93136596679688
+        },
+        {
+          "label": "Annual Advisory Fee",
+          "value": "0.85%",
+          "page": 1,
+          "confidence": 95.81525421142578
+        },
+        {
+          "label": "Client Name",
+          "value": "Jordan Kim",
+          "page": 1,
+          "confidence": 95.25407409667969
+        },
+        {
+          "label": "Client Signature",
+          "value": "Jordan Kim",
+          "page": 1,
+          "confidence": 95.59164428710938
+        },
+        {
+          "label": "Account Number",
+          "value": "DEMO-IRA-1001",
+          "page": 1,
+          "confidence": 95.6487808227539
+        },
+        {
+          "label": "Program",
+          "value": "Managed Portfolio - Demo",
+          "page": 1,
+          "confidence": 95.462890625
+        },
+        {
+          "label": "Effective Upon Transfer",
+          "value": "Yes",
+          "page": 1,
+          "confidence": 96.03406524658203
+        },
+        {
+          "label": "Signature Date",
+          "value": "10/01/2026",
+          "page": 1,
+          "confidence": 95.58525848388672
+        },
+        {
+          "label": "Page",
+          "value": "1",
+          "page": 1,
+          "confidence": 92.43135070800781
+        },
+        {
+          "label": "Demo Terms",
+          "value": "This synthetic agreement exists solely to create a realistic test artifact for document extraction and consistency checks. It has no legal effect.",
+          "page": 1,
+          "confidence": 73.92047882080078
+        }
+      ]
+    }
+  ]
+}

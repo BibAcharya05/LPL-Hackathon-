@@ -1,0 +1,12 @@
+account_id
+account_type
+checks_completed
+client_name
+issues
+normalized_fields
+notice
+observations
+processing_status
+status
+summary
+synthetic

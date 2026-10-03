@@ -1,0 +1,13 @@
+{
+    "Buckets": [
+        {
+            "Name": "transition-copilot-bibek-demo-2026",
+            "CreationDate": "2026-10-02T21:04:27+00:00",
+            "BucketArn": "arn:aws:s3:::transition-copilot-bibek-demo-2026"
+        }
+    ],
+    "Owner": {
+        "ID": "d2e3456782af186d365bda15ca4d1ae576354cf66fb08c42e6158ba28095ab77"
+    },
+    "Prefix": null
+}

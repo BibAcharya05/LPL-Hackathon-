@@ -1,0 +1,1211 @@
+{
+  "packet_id": "T002",
+  "synthetic": true,
+  "documents": [
+    {
+      "document": "01_existing_account_statement.pdf",
+      "s3_key": "uploads/227ec71ad30240d39a97bde752c2db2c/T002/01_existing_account_statement.pdf",
+      "job_id": "214b842d9a6ef29340fd436638485aafecde8782fcb071514c509838b12543f8",
+      "lines": [
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 97.46585083007812
+        },
+        {
+          "text": "Northstar Wealth Partners",
+          "page": 1,
+          "confidence": 99.9867172241211
+        },
+        {
+          "text": "Synthetic Existing Account Statement",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 98.6575927734375
+        },
+        {
+          "text": "Account Summary",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Delivering Firm",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Northstar Wealth Partners - Fictional",
+          "page": 1,
+          "confidence": 98.5459213256836
+        },
+        {
+          "text": "Statement Period",
+          "page": 1,
+          "confidence": 99.9951171875
+        },
+        {
+          "text": "September 1-30, 2026",
+          "page": 1,
+          "confidence": 99.77107238769531
+        },
+        {
+          "text": "Client Name",
+          "page": 1,
+          "confidence": 99.9951171875
+        },
+        {
+          "text": "Priya Shah",
+          "page": 1,
+          "confidence": 99.98046875
+        },
+        {
+          "text": "Mailing Address",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "220 Test Lane, Example Town, NC 00000",
+          "page": 1,
+          "confidence": 99.96187591552734
+        },
+        {
+          "text": "Account Number",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "DEMO-ROTH-2002",
+          "page": 1,
+          "confidence": 99.69407653808594
+        },
+        {
+          "text": "Account Type",
+          "page": 1,
+          "confidence": 99.97518920898438
+        },
+        {
+          "text": "Roth IRA",
+          "page": 1,
+          "confidence": 99.85800170898438
+        },
+        {
+          "text": "Ending Account Value",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "$174,880.20",
+          "page": 1,
+          "confidence": 99.951171875
+        },
+        {
+          "text": "Cash Balance",
+          "page": 1,
+          "confidence": 99.990234375
+        },
+        {
+          "text": "$8,880.20",
+          "page": 1,
+          "confidence": 99.990234375
+        },
+        {
+          "text": "Holdings",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Holding",
+          "page": 1,
+          "confidence": 99.970703125
+        },
+        {
+          "text": "Symbol",
+          "page": 1,
+          "confidence": 99.95037078857422
+        },
+        {
+          "text": "Quantity",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Market Value",
+          "page": 1,
+          "confidence": 99.94100952148438
+        },
+        {
+          "text": "Large Cap Growth Fund",
+          "page": 1,
+          "confidence": 99.90543365478516
+        },
+        {
+          "text": "LCGX",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "680",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "$102,000.00",
+          "page": 1,
+          "confidence": 99.951171875
+        },
+        {
+          "text": "International Equity ETF",
+          "page": 1,
+          "confidence": 99.9471206665039
+        },
+        {
+          "text": "INTL",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "520",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "$52,000.00",
+          "page": 1,
+          "confidence": 99.970703125
+        },
+        {
+          "text": "Short Treasury ETF",
+          "page": 1,
+          "confidence": 99.98697662353516
+        },
+        {
+          "text": "STRE",
+          "page": 1,
+          "confidence": 99.96014404296875
+        },
+        {
+          "text": "300",
+          "page": 1,
+          "confidence": 99.96014404296875
+        },
+        {
+          "text": "$12,000.00",
+          "page": 1,
+          "confidence": 99.912109375
+        },
+        {
+          "text": "This statement is entirely synthetic and contains no real customer information.",
+          "page": 1,
+          "confidence": 99.85076141357422
+        },
+        {
+          "text": "Transition Copilot synthetic test fixture",
+          "page": 1,
+          "confidence": 99.7159194946289
+        },
+        {
+          "text": "Page 1",
+          "page": 1,
+          "confidence": 98.90056610107422
+        }
+      ],
+      "fields": [
+        {
+          "label": "Page",
+          "value": "1",
+          "page": 1,
+          "confidence": 93.04740142822266
+        },
+        {
+          "label": "International Equity ETF",
+          "value": "520 $52,000.00",
+          "page": 1,
+          "confidence": 20.340370178222656
+        },
+        {
+          "label": "Mailing Address",
+          "value": "220 Test Lane, Example Town, NC 00000",
+          "page": 1,
+          "confidence": 96.01773071289062
+        },
+        {
+          "label": "Account Number",
+          "value": "DEMO-ROTH-2002",
+          "page": 1,
+          "confidence": 95.71711730957031
+        },
+        {
+          "label": "Delivering Firm",
+          "value": "Northstar Wealth Partners - Fictional",
+          "page": 1,
+          "confidence": 95.12727355957031
+        },
+        {
+          "label": "Account Type",
+          "value": "Roth IRA",
+          "page": 1,
+          "confidence": 95.74988555908203
+        },
+        {
+          "label": "Ending Account Value",
+          "value": "$174,880.20",
+          "page": 1,
+          "confidence": 95.95613861083984
+        },
+        {
+          "label": "Statement Period",
+          "value": "September 1-30, 2026",
+          "page": 1,
+          "confidence": 95.71115112304688
+        },
+        {
+          "label": "Client Name",
+          "value": "Priya Shah",
+          "page": 1,
+          "confidence": 95.81912994384766
+        },
+        {
+          "label": "Cash Balance",
+          "value": "$8,880.20",
+          "page": 1,
+          "confidence": 95.60909271240234
+        }
+      ]
+    },
+    {
+      "document": "02_new_account_application.pdf",
+      "s3_key": "uploads/227ec71ad30240d39a97bde752c2db2c/T002/02_new_account_application.pdf",
+      "job_id": "24a4dcec726b503b701aa8135a7cc497f13b2b853c89311d863c5bbd6406c321",
+      "lines": [
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 97.15310668945312
+        },
+        {
+          "text": "New Account Application",
+          "page": 1,
+          "confidence": 99.99674224853516
+        },
+        {
+          "text": "Synthetic LPL Transition Intake Form",
+          "page": 1,
+          "confidence": 99.97444915771484
+        },
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 98.77888488769531
+        },
+        {
+          "text": "Account Registration",
+          "page": 1,
+          "confidence": 99.9951171875
+        },
+        {
+          "text": "Receiving Firm",
+          "page": 1,
+          "confidence": 99.9951171875
+        },
+        {
+          "text": "LPL Financial - Hackathon Demo",
+          "page": 1,
+          "confidence": 98.59203338623047
+        },
+        {
+          "text": "Client Name",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "Priya Shah",
+          "page": 1,
+          "confidence": 99.93124389648438
+        },
+        {
+          "text": "Date of Birth",
+          "page": 1,
+          "confidence": 99.98697662353516
+        },
+        {
+          "text": "11/03/1985",
+          "page": 1,
+          "confidence": 99.990234375
+        },
+        {
+          "text": "Mailing Address",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "220 Test Lane, Example Town, NC 00000",
+          "page": 1,
+          "confidence": 99.94524383544922
+        },
+        {
+          "text": "Email",
+          "page": 1,
+          "confidence": 99.990234375
+        },
+        {
+          "text": "priya.shah@example.com",
+          "page": 1,
+          "confidence": 99.47285461425781
+        },
+        {
+          "text": "Phone",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "555-0102",
+          "page": 1,
+          "confidence": 99.970703125
+        },
+        {
+          "text": "Requested Account Type",
+          "page": 1,
+          "confidence": 99.9867172241211
+        },
+        {
+          "text": "Roth IRA",
+          "page": 1,
+          "confidence": 99.78475952148438
+        },
+        {
+          "text": "Employment Status",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "Employed",
+          "page": 1,
+          "confidence": 99.990234375
+        },
+        {
+          "text": "Annual Income Range",
+          "page": 1,
+          "confidence": 99.9802017211914
+        },
+        {
+          "text": "$150,000-$199,999",
+          "page": 1,
+          "confidence": 99.609375
+        },
+        {
+          "text": "Estimated Net Worth",
+          "page": 1,
+          "confidence": 99.99349212646484
+        },
+        {
+          "text": "$250,000-$499,999",
+          "page": 1,
+          "confidence": 99.8046875
+        },
+        {
+          "text": "Account Preferences",
+          "page": 1,
+          "confidence": 99.88042449951172
+        },
+        {
+          "text": "Investment Objective",
+          "page": 1,
+          "confidence": 99.9353256225586
+        },
+        {
+          "text": "Long-Term Growth",
+          "page": 1,
+          "confidence": 99.6875
+        },
+        {
+          "text": "Risk Tolerance",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "Moderately Aggressive",
+          "page": 1,
+          "confidence": 99.96542358398438
+        },
+        {
+          "text": "Time Horizon",
+          "page": 1,
+          "confidence": 99.9755859375
+        },
+        {
+          "text": "15+ years",
+          "page": 1,
+          "confidence": 99.29159545898438
+        },
+        {
+          "text": "Liquidity Need",
+          "page": 1,
+          "confidence": 99.98046875
+        },
+        {
+          "text": "Low",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Attestation",
+          "page": 1,
+          "confidence": 99.92028045654297
+        },
+        {
+          "text": "Client Signature",
+          "page": 1,
+          "confidence": 99.990234375
+        },
+        {
+          "text": "SIGNED Priya Shah",
+          "page": 1,
+          "confidence": 99.74555969238281
+        },
+        {
+          "text": "Signature Date",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "10/01/2026",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "No Social Security number is included in this synthetic dataset.",
+          "page": 1,
+          "confidence": 99.93873596191406
+        },
+        {
+          "text": "Transition Copilot synthetic test fixture",
+          "page": 1,
+          "confidence": 99.68646240234375
+        },
+        {
+          "text": "Page 1",
+          "page": 1,
+          "confidence": 98.4547348022461
+        }
+      ],
+      "fields": [
+        {
+          "label": "SIGNED",
+          "value": "Priya Shah",
+          "page": 1,
+          "confidence": 87.8238525390625
+        },
+        {
+          "label": "Email",
+          "value": "priya.shah@example.com",
+          "page": 1,
+          "confidence": 95.66431427001953
+        },
+        {
+          "label": "Mailing Address",
+          "value": "220 Test Lane, Example Town, NC 00000",
+          "page": 1,
+          "confidence": 95.98515319824219
+        },
+        {
+          "label": "Signature Date",
+          "value": "10/01/2026",
+          "page": 1,
+          "confidence": 94.27067565917969
+        },
+        {
+          "label": "Investment Objective",
+          "value": "Long-Term Growth",
+          "page": 1,
+          "confidence": 95.01240539550781
+        },
+        {
+          "label": "Time Horizon",
+          "value": "15+ years",
+          "page": 1,
+          "confidence": 95.13289642333984
+        },
+        {
+          "label": "Phone",
+          "value": "555-0102",
+          "page": 1,
+          "confidence": 95.58869171142578
+        },
+        {
+          "label": "Requested Account Type",
+          "value": "Roth IRA",
+          "page": 1,
+          "confidence": 95.83172607421875
+        },
+        {
+          "label": "Client Name",
+          "value": "Priya Shah",
+          "page": 1,
+          "confidence": 95.50942993164062
+        },
+        {
+          "label": "Estimated Net Worth",
+          "value": "$250,000-$499,999",
+          "page": 1,
+          "confidence": 95.19757843017578
+        },
+        {
+          "label": "Client Signature",
+          "value": "",
+          "page": 1,
+          "confidence": 93.97979736328125
+        },
+        {
+          "label": "Liquidity Need",
+          "value": "Low",
+          "page": 1,
+          "confidence": 94.98280334472656
+        },
+        {
+          "label": "Annual Income Range",
+          "value": "$150,000-$199,999",
+          "page": 1,
+          "confidence": 95.76228332519531
+        },
+        {
+          "label": "Date of Birth",
+          "value": "11/03/1985",
+          "page": 1,
+          "confidence": 95.66586303710938
+        },
+        {
+          "label": "Risk Tolerance",
+          "value": "Moderately Aggressive",
+          "page": 1,
+          "confidence": 94.96082305908203
+        },
+        {
+          "label": "Receiving Firm",
+          "value": "LPL Financial - Hackathon Demo",
+          "page": 1,
+          "confidence": 94.77539825439453
+        },
+        {
+          "label": "Employment Status",
+          "value": "Employed",
+          "page": 1,
+          "confidence": 95.75652313232422
+        },
+        {
+          "label": "Page",
+          "value": "1",
+          "page": 1,
+          "confidence": 91.65963745117188
+        }
+      ]
+    },
+    {
+      "document": "03_account_transfer_form.pdf",
+      "s3_key": "uploads/227ec71ad30240d39a97bde752c2db2c/T002/03_account_transfer_form.pdf",
+      "job_id": "dd095fcbe930a4f43eb1b26bbe42d3d7114d2ad402e2297a91fa15e1f59097f9",
+      "lines": [
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 97.3027114868164
+        },
+        {
+          "text": "Account Transfer Form",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Synthetic ACAT-style Transition Document",
+          "page": 1,
+          "confidence": 99.85595703125
+        },
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 98.65486907958984
+        },
+        {
+          "text": "Transfer Instructions",
+          "page": 1,
+          "confidence": 99.9951171875
+        },
+        {
+          "text": "Delivering Firm",
+          "page": 1,
+          "confidence": 99.9951171875
+        },
+        {
+          "text": "Northstar Wealth Partners - Fictional",
+          "page": 1,
+          "confidence": 98.8603744506836
+        },
+        {
+          "text": "Client Name",
+          "page": 1,
+          "confidence": 99.98046875
+        },
+        {
+          "text": "Priya Shah",
+          "page": 1,
+          "confidence": 99.95077514648438
+        },
+        {
+          "text": "Delivering Account Number",
+          "page": 1,
+          "confidence": 99.990234375
+        },
+        {
+          "text": "DEMO-ROTH-2002",
+          "page": 1,
+          "confidence": 99.72496795654297
+        },
+        {
+          "text": "Account Type",
+          "page": 1,
+          "confidence": 99.96542358398438
+        },
+        {
+          "text": "Roth IRA",
+          "page": 1,
+          "confidence": 99.87753295898438
+        },
+        {
+          "text": "Transfer Type",
+          "page": 1,
+          "confidence": 99.91539764404297
+        },
+        {
+          "text": "Full",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Transfer Instruction",
+          "page": 1,
+          "confidence": 99.94061279296875
+        },
+        {
+          "text": "Transfer all eligible assets in kind.",
+          "page": 1,
+          "confidence": 99.91227722167969
+        },
+        {
+          "text": "Estimated Transfer Value",
+          "page": 1,
+          "confidence": 99.9867172241211
+        },
+        {
+          "text": "$174,880.20",
+          "page": 1,
+          "confidence": 99.912109375
+        },
+        {
+          "text": "Client Signature",
+          "page": 1,
+          "confidence": 99.98046875
+        },
+        {
+          "text": "SIGNED Priya Shah",
+          "page": 1,
+          "confidence": 99.87630462646484
+        },
+        {
+          "text": "Signature Date",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "10/01/2026",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Operational note: transferability of individual assets is outside the scope of this synthetic test fixture.",
+          "page": 1,
+          "confidence": 99.91979217529297
+        },
+        {
+          "text": "Transition Copilot synthetic test fixture",
+          "page": 1,
+          "confidence": 99.75399017333984
+        },
+        {
+          "text": "Page 1",
+          "page": 1,
+          "confidence": 98.74840545654297
+        }
+      ],
+      "fields": [
+        {
+          "label": "Account Type",
+          "value": "Roth IRA",
+          "page": 1,
+          "confidence": 95.72416687011719
+        },
+        {
+          "label": "Transfer Type",
+          "value": "Full",
+          "page": 1,
+          "confidence": 95.77513122558594
+        },
+        {
+          "label": "Estimated Transfer Value",
+          "value": "$174,880.20",
+          "page": 1,
+          "confidence": 95.91722106933594
+        },
+        {
+          "label": "Client Name",
+          "value": "Priya Shah",
+          "page": 1,
+          "confidence": 95.7535171508789
+        },
+        {
+          "label": "Operational note:",
+          "value": "transferability of individual assets is outside the scope of this synthetic test fixture.",
+          "page": 1,
+          "confidence": 92.6812973022461
+        },
+        {
+          "label": "Signature Date",
+          "value": "10/01/2026",
+          "page": 1,
+          "confidence": 95.6908187866211
+        },
+        {
+          "label": "Delivering Account Number",
+          "value": "DEMO-ROTH-2002",
+          "page": 1,
+          "confidence": 95.83049774169922
+        },
+        {
+          "label": "Delivering Firm",
+          "value": "Northstar Wealth Partners - Fictional",
+          "page": 1,
+          "confidence": 95.26595306396484
+        },
+        {
+          "label": "Transfer Instruction",
+          "value": "Transfer all eligible assets in kind.",
+          "page": 1,
+          "confidence": 95.9157485961914
+        },
+        {
+          "label": "Client Signature",
+          "value": "SIGNED Priya Shah",
+          "page": 1,
+          "confidence": 95.79364776611328
+        },
+        {
+          "label": "Page",
+          "value": "1",
+          "page": 1,
+          "confidence": 92.32801818847656
+        }
+      ]
+    },
+    {
+      "document": "04_investor_profile.pdf",
+      "s3_key": "uploads/227ec71ad30240d39a97bde752c2db2c/T002/04_investor_profile.pdf",
+      "job_id": "bc64c25743b3da1c337b95a35a4c8a5bcedd4951e01dad7f9ec1fbab7a155686",
+      "lines": [
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 97.63780212402344
+        },
+        {
+          "text": "Investor Profile Questionnaire",
+          "page": 1,
+          "confidence": 99.89044952392578
+        },
+        {
+          "text": "Synthetic Suitability / Profile Data",
+          "page": 1,
+          "confidence": 99.10686492919922
+        },
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 98.64509582519531
+        },
+        {
+          "text": "Investor Profile",
+          "page": 1,
+          "confidence": 99.96014404296875
+        },
+        {
+          "text": "Client Name",
+          "page": 1,
+          "confidence": 99.98046875
+        },
+        {
+          "text": "Priya Shah",
+          "page": 1,
+          "confidence": 99.94100952148438
+        },
+        {
+          "text": "Annual Income Range",
+          "page": 1,
+          "confidence": 99.98371887207031
+        },
+        {
+          "text": "$150,000-$199,999",
+          "page": 1,
+          "confidence": 99.638671875
+        },
+        {
+          "text": "Estimated Net Worth",
+          "page": 1,
+          "confidence": 99.99349212646484
+        },
+        {
+          "text": "$250,000-$499,999",
+          "page": 1,
+          "confidence": 99.80388641357422
+        },
+        {
+          "text": "Liquid Net Worth",
+          "page": 1,
+          "confidence": 99.99349212646484
+        },
+        {
+          "text": "$100,000-$249,999",
+          "page": 1,
+          "confidence": 99.736328125
+        },
+        {
+          "text": "Investment Objective",
+          "page": 1,
+          "confidence": 99.96014404296875
+        },
+        {
+          "text": "Long-Term Growth",
+          "page": 1,
+          "confidence": 99.70703125
+        },
+        {
+          "text": "Risk Tolerance",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "Moderately Aggressive",
+          "page": 1,
+          "confidence": 99.96542358398438
+        },
+        {
+          "text": "Investment Experience",
+          "page": 1,
+          "confidence": 99.95037078857422
+        },
+        {
+          "text": "5-10 years",
+          "page": 1,
+          "confidence": 99.6875
+        },
+        {
+          "text": "Time Horizon",
+          "page": 1,
+          "confidence": 99.98046875
+        },
+        {
+          "text": "15+ years",
+          "page": 1,
+          "confidence": 99.0478515625
+        },
+        {
+          "text": "Liquidity Need",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "Low",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "This questionnaire is a simplified synthetic demo and is not intended to represent any real firm form or regulatory requirement.",
+          "page": 1,
+          "confidence": 99.88993072509766
+        },
+        {
+          "text": "Transition Copilot synthetic test fixture",
+          "page": 1,
+          "confidence": 99.60072326660156
+        },
+        {
+          "text": "Page 1",
+          "page": 1,
+          "confidence": 98.78298950195312
+        }
+      ],
+      "fields": [
+        {
+          "label": "Liquid Net Worth",
+          "value": "$100,000-$249,999",
+          "page": 1,
+          "confidence": 95.99493408203125
+        },
+        {
+          "label": "Investment Objective",
+          "value": "Long-Term Growth",
+          "page": 1,
+          "confidence": 95.97093200683594
+        },
+        {
+          "label": "Client Name",
+          "value": "Priya Shah",
+          "page": 1,
+          "confidence": 95.05058288574219
+        },
+        {
+          "label": "Risk Tolerance",
+          "value": "Moderately Aggressive",
+          "page": 1,
+          "confidence": 95.76441955566406
+        },
+        {
+          "label": "Investment Experience",
+          "value": "5-10 years",
+          "page": 1,
+          "confidence": 95.85230255126953
+        },
+        {
+          "label": "Liquidity Need",
+          "value": "Low",
+          "page": 1,
+          "confidence": 95.6348876953125
+        },
+        {
+          "label": "Estimated Net Worth",
+          "value": "$250,000-$499,999",
+          "page": 1,
+          "confidence": 95.79000854492188
+        },
+        {
+          "label": "Time Horizon",
+          "value": "15+ years",
+          "page": 1,
+          "confidence": 95.55704498291016
+        },
+        {
+          "label": "Annual Income Range",
+          "value": "$150,000-$199,999",
+          "page": 1,
+          "confidence": 95.7555923461914
+        },
+        {
+          "label": "Page",
+          "value": "1",
+          "page": 1,
+          "confidence": 92.37816619873047
+        }
+      ]
+    },
+    {
+      "document": "06_advisory_agreement.pdf",
+      "s3_key": "uploads/227ec71ad30240d39a97bde752c2db2c/T002/06_advisory_agreement.pdf",
+      "job_id": "faba29be3c4d4aec2f721f0893b9a50836b8258faaa6c9fd9a2e1f9d377d671c",
+      "lines": [
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 97.3613052368164
+        },
+        {
+          "text": "Advisory Agreement",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Synthetic Demonstration Agreement",
+          "page": 1,
+          "confidence": 99.9867172241211
+        },
+        {
+          "text": "SYNTHETIC DEMO DATA - NOT A REAL FINANCIAL DOCUMENT - CREATED FOR HACKATHON TESTING",
+          "page": 1,
+          "confidence": 98.67631530761719
+        },
+        {
+          "text": "Advisory Relationship",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Client Name",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "Priya Shah",
+          "page": 1,
+          "confidence": 99.96054077148438
+        },
+        {
+          "text": "Account Number",
+          "page": 1,
+          "confidence": 99.9951171875
+        },
+        {
+          "text": "DEMO-ROTH-2002",
+          "page": 1,
+          "confidence": 99.72496795654297
+        },
+        {
+          "text": "Program",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Managed Portfolio - Demo",
+          "page": 1,
+          "confidence": 97.8194808959961
+        },
+        {
+          "text": "Billing Method",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Quarterly in arrears",
+          "page": 1,
+          "confidence": 99.96392822265625
+        },
+        {
+          "text": "Annual Advisory Fee",
+          "page": 1,
+          "confidence": 99.99349212646484
+        },
+        {
+          "text": "0.90%",
+          "page": 1,
+          "confidence": 99.990234375
+        },
+        {
+          "text": "Effective Upon Transfer",
+          "page": 1,
+          "confidence": 99.9802017211914
+        },
+        {
+          "text": "Yes",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Client Signature",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "SIGNED Priya Shah",
+          "page": 1,
+          "confidence": 99.89556884765625
+        },
+        {
+          "text": "Signature Date",
+          "page": 1,
+          "confidence": 99.9853515625
+        },
+        {
+          "text": "10/01/2026",
+          "page": 1,
+          "confidence": 100.0
+        },
+        {
+          "text": "Demo Terms",
+          "page": 1,
+          "confidence": 99.96014404296875
+        },
+        {
+          "text": "This synthetic agreement exists solely to create a realistic test artifact for document extraction and consistency checks. It has no legal effect.",
+          "page": 1,
+          "confidence": 99.94053649902344
+        },
+        {
+          "text": "Transition Copilot synthetic test fixture",
+          "page": 1,
+          "confidence": 99.78001403808594
+        },
+        {
+          "text": "Page 1",
+          "page": 1,
+          "confidence": 98.76713562011719
+        }
+      ],
+      "fields": [
+        {
+          "label": "Demo Terms",
+          "value": "This synthetic agreement exists solely to create a realistic test artifact for document extraction and consistency checks. It has no legal effect.",
+          "page": 1,
+          "confidence": 98.22642517089844
+        },
+        {
+          "label": "Transition",
+          "value": "Copilot synthetic test fixture",
+          "page": 1,
+          "confidence": 45.38554382324219
+        },
+        {
+          "label": "Billing Method",
+          "value": "Quarterly in arrears",
+          "page": 1,
+          "confidence": 95.93043518066406
+        },
+        {
+          "label": "Annual Advisory Fee",
+          "value": "0.90%",
+          "page": 1,
+          "confidence": 95.76643371582031
+        },
+        {
+          "label": "Client Name",
+          "value": "Priya Shah",
+          "page": 1,
+          "confidence": 95.21293640136719
+        },
+        {
+          "label": "Client Signature",
+          "value": "SIGNED Priya Shah",
+          "page": 1,
+          "confidence": 95.67678833007812
+        },
+        {
+          "label": "Account Number",
+          "value": "DEMO-ROTH-2002",
+          "page": 1,
+          "confidence": 95.64349365234375
+        },
+        {
+          "label": "Program",
+          "value": "Managed Portfolio - Demo",
+          "page": 1,
+          "confidence": 95.44432830810547
+        },
+        {
+          "label": "Effective Upon Transfer",
+          "value": "Yes",
+          "page": 1,
+          "confidence": 96.02643585205078
+        },
+        {
+          "label": "Signature Date",
+          "value": "10/01/2026",
+          "page": 1,
+          "confidence": 95.5742416381836
+        },
+        {
+          "label": "Page",
+          "value": "1",
+          "page": 1,
+          "confidence": 92.46902465820312
+        }
+      ]
+    }
+  ]
+}

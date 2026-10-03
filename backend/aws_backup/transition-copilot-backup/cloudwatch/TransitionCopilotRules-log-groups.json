@@ -1,0 +1,15 @@
+{
+    "logGroups": [
+        {
+            "logGroupName": "/aws/lambda/TransitionCopilotRules",
+            "creationTime": 1790982508982,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:644669036718:log-group:/aws/lambda/TransitionCopilotRules:*",
+            "storedBytes": 0,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:644669036718:log-group:/aws/lambda/TransitionCopilotRules",
+            "deletionProtectionEnabled": false,
+            "bearerTokenAuthenticationEnabled": false
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "TransitionCopilotRulesRole",
+        "RoleId": "AROAZMGKE3CXJ5AT4TY6S",
+        "Arn": "arn:aws:iam::644669036718:role/TransitionCopilotRulesRole",
+        "CreateDate": "2026-10-02T23:00:28+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": "lambda.amazonaws.com"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        },
+        "MaxSessionDuration": 3600,
+        "RoleLastUsed": {
+            "LastUsedDate": "2026-10-03T00:07:26+00:00",
+            "Region": "us-east-1"
+        }
+    }
+}

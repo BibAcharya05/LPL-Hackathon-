@@ -1,0 +1,325 @@
+{
+    "Functions": [
+        {
+            "FunctionName": "kiro-rdp-SecretPlaintextLambda-90EPBxLDc0ef",
+            "FunctionArn": "arn:aws:lambda:us-east-1:644669036718:function:kiro-rdp-SecretPlaintextLambda-90EPBxLDc0ef",
+            "Runtime": "python3.13",
+            "Role": "arn:aws:iam::644669036718:role/kiro-rdp-SecretPlaintextLambdaRole-MOHWuegEkcd5",
+            "Handler": "index.lambda_handler",
+            "CodeSize": 1938,
+            "Description": "Return the value of the secret",
+            "Timeout": 10,
+            "MemorySize": 128,
+            "LastModified": "2026-10-01T21:39:53.800+0000",
+            "CodeSha256": "0dOnMIPCutfEgEN8Hl0GaMo7YJ3ZvtwhqzQDP6xaTZo=",
+            "Version": "$LATEST",
+            "TracingConfig": {
+                "Mode": "PassThrough"
+            },
+            "RevisionId": "389309cd-2fe4-4fc7-b64b-b9f409896235",
+            "PackageType": "Zip",
+            "Architectures": [
+                "arm64"
+            ],
+            "EphemeralStorage": {
+                "Size": 512
+            },
+            "SnapStart": {
+                "ApplyOn": "None",
+                "OptimizationStatus": "Off"
+            },
+            "LoggingConfig": {
+                "LogFormat": "Text",
+                "LogGroup": "/aws/lambda/kiro-rdp-SecretPlaintextLambda-90EPBxLDc0ef"
+            }
+        },
+        {
+            "FunctionName": "vscode-server-RunSSMDocLambda-ZLPzh8Vf1rcT",
+            "FunctionArn": "arn:aws:lambda:us-east-1:644669036718:function:vscode-server-RunSSMDocLambda-ZLPzh8Vf1rcT",
+            "Runtime": "python3.13",
+            "Role": "arn:aws:iam::644669036718:role/vscode-server-SSMDocLambdaRole-P4nT8vjPBX1w",
+            "Handler": "index.lambda_handler",
+            "CodeSize": 2364,
+            "Description": "Run SSM document on EC2 instance",
+            "Timeout": 600,
+            "MemorySize": 128,
+            "LastModified": "2026-10-01T21:30:15.421+0000",
+            "CodeSha256": "K/hjokRvgeC0/vgVrlUs5AV3Y4dqthkyjz64e9mwqfA=",
+            "Version": "$LATEST",
+            "Environment": {
+                "Variables": {
+                    "RetrySleep": "2900",
+                    "AbortTimeRemaining": "3200"
+                }
+            },
+            "TracingConfig": {
+                "Mode": "PassThrough"
+            },
+            "RevisionId": "2483093c-aece-4f09-81f0-caccc291d6bb",
+            "PackageType": "Zip",
+            "Architectures": [
+                "arm64"
+            ],
+            "EphemeralStorage": {
+                "Size": 512
+            },
+            "SnapStart": {
+                "ApplyOn": "None",
+                "OptimizationStatus": "Off"
+            },
+            "LoggingConfig": {
+                "LogFormat": "Text",
+                "LogGroup": "/aws/lambda/vscode-server-RunSSMDocLambda-ZLPzh8Vf1rcT"
+            }
+        },
+        {
+            "FunctionName": "idc-kiro-IDCLambda-4EdWPJFS4KyM",
+            "FunctionArn": "arn:aws:lambda:us-east-1:644669036718:function:idc-kiro-IDCLambda-4EdWPJFS4KyM",
+            "Runtime": "python3.12",
+            "Role": "arn:aws:iam::644669036718:role/idc-kiro-IDCLambdaExecutionRole-KEDLufBCPBkw",
+            "Handler": "index.handler",
+            "CodeSize": 5030,
+            "Description": "Configure Identity Center in us-east-1 for Kiro",
+            "Timeout": 900,
+            "MemorySize": 128,
+            "LastModified": "2026-10-01T21:37:30.142+0000",
+            "CodeSha256": "2zof9OEWn+vSFppcGBUJgwWxzkymBEwNoQBuslCxkV8=",
+            "Version": "$LATEST",
+            "TracingConfig": {
+                "Mode": "PassThrough"
+            },
+            "RevisionId": "f23455f4-7e6f-4ea1-a712-fc8a2e43ac3b",
+            "PackageType": "Zip",
+            "Architectures": [
+                "x86_64"
+            ],
+            "EphemeralStorage": {
+                "Size": 512
+            },
+            "SnapStart": {
+                "ApplyOn": "None",
+                "OptimizationStatus": "Off"
+            },
+            "LoggingConfig": {
+                "LogFormat": "Text",
+                "LogGroup": "/aws/lambda/idc-kiro-IDCLambda-4EdWPJFS4KyM"
+            }
+        },
+        {
+            "FunctionName": "WSConcurrencyCurtailer-DO-NOT-USE",
+            "FunctionArn": "arn:aws:lambda:us-east-1:644669036718:function:WSConcurrencyCurtailer-DO-NOT-USE",
+            "Runtime": "provided.al2023",
+            "Role": "arn:aws:iam::644669036718:role/WSLambdaCurtailerRole",
+            "Handler": "main",
+            "CodeSize": 292,
+            "Description": "",
+            "Timeout": 3,
+            "MemorySize": 128,
+            "LastModified": "2024-11-13T23:59:51.881+0000",
+            "CodeSha256": "pGwa9Shc5SKhz14ZmAVGn1yNCzisg0RJOxBbfl/6A6Q=",
+            "Version": "$LATEST",
+            "TracingConfig": {
+                "Mode": "PassThrough"
+            },
+            "RevisionId": "cfc2dcfd-8858-4fc2-8642-14c6df4a2f56",
+            "PackageType": "Zip",
+            "Architectures": [
+                "x86_64"
+            ],
+            "EphemeralStorage": {
+                "Size": 512
+            },
+            "SnapStart": {
+                "ApplyOn": "None",
+                "OptimizationStatus": "Off"
+            },
+            "LoggingConfig": {
+                "LogFormat": "Text",
+                "LogGroup": "/aws/lambda/WSConcurrencyCurtailer-DO-NOT-USE"
+            }
+        },
+        {
+            "FunctionName": "vscode-server-CodeEditorHealthCheckLambda-jUdEBik6X6gg",
+            "FunctionArn": "arn:aws:lambda:us-east-1:644669036718:function:vscode-server-CodeEditorHealthCheckLambda-jUdEBik6X6gg",
+            "Runtime": "python3.13",
+            "Role": "arn:aws:iam::644669036718:role/vscode-server-CodeEditorHealthCheckLambdaRole-nPaEt31buOj8",
+            "Handler": "index.lambda_handler",
+            "CodeSize": 2799,
+            "Description": "Run health check on Code Editor instance",
+            "Timeout": 600,
+            "MemorySize": 128,
+            "LastModified": "2026-10-01T21:27:24.036+0000",
+            "CodeSha256": "PbhiO3U1Ya055TS5KeudKftFWvMTYgCj7+pcdpGU+LE=",
+            "Version": "$LATEST",
+            "Environment": {
+                "Variables": {
+                    "RetrySleep": "2900",
+                    "AbortTimeRemaining": "5000"
+                }
+            },
+            "TracingConfig": {
+                "Mode": "PassThrough"
+            },
+            "RevisionId": "4b79e15e-562a-4548-b98e-a3341e850ce1",
+            "PackageType": "Zip",
+            "Architectures": [
+                "arm64"
+            ],
+            "EphemeralStorage": {
+                "Size": 512
+            },
+            "SnapStart": {
+                "ApplyOn": "None",
+                "OptimizationStatus": "Off"
+            },
+            "LoggingConfig": {
+                "LogFormat": "Text",
+                "LogGroup": "/aws/lambda/vscode-server-CodeEditorHealthCheckLambda-jUdEBik6X6gg"
+            }
+        },
+        {
+            "FunctionName": "idc-kiro-KiroSubscriptionCheckerLambda-TlsgxUIhlDCz",
+            "FunctionArn": "arn:aws:lambda:us-east-1:644669036718:function:idc-kiro-KiroSubscriptionCheckerLambda-TlsgxUIhlDCz",
+            "Runtime": "python3.12",
+            "Role": "arn:aws:iam::644669036718:role/idc-kiro-IDCLambdaExecutionRole-KEDLufBCPBkw",
+            "Handler": "index.handler",
+            "CodeSize": 3518,
+            "Description": "Verify the 'kiro' user Kiro subscription in IDC -> Users & Groups",
+            "Timeout": 900,
+            "MemorySize": 128,
+            "LastModified": "2026-10-01T21:37:29.822+0000",
+            "CodeSha256": "dB9jGVB/oWhWD2ly/uGh0ROtinaPvkQAw+ZLum7aLZ4=",
+            "Version": "$LATEST",
+            "TracingConfig": {
+                "Mode": "PassThrough"
+            },
+            "RevisionId": "e31241c9-bb05-4747-a800-277ff00ff360",
+            "PackageType": "Zip",
+            "Architectures": [
+                "x86_64"
+            ],
+            "EphemeralStorage": {
+                "Size": 512
+            },
+            "SnapStart": {
+                "ApplyOn": "None",
+                "OptimizationStatus": "Off"
+            },
+            "LoggingConfig": {
+                "LogFormat": "Text",
+                "LogGroup": "/aws/lambda/idc-kiro-KiroSubscriptionCheckerLambda-TlsgxUIhlDCz"
+            }
+        },
+        {
+            "FunctionName": "vscode-server-CheckSSMDocLambda-rnTX8k1cLLwi",
+            "FunctionArn": "arn:aws:lambda:us-east-1:644669036718:function:vscode-server-CheckSSMDocLambda-rnTX8k1cLLwi",
+            "Runtime": "python3.13",
+            "Role": "arn:aws:iam::644669036718:role/vscode-server-SSMDocLambdaRole-P4nT8vjPBX1w",
+            "Handler": "index.lambda_handler",
+            "CodeSize": 2580,
+            "Description": "Check SSM document on EC2 instance",
+            "Timeout": 600,
+            "MemorySize": 128,
+            "LastModified": "2026-10-01T21:30:15.198+0000",
+            "CodeSha256": "/Ccb/5xyvG3aIZg897YEAJDCrBaQKo77LoxK4PjGRpw=",
+            "Version": "$LATEST",
+            "Environment": {
+                "Variables": {
+                    "RetrySleep": "2900",
+                    "AbortTimeRemaining": "5000"
+                }
+            },
+            "TracingConfig": {
+                "Mode": "PassThrough"
+            },
+            "RevisionId": "b4186be5-65bc-4ac6-a787-ea732d03aac8",
+            "PackageType": "Zip",
+            "Architectures": [
+                "arm64"
+            ],
+            "EphemeralStorage": {
+                "Size": 512
+            },
+            "SnapStart": {
+                "ApplyOn": "None",
+                "OptimizationStatus": "Off"
+            },
+            "LoggingConfig": {
+                "LogFormat": "Text",
+                "LogGroup": "/aws/lambda/vscode-server-CheckSSMDocLambda-rnTX8k1cLLwi"
+            }
+        },
+        {
+            "FunctionName": "vscode-server-SecretPlaintextLambda-vgvWhmPGXH89",
+            "FunctionArn": "arn:aws:lambda:us-east-1:644669036718:function:vscode-server-SecretPlaintextLambda-vgvWhmPGXH89",
+            "Runtime": "python3.13",
+            "Role": "arn:aws:iam::644669036718:role/vscode-server-SecretPlaintextLambdaRole-dXc8hR5rZUkv",
+            "Handler": "index.lambda_handler",
+            "CodeSize": 1938,
+            "Description": "Return the value of the secret",
+            "Timeout": 10,
+            "MemorySize": 128,
+            "LastModified": "2026-10-01T21:27:27.471+0000",
+            "CodeSha256": "iWSML4Vqw234PoSGA/XX/fAhFjtlaBC6EVHsG3dQ0Sg=",
+            "Version": "$LATEST",
+            "TracingConfig": {
+                "Mode": "PassThrough"
+            },
+            "RevisionId": "8f7b691a-5420-4c8c-80f3-26a08e420c83",
+            "PackageType": "Zip",
+            "Architectures": [
+                "arm64"
+            ],
+            "EphemeralStorage": {
+                "Size": 512
+            },
+            "SnapStart": {
+                "ApplyOn": "None",
+                "OptimizationStatus": "Off"
+            },
+            "LoggingConfig": {
+                "LogFormat": "Text",
+                "LogGroup": "/aws/lambda/vscode-server-SecretPlaintextLambda-vgvWhmPGXH89"
+            }
+        },
+        {
+            "FunctionName": "TransitionCopilotRules",
+            "FunctionArn": "arn:aws:lambda:us-east-1:644669036718:function:TransitionCopilotRules",
+            "Runtime": "python3.11",
+            "Role": "arn:aws:iam::644669036718:role/TransitionCopilotRulesRole",
+            "Handler": "lambda_function.lambda_handler",
+            "CodeSize": 3949,
+            "Description": "",
+            "Timeout": 60,
+            "MemorySize": 256,
+            "LastModified": "2026-10-02T23:07:37.282+0000",
+            "CodeSha256": "HjpZlQr2pvgNug5w+1mSb4PVfBjLSzW4bAlApbf2qyE=",
+            "Version": "$LATEST",
+            "Environment": {
+                "Variables": {
+                    "TABLE_NAME": "TransitionCopilotAccounts",
+                    "PACKET_BUCKET": "transition-copilot-bibek-demo-2026"
+                }
+            },
+            "TracingConfig": {
+                "Mode": "PassThrough"
+            },
+            "RevisionId": "b6ee0e01-1a43-4783-8c71-b19cf2b32fe9",
+            "PackageType": "Zip",
+            "Architectures": [
+                "x86_64"
+            ],
+            "EphemeralStorage": {
+                "Size": 512
+            },
+            "SnapStart": {
+                "ApplyOn": "None",
+                "OptimizationStatus": "Off"
+            },
+            "LoggingConfig": {
+                "LogFormat": "Text",
+                "LogGroup": "/aws/lambda/TransitionCopilotRules"
+            }
+        }
+    ]
+}
