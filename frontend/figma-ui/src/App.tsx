@@ -22,7 +22,6 @@ import {
   PanelLeftOpen,
   RefreshCw,
   Search,
-  Send,
   ShieldCheck,
   TriangleAlert,
   Upload,
@@ -43,7 +42,7 @@ import { initials, type Account } from "./lib/transitions"
 const API_URL = new URL("./api/accounts", window.location.href).pathname
 const CARDS = [
   {
-    label: "Active Transitions",
+    label: "Total accounts",
     filter: "All",
     tone: "navy",
     icon: ArrowRightLeft,
@@ -71,11 +70,11 @@ const CARDS = [
     note: "Findings to investigate",
   },
   {
-    label: "Submitted",
-    filter: "Submitted",
-    tone: "blue",
-    icon: Send,
-    note: "Simulated submissions",
+    label: "Approved",
+    filter: "Approved",
+    tone: "green",
+    icon: FileCheck2,
+    note: "Human approval for the current packet",
   },
 ]
 
@@ -151,16 +150,25 @@ export default function App() {
   }, [])
 
   const selected = accounts.find((account) => account.account_id === selectedId)
-  const countFor = (status: string) =>
-    status === "All"
-      ? accounts.length
-      : accounts.filter((account) => account.status === status).length
+  const isApproved = (account: Account) =>
+    account.review_status === "approved" &&
+    Boolean(account.packet_version) &&
+    account.reviewed_packet_version === account.packet_version
+
+  const matchesFilter = (account: Account, value: string) =>
+    value === "All" ||
+    (value === "Approved"
+      ? isApproved(account)
+      : account.status === value)
+
+  const countFor = (value: string) =>
+    accounts.filter((account) => matchesFilter(account, value)).length
   const attentionCount = countFor("Flagged") + countFor("Missing Info")
   const visibleAccounts = accounts.filter((account) => {
     const text =
       `${account.client_name ?? ""} ${account.account_id}`.toLowerCase()
     return (
-      (filter === "All" || account.status === filter) &&
+      matchesFilter(account, filter) &&
       text.includes(search.toLowerCase().trim())
     )
   })
@@ -577,7 +585,7 @@ export default function App() {
                                 <StatusChip status={account.status} />
                               </td>
                               <td>
-                                {account.review_status === "approved"
+                                {isApproved(account)
                                   ? "Approved"
                                   : account.review_status === "corrections_requested"
                                     ? "Corrections requested"

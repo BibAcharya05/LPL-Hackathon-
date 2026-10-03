@@ -11,6 +11,10 @@ export function reviewAction(issue: Issue): string {
     return `Obtain the ${documentLabel(issue.expected_document).toLowerCase()} and upload the complete corrected packet for rechecking.`
   }
 
+  if (issue.code === "RAPID_THIRD_PARTY_FUND_MOVEMENT") {
+    return "Verify the incoming funds and subsequent outgoing wires, recipient ownership, and supporting authorization. Confirm exact transaction times with supporting records; the report provides dates only. Document the explanation before approval."
+  }
+
   if (issue.code === "TRANSACTION_DESTINATION_REVIEW") {
     return "Verify the third-party recipients and newly added destinations against the activity report and supporting records. Document the explanation or request supporting documents before approval."
   }
