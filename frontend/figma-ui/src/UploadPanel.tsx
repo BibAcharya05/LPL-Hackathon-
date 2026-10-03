@@ -143,8 +143,8 @@ export default function UploadPanel({
   }
 
   const validationError =
-    files.length > 6
-      ? "Select up to six PDF documents."
+    files.length > 7
+      ? "Select up to seven PDF documents."
       : new Set(files.map((file) => file.name)).size !== files.length
         ? "Each document filename must be unique."
         : files.some((file) => !file.name.toLowerCase().endsWith(".pdf"))
@@ -153,7 +153,8 @@ export default function UploadPanel({
             ? "Each PDF must be 5 MB or smaller."
             : files.some(
                   (file) =>
-                    !REQUIRED_DOCUMENTS.some(([name]) => name === file.name),
+                    !REQUIRED_DOCUMENTS.some(([name]) => name === file.name) &&
+                    file.name !== "07_transaction_activity_report.pdf",
                 )
               ? "Use the original document filenames from the synthetic packet."
               : ""
@@ -204,11 +205,19 @@ export default function UploadPanel({
               className="select-control"
               value={packetId}
               disabled={locked}
-              onChange={(event) => setPacketId(event.target.value)}
+              onChange={(event) => {
+                setPacketId(event.target.value)
+                setFiles([])
+                setSynthetic(false)
+                setError("")
+                setStage("")
+              }}
             >
               <option value="T001">T001 — Jordan Kim</option>
               <option value="T002">T002 — Priya Shah</option>
               <option value="T003">T003 — Marcus Lee</option>
+              <option value="T004">T004 — Elena Rodriguez</option>
+              <option value="T005">T005 — Cameron Blake</option>
             </select>
           </label>
 
@@ -218,9 +227,10 @@ export default function UploadPanel({
               Select this packet’s PDF documents
             </label>
             <p id="file-guidance">
-              Original filenames · Up to 6 PDFs · 5 MB per file
+              Original filenames · Up to 7 PDFs · 5 MB per file
             </p>
             <input
+              key={packetId}
               id="packet-files"
               aria-describedby="file-guidance"
               aria-invalid={!!validationError}
