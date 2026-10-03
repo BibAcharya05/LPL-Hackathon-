@@ -4,6 +4,7 @@ import App from './App'
 import './index.css'
 import "./polish.css";
 import "./lpl-theme.css";
+import "./responsive.css"
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

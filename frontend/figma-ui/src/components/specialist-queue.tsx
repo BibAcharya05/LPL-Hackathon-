@@ -1,3 +1,4 @@
+import { reviewAction } from "../lib/review-actions"
 import type { Account } from "../lib/transitions"
 import { accountValue, reviewPriority } from "../lib/assessment"
 import Button from "./ui/button"
@@ -33,7 +34,7 @@ export default function SpecialistQueue({ accounts, onReview }: Props) {
       <div className="specialist-list">
         {queue.map(account => {
           const priority = reviewPriority(account)
-          const tasks = [...new Set(account.issues.map(issue => issue.action))]
+          const tasks = [...new Set(account.issues.map(reviewAction))]
           return (
             <article className="specialist-card" key={account.account_id}>
               <div className="specialist-card-heading">

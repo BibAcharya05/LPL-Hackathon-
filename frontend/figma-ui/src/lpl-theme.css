@@ -223,3 +223,8 @@ tbody tr:hover { background: #fcfaf7; }
   .review-heading h1,
   .title-with-status h1 { font-size: 29px; }
 }
+
+/* Remove the sidebar demo notice. */
+.sidebar-footer {
+  display: none;
+}

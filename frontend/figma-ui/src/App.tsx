@@ -1,5 +1,4 @@
 import { FileCheck2 } from "lucide-react"
-import AgentReview from "./components/agent-review"
 import BookOverview from "./components/book-overview"
 import SpecialistQueue from "./components/specialist-queue"
 import { accountValue } from "./lib/assessment"
@@ -380,10 +379,7 @@ export default function App() {
                     Review account readiness and resolve outstanding findings.
                   </p>
                 </div>
-                <span className="workspace-badge">
-                  <ShieldCheck size={14} aria-hidden="true" />
-                  Transition operations
-                </span>
+                
               </div>
               {lastLoaded && <BookOverview accounts={accounts} />}
               <section
@@ -541,7 +537,7 @@ export default function App() {
                         <th>Status</th>
                         <th>Human review</th>
                         <th className="numeric">Issues</th>
-                        <th>Main reason</th>
+                        <th>Key finding</th>
                         <th>
                           <span className="sr-only">Review account</span>
                         </th>
@@ -687,10 +683,7 @@ export default function App() {
                 onBack={() => navigate("Transitions")}
                 onUpload={() => setUploadOpen(true)}
               />
-              <AgentReview
-                key={"agent:" + selected.account_id + ":" + (selected.packet_version || "")}
-                account={selected}
-              />
+              
               <HumanReview
                 key={selected.account_id + ":" + (selected.packet_version || "")}
                 account={selected}

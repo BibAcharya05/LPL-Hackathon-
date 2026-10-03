@@ -1,3 +1,5 @@
+import { reviewAction } from "../lib/review-actions"
+import AgentReview from "./agent-review"
 import {
   ArrowLeft,
   ArrowRight,
@@ -41,7 +43,7 @@ export default function AccountReview({ account, onBack, onUpload }: Props) {
     <>
       <Button variant="ghost" className="back-link" onClick={onBack}>
         <ArrowLeft size={16} />
-        All transitions
+        LPL Specialist Review
       </Button>
       <div className="review-heading">
         <div className="review-client">
@@ -89,6 +91,10 @@ export default function AccountReview({ account, onBack, onUpload }: Props) {
               Verify against source documents before taking action.
             </div>
           </section>
+          <AgentReview
+            key={`agent:${account.account_id}:${account.packet_version}`}
+            account={account}
+          />
           <section className="issues-section" aria-labelledby="findings-title">
             <div className="section-heading">
               <h2 id="findings-title">
@@ -141,7 +147,7 @@ export default function AccountReview({ account, onBack, onUpload }: Props) {
                     <ArrowRight size={16} />
                     <div>
                       <strong>Recommended next step</strong>
-                      <p>{issue.action}</p>
+                      <p>{reviewAction(issue)}</p>
                     </div>
                   </div>
                 </article>
@@ -259,7 +265,7 @@ export default function AccountReview({ account, onBack, onUpload }: Props) {
                 : "Complete human review"}
             </h2>
             <p>
-              {account.issues[0]?.action ||
+              {(account.issues[0] ? reviewAction(account.issues[0]) : "") ||
                 "Review the source documents before proceeding."}
             </p>
           </section>
