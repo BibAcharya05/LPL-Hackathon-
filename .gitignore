@@ -10,3 +10,6 @@ dist/
 # Local backups and generated processing results
 *.py.bak
 backend/results/
+
+# AWS CloudTrail exports
+cloudtrail-*.json
